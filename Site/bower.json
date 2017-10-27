@@ -1,0 +1,26 @@
+{
+  "name": "SIENicaragua",
+  "authors": [
+    "Michael Traña <mtraatabladaa94@gmail.com>"
+  ],
+  "description": "Soluciones Informaticas Empresariales Nicaragua",
+  "main": "",
+  "keywords": [
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.7.23"
+  }
+}
