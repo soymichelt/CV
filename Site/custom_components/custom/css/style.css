@@ -335,3 +335,15 @@ footer.page-footer {
   font-size: 13px;
   font-weight: 300;
 }
+
+
+/*Fanpage*/
+.profile-image-social {
+	width:96px;
+	border:3px solid #fff;
+	box-shadow:0 1px 1px rgba(0, 0, 0, 0.1);
+	margin-top:-75px;
+	position:relative;
+	z-index:1;
+}
+/*End Fanpage*/
