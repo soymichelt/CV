@@ -1,0 +1,14 @@
+.card-profile .pearson-name {
+    font-size: 1.2rem;
+    position: relative;
+    margin-left: 70px;
+    margin-top: -20px;
+}
+
+.card-profile .card-image-profile {
+    position: absolute;
+    margin-top: -60px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}

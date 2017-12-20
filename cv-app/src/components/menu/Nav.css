@@ -1,0 +1,60 @@
+.navbar-fixed-component nav {
+    
+}
+#sidenav-overlay {
+    z-index: 990!important;
+    position: relative;
+}
+.side-nav {
+    z-index: 999!important;
+}
+.mnu-logo {
+    height: 32px;
+    vertical-align: middle;
+    margin-top:-4px;
+}
+.mnu-image {
+    width:32px;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+.side-nav-profile, .side-nav-profile .link {
+    height: 56px;
+    line-height: 18px;
+}
+.side-nav-profile .side-nav-profile-content {
+    padding-top: 9px;
+    vertical-align: middle;
+}
+.side-nav-profile img {
+    line-height: 18px;
+    width: 32px;
+    margin-right: 16px;
+}
+.side-nav-profile p {
+    margin: 0;
+}
+.side-nav-profile .title, .side-nav-profile .subtitle {
+    line-height: 18px;
+}
+.side-nav-profile .title {
+    
+}
+.side-nav-profile .subtitle {
+    font-size: .9rem;
+    font-weight: 400;
+}
+.main-mobile-section li a {
+    padding-left: 20px!important;
+    padding-right: 14px!important;
+}
+.material-icons.right {
+    margin-right: 0px!important;
+}
+.main-mobile-section .mnu-primary .material-icons {
+    margin-left: 4px;
+    margin-right: 20px;
+}
+.nav-content-container {
+    position: relative;
+}

@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "^0.7.23"
+    "webcomponentsjs": "^0.7.23",
+    "materialize": "^0.100.2"
   }
 }
