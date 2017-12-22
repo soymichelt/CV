@@ -2,41 +2,43 @@
 import React, { Component } from 'react';
 
 /* CSS */
-import './Index.css';
+import './Login.css';
 
 /* Components */
 import Header from '../../../components/header/Header';
 import { Aside } from '../../../components/aside/Aside';
 import { Container, ContainerFluid, Row, Col } from '../../../components/grid/Grid';
 
-class Index extends Component {
+class Login extends Component {
 
     render() {
 
         return (
-
-            <section className="index-home-page">
+            <section className="login-account-page">
 
                 <Header />
-
-                <Container className="index-container">
-                    <Row>
-                        <Col className="hide-on-med-and-down m4 l4">
-                            <Aside />
-                        </Col>
-                        <Col className="s12 m12 l8">
-                            <section className="card-panel">
-                            </section>
-                        </Col>
-                    </Row>
-                </Container>
                 
-            </section>
+                <Container>
 
+                    <Row>
+
+                        <Col className="s10 s1-offset m6 m3-offset">
+
+                            <section className="card-panel">
+                                
+                            </section>
+
+                        </Col>
+
+                    </Row>
+
+                </Container>
+
+            </section>
         );
 
     }
 
 }
 
-export default Index;
+export default Login;

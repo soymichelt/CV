@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 /* Pages Components */
 import Index from './pages/home/index/Index';
 
+
 class App extends Component {
 
   render() {

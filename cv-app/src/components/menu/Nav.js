@@ -17,7 +17,7 @@ function Nav(props) {
                 <ContainerFluid>
                     <Container>
                         <div className="nav-wrapper">
-                            <a href="#" data-activates="mobile-section" className="button-collapse btn btn-flat blue-grey lighten-5"><i className="material-icons blue-grey-text text-darken-4">menu</i></a>
+                            <a href="#" data-activates="mobile-section" className="button-collapse btn btn-flat blue-grey lighten-5"><i className="material-icons">menu</i></a>
                             <Link className="brand-logo" to="/">
                                 <img className="mnu-logo" src={process.env.PUBLIC_URL + '/Resources/Images/Imagotipo.png'} />
                             </Link>
@@ -35,7 +35,7 @@ function Nav(props) {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/account/login" className="mnu-primary btn red darken-3">Entrar</Link>
+                                    <Link to="/account/login" className="mnu-primary mnu-last btn red darken-3">Entrar</Link>
                                 </li>
                             </ul>
                             <ul id="mobile-section" className="main-mobile-section side-nav">

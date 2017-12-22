@@ -1,14 +1,49 @@
+.card-profile {
+    
+}
 .card-profile .pearson-name {
     font-size: 1.2rem;
     position: relative;
-    margin-left: 70px;
-    margin-top: -20px;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card-profile .card-image-profile {
-    position: absolute;
-    margin-top: -60px;
+    margin-top: -96px;
     position: relative;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 5px solid #fff;
+}
+
+/*card profile section*/
+.card-profile .like-button-section {
+    position: relative;
+    margin-top: -44px!important;
+    text-align: center;
+}
+.card-profile .like-button-section .likes {
+    position: relative;
+    display:inline-block;
+    margin-top:20px;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.card-profile .like-button-section .like-button {
+    position: relative;
+    margin-top: -20px;
+}
+
+/*card profile social*/
+.card-profile .social-link {
+    /*position: relative;
+    margin-top:-40px!important;*/
+    margin-top: 10px!important;
+}
+.card-profile .social-link img {
+    width: 32px;
+    height: 32px;
 }

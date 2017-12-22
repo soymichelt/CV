@@ -8,6 +8,9 @@
 .side-nav {
     z-index: 999!important;
 }
+.nav-wrapper .mnu-primary.mnu-last {
+    margin-right: 0px!important;
+}
 .mnu-logo {
     height: 32px;
     vertical-align: middle;
@@ -36,9 +39,6 @@
 }
 .side-nav-profile .title, .side-nav-profile .subtitle {
     line-height: 18px;
-}
-.side-nav-profile .title {
-    
 }
 .side-nav-profile .subtitle {
     font-size: .9rem;

@@ -24,13 +24,32 @@ export function Profile(props) {
             <div className="card-image">
                 <img src={process.env.PUBLIC_URL + '/Resources/Images/banner1.jpg'} />
             </div>
-            <div className="card-content">
-                <img className="left card-image-profile" src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'} />
-                <h1 className="truncate pearson-name">
-                    Michel R. Traña Tablada
+            <div className="center card-content">
+                <img className="card-image-profile" src={process.env.PUBLIC_URL + '/Resources/Images/Profile.jpeg'} />
+                <p className="right like-button-section hide">
+                    <a href="#" className="likes blue-grey-text text-darken-2">
+                        15 K
+                    </a>
+                    <a className="like-button btn btn-floating red darken-3">
+                        L
+                    </a>
+                </p>
+                <h1 className="center truncate pearson-name">
+                    Ing. Michel R. Traña Tablada
                 </h1>
-                <p>
-                    I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+                <p className="center">
+                    Autodidacta desarrollador de App's de escritorio, web y móvil.
+                </p>
+                <p className="social-link center">
+                    <a href="https://www.facebook.com/mtraatabladaa94" target="_blank">
+                        <img src={process.env.PUBLIC_URL + '/Resources/Images/Social/fb.png'} />
+                    </a>
+                    <a href="https://www.facebook.com/mtraatabladaa94" target="_blank">
+                        <img src={process.env.PUBLIC_URL + '/Resources/Images/Social/tw.png'} />
+                    </a>
+                    <a href="https://www.facebook.com/mtraatabladaa94" target="_blank">
+                        <img src={process.env.PUBLIC_URL + '/Resources/Images/Social/pr.png'} />
+                    </a>
                 </p>
             </div>
         </div>
