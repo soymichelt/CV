@@ -1,8 +1,8 @@
 /* Node & ReactJS Modules */
 import React, { Component } from 'react';
-import './Aside.css';
 
 /* CSS */
+import './Aside.css';
 
 export function Aside(props) {
 

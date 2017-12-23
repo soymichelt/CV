@@ -1,0 +1,26 @@
+.footer-section .row {
+    margin-bottom: 0px;
+}
+
+.footer-copyright {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 32px;
+    font-size: 12px;
+}
+
+.footer-copyright .developed img {
+    width: 32px;
+}
+
+.footer-copyright .developed img, .footer-copyright .copyright {
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-copyright .developed.right, .footer-copyright .copyright {
+        float: none!important;
+        display: block;
+        text-align: center;
+    }
+}

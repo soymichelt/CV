@@ -1,13 +1,15 @@
 /* Node & ReactJS Modules */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 /* CSS */
 import './Index.css';
 
 /* Components */
 import Header from '../../../components/header/Header';
+import Footer from '../../../components/footer/Footer';
 import { Aside } from '../../../components/aside/Aside';
-import { Container, ContainerFluid, Row, Col } from '../../../components/grid/Grid';
+import { ContainerFluid, Row, Col } from '../../../components/grid/Grid';
 
 class Index extends Component {
 
@@ -30,6 +32,8 @@ class Index extends Component {
                         </Col>
                     </Row>
                 </ContainerFluid>
+
+                <Footer />
                 
             </section>
 

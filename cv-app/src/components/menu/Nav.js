@@ -18,7 +18,7 @@ function Nav(props) {
                     <Row>
                         <Col className="s12 m12 l10 offset-l1">
                             <div className="nav-wrapper">
-                                <a href="#" data-activates="mobile-section" className="button-collapse btn btn-flat blue-grey lighten-5"><i className="material-icons">menu</i></a>
+                                <a href="#" data-activates="mobile-section" className="button-collapse black-text"><i className="material-icons">menu</i></a>
                                 <Link className="brand-logo" to="/">
                                     <img className="mnu-logo" src={process.env.PUBLIC_URL + '/Resources/Images/Imagotipo.png'} />
                                 </Link>

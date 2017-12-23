@@ -1,6 +1,23 @@
 .navbar-fixed-component nav .row {
     margin-bottom: 0px!important;
 }
+.navbar-fixed-component .button-collapse {
+    background: transparent!important;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align:center;
+}
+.navbar-fixed-component .button-collapse:hover, .navbar-fixed-component .button-collapse:active {
+    background: #eceff1 !important;
+}
+.navbar-fixed-component .button-collapse i {
+    height: 36px;
+    line-height: 36px;
+}
 #sidenav-overlay {
     z-index: 990!important;
     position: relative;
