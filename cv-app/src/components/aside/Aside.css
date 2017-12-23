@@ -47,3 +47,16 @@
     width: 32px;
     height: 32px;
 }
+
+/*Profile Info*/
+.info-section {
+    padding: 0px!important;
+}
+.info-section .profile-info {
+    border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.info-section .profile-info i.left {
+    margin-right: 5px;
+}

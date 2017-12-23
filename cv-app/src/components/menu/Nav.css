@@ -1,5 +1,5 @@
-.navbar-fixed-component nav {
-    
+.navbar-fixed-component nav .row {
+    margin-bottom: 0px!important;
 }
 #sidenav-overlay {
     z-index: 990!important;

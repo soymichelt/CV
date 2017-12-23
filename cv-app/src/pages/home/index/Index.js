@@ -19,17 +19,17 @@ class Index extends Component {
 
                 <Header />
 
-                <Container className="index-container">
+                <ContainerFluid className="index-container">
                     <Row>
-                        <Col className="hide-on-med-and-down m4 l4">
+                        <Col className="hide-on-med-and-down m3 l3 offset-l1">
                             <Aside />
                         </Col>
-                        <Col className="s12 m12 l8">
+                        <Col className="s12 m12 l7">
                             <section className="card-panel">
                             </section>
                         </Col>
                     </Row>
-                </Container>
+                </ContainerFluid>
                 
             </section>
 
