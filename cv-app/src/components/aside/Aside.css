@@ -49,14 +49,14 @@
 }
 
 /*Profile Info*/
-.info-section {
+.info-section, .location-section {
     padding: 0px!important;
 }
-.info-section .profile-info {
+.info-section .profile-info, .location-section .profile-location {
     border-radius: 0px;
     border-left: 0px;
     border-right: 0px;
 }
-.info-section .profile-info i.left {
+.info-section .profile-info i.left, .location-section .profile-location i.left {
     margin-right: 5px;
 }

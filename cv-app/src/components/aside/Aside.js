@@ -11,6 +11,7 @@ export function Aside(props) {
         <section className="aside-left">
             <Profile />
             <Info />
+            <Location />
         </section>
 
     );
@@ -68,6 +69,56 @@ export function Info(props) {
         <section className="info-section card-panel">
             <ul className="profile-info left-align collection">
                 <li className="collection-item">
+                    <h5 className="collection-header">
+                        <i className="material-icons right">people</i>
+                        Datos Personales
+                    </h5>
+                </li>
+                <li className="collection-item">
+
+                    <i className="material-icons left">phone</i>
+                    
+                    121 - 020993 - 0004R
+
+                    <a href="#" className="right">
+                        <i className="material-icons">chevron_right</i>
+                    </a>
+
+                </li>
+                <li className="collection-item">
+
+                    <i className="material-icons left">phone</i>
+                    
+                    Masculino
+
+                    <a href="#" className="right">
+                        <i className="material-icons">chevron_right</i>
+                    </a>
+
+                </li>
+                <li className="collection-item">
+
+                    <i className="material-icons left">phone</i>
+                    
+                    Soltero
+
+                    <a href="#" className="right">
+                        <i className="material-icons">chevron_right</i>
+                    </a>
+
+                </li>
+                <li className="collection-item">
+
+                    <i className="material-icons left">phone</i>
+                    
+                    02/09/1993
+
+                    <a href="#" className="right">
+                        <i className="material-icons">chevron_right</i>
+                    </a>
+
+                </li>
+                <li className="collection-item">
 
                     <i className="material-icons left">phone</i>
                     
@@ -106,4 +157,28 @@ export function Info(props) {
 
 }
 
-export default { Aside, Profile };
+export function Location(props) {
+
+    return(
+
+        <section className="location-section card-panel">
+            <ul className="profile-location left-align collection">
+                <li className="collection-item">
+                    <h5 className="collection-header">
+                        <i className="material-icons right">global</i>
+                        Domicilio
+                    </h5>
+                </li>
+                <li className="collection-item">
+
+                    De "Lubricentros Álvarez" 4 Cuadras al Oeste, 20 Varas al Sur. Juigalpa, Chontales, Nicaragua.
+
+                </li>
+            </ul>
+        </section>
+
+    );
+
+}
+
+export default { Aside, Profile, Location };

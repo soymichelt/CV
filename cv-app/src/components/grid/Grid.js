@@ -1,6 +1,9 @@
 /* Node & ReactJS Modules */
 import React, { Component } from 'react';
 
+/* Components */
+import { getAttribute } from '../../helpers/Attribute';
+
 function getClassName(className) {
 
     var classNameProps = '';
@@ -15,7 +18,7 @@ export function Container(props) {
 
     
     return(
-        <section className={ 'container' + getClassName(props.className) }>
+        <section className={ 'container' + getAttribute(props.className) }>
             {props.children}
         </section>
     );
@@ -25,7 +28,7 @@ export function Container(props) {
 export function ContainerFluid(props) {
 
     return(
-        <section className={ 'container-fluid' + getClassName(props.className) }>
+        <section className={ 'container-fluid' + getAttribute(props.className) }>
             {props.children}
         </section>
     );
@@ -35,7 +38,7 @@ export function ContainerFluid(props) {
 export function Row(props) {
 
     return (
-        <section className={'row' + getClassName(props.className)}>
+        <section className={'row' + getAttribute(props.className)}>
             {props.children}
         </section>
     );
@@ -45,7 +48,7 @@ export function Row(props) {
 export function Col(props) {
 
     return (
-        <section className={'col' + getClassName(props.className)}>
+        <section className={'col' + getAttribute(props.className)}>
             {props.children}
         </section>
     );
