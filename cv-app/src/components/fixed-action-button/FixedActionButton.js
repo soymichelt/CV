@@ -8,19 +8,19 @@ export function FixedActionButton() {
 
     return(
 
-        <section class="fixed-action-button-section fixed-action-btn">
-            <a href="javascript:void(0);" class="btn-floating btn-large red darken-4">
-                <i class="large material-icons">supervisor_account</i>
+        <section className="fixed-action-button-section fixed-action-btn">
+            <a href="javascript:void(0);" className="btn-floating btn-large red darken-4">
+                <i className="large material-icons">group</i>
             </a>
             <ul>
                 <li>
-                    <a class="btn-floating green">
-                        <i class="material-icons">publish</i>
+                    <a className="btn-floating green">
+                        <i className="material-icons">publish</i>
                     </a>
                 </li>
                 <li>
-                    <a class="btn-floating blue" href="">
-                        <i class="material-icons">textsms</i>
+                    <a className="btn-floating blue" href="">
+                        <i className="material-icons">textsms</i>
                     </a>
                 </li>
             </ul>

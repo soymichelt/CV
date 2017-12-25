@@ -16,4 +16,5 @@ registerServiceWorker();
 
 $(document).ready(function() {
     $(".button-collapse").sideNav();
+    $(".material-select").material_select();
 });

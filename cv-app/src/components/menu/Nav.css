@@ -72,6 +72,13 @@
     margin-left: 4px;
     margin-right: 20px;
 }
+.main-mobile-section .mnu-primary.btn {
+    padding-left: 12px!important;
+}
+.main-mobile-section .mnu-primary.btn .material-icons.left {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 .nav-content-container {
     position: relative;
 }

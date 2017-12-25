@@ -1,5 +1,5 @@
 /* Node & ReactJS Modules */
-import React, { Component } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 
 /* Components */
@@ -8,7 +8,7 @@ import { Container, ContainerFluid, Row, Col } from '../grid/Grid';
 /* CSS */
 import './Nav.css';
 
-function Nav(props) {
+export function Nav(props) {
 
     return (
 
@@ -36,7 +36,10 @@ function Nav(props) {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/account/login" className="mnu-primary mnu-last btn red darken-3">Entrar</Link>
+                                        <Link to="/account/login" className="mnu-primary mnu-last btn red darken-3">
+                                            <i className="material-icons left">person</i>
+                                            Entrar
+                                        </Link>
                                     </li>
                                 </ul>
                                 <ul id="mobile-section" className="main-mobile-section side-nav">
@@ -56,28 +59,30 @@ function Nav(props) {
                                         </a>
                                     </li>
                                     <li>
-                                        <Link to="/" className="mnu-primary blue-grey-text text-darken-3">
-                                            <i className="material-icons blue-grey-text text-darken-4">home</i>
+                                        <Link to="/" className="mnu-primary blue-grey-text text-darken-4">
+                                            <i className="material-icons blue-grey-text text-darken-3">home</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Inicio
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/about" className="mnu-primary blue-grey-text text-darken-3">
-                                            <i className="material-icons blue-grey-text text-darken-4">person_pin</i>
+                                        <Link to="/about" className="mnu-primary blue-grey-text text-darken-4">
+                                            <i className="material-icons blue-grey-text text-darken-3">person_pin</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Sobre mí
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/contact" className="mnu-primary blue-grey-text text-darken-3">
-                                            <i className="material-icons blue-grey-text text-darken-4">local_phone</i>
+                                        <Link to="/contact" className="mnu-primary blue-grey-text text-darken-4">
+                                            <i className="material-icons blue-grey-text text-darken-3">local_phone</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Contáctame
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/account/login" className="mnu-primary btn red darken-3">Entrar</Link>
+                                        <Link to="/account/login" className="mnu-primary btn red darken-3">
+                                            Entrar
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>

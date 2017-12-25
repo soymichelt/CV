@@ -1,5 +1,5 @@
 /* Node & ReactJS Modules */
-import React, { Component } from 'react';
+import React from 'react';
 
 /* Components */
 import { getAttribute } from '../../helpers/Attribute';

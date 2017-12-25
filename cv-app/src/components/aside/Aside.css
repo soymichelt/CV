@@ -58,5 +58,8 @@
     border-right: 0px;
 }
 .info-section .profile-info i.left, .location-section .profile-location i.left {
-    margin-right: 5px;
+    margin-right: 10px;
+}
+.info-section .profile-info .material-icons.left, .location-section .profile-location .material-icons.left {
+    
 }

@@ -1,5 +1,5 @@
 /* Node & ReactJS Modules */
-import React, { Component } from 'react';
+import React from 'react';
 
 /* CSS */
 import './Aside.css';
@@ -70,13 +70,13 @@ export function Info(props) {
             <ul className="profile-info left-align collection">
                 <li className="collection-item">
                     <h5 className="collection-header">
-                        <i className="material-icons right">people</i>
+                        <i className="material-icons right blue-grey-text text-darken-4">people</i>
                         Datos Personales
                     </h5>
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">assignment_ind</i>
                     
                     121 - 020993 - 0004R
 
@@ -87,7 +87,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">wc</i>
                     
                     Masculino
 
@@ -98,7 +98,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">favorite_outline</i>
                     
                     Soltero
 
@@ -109,7 +109,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">cake</i>
                     
                     02/09/1993
 
@@ -120,7 +120,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">phone</i>
                     
                     (+505) 8367 - 1719
 
@@ -131,7 +131,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">phone</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">phone</i>
                     
                     (+505) 8590 - 0017
 
@@ -142,7 +142,7 @@ export function Info(props) {
                 </li>
                 <li className="collection-item">
 
-                    <i className="material-icons left">email</i>
+                    <i className="material-icons left blue-grey-text text-darken-3">email</i>
                     
                     mtraatabladaa94@gmail.com
 
@@ -165,7 +165,7 @@ export function Location(props) {
             <ul className="profile-location left-align collection">
                 <li className="collection-item">
                     <h5 className="collection-header">
-                        <i className="material-icons right">global</i>
+                        <i className="material-icons right blue-grey-text text-darken-4">pin_drop</i>
                         Domicilio
                     </h5>
                 </li>

@@ -1,0 +1,24 @@
+.input-select .select-dropdown {
+
+    border-left:1px solid #9E9E9E!important;
+    border-right: 1px solid #9E9E9E!important;
+    border-top: 1px solid #9E9E9E!important;
+    border-bottom: 1px solid #9E9E9E!important;
+    
+    box-shadow: 0 1px 0 0 #9E9E9E!important;
+
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+
+    box-sizing: border-box!important;
+
+}
+.input-select ul.select-dropdown {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.input-select .caret {
+
+    right: 10px!important;
+
+}
