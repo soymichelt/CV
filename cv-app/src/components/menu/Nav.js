@@ -37,7 +37,7 @@ export function Nav(props) {
                                     </li>
                                     <li>
                                         <Link to="/account/login" className="mnu-primary mnu-last btn red darken-3">
-                                            <i className="material-icons left">person</i>
+                                            <i className="material-icons right">account_circle</i>
                                             Entrar
                                         </Link>
                                     </li>

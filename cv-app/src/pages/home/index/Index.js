@@ -11,6 +11,7 @@ import Footer from '../../../components/footer/Footer';
 import { Aside } from '../../../components/aside/Aside';
 import { ContainerFluid, Row, Col } from '../../../components/grid/Grid';
 import FormContact from '../../../components/form-contact/FormContact';
+import { BlockquoteList, Blockquote } from '../../../components/blockquote/BlockquoteList';
 import FixedActionButton from '../../../components/fixed-action-button/FixedActionButton';
 
 class Index extends Component {
@@ -29,12 +30,15 @@ class Index extends Component {
                             <Aside />
                         </Col>
                         <Col className="s12 m12 l7">
+
                             <section className="card-panel">
+                                <BlockquoteList />
                             </section>
 
                             <section className="card-panel">
                                 <FormContact />
                             </section>
+
                         </Col>
                     </Row>
                 </ContainerFluid>
