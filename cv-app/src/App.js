@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 /* Pages Components */
 import Index from './pages/home/index/Index';
-
+import Quotes from './pages/home/quotes/Quotes';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Index} />
           <Route exact path="/Home/Index" component={Index} />
-          <Route exact path="/Home/Quotes" />
+          <Route exact path="/Home/Quotes" component={Quotes} />
         </div>
       </BrowserRouter>
     );

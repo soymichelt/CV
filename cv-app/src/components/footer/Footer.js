@@ -8,7 +8,7 @@ import './Footer.css';
 /* Components */
 import { ContainerFluid, Row, Col } from '../grid/Grid';
 
-class Footer extends Component {
+export class Footer extends Component {
 
     render() {
 

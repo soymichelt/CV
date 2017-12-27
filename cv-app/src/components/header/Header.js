@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Nav from '../menu/Nav';
 
 
-class Header extends Component {
+export class Header extends Component {
 
     render() {
 
