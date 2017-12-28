@@ -13,6 +13,7 @@ import { ContainerFluid, Row, Col } from '../../../components/grid/Grid';
 import FormContact from '../../../components/form-contact/FormContact';
 import { BlockquoteList, Blockquote } from '../../../components/blockquote/BlockquoteList';
 import FixedActionButton from '../../../components/fixed-action-button/FixedActionButton';
+import { BubbleChat } from '../../../components/bubble-chat/BubbleChat';
 
 class Index extends Component {
 
@@ -40,7 +41,9 @@ class Index extends Component {
                             </section>
 
                         </Col>
+
                     </Row>
+
                 </ContainerFluid>
 
                 <FixedActionButton />

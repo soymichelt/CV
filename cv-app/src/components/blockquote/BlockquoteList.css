@@ -3,9 +3,20 @@
     margin-right: 10px;
 }
 
+.blockquote-list-section hr {
+    margin-left: 27px;
+    margin-right: 27px;
+    border:none;
+    height: 1px;
+}
+
 /* Blockquote-Items */
+.blockquote-item:first-child {
+    margin-top:0px!important;
+}
 .blockquote-item {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     border-left: 3px solid #039be5;
     padding-left: 25px;
     padding-right: 25px;
@@ -20,12 +31,12 @@
     margin-left: 0px!important;
 }
 .blockquote-item .source-section .photo {
-    margin-top: 15px;
-    width: 48px;
-    height: 48px;
+    margin-top: 8px;
+    width: 32px;
+    height: 32px;
 }
 .blockquote-item .source-section .source {
-    margin-left: 56px;
+    margin-left: 40px;
     margin-bottom: 0px;
 }
 .blockquote-item .source-section .photo.valign-wrapper {

@@ -10,20 +10,8 @@ export function FixedActionButton() {
 
         <section className="fixed-action-button-section fixed-action-btn">
             <a href="javascript:void(0);" className="btn-floating btn-large red darken-4">
-                <i className="large material-icons">group</i>
+                <i className="large material-icons">chat</i>
             </a>
-            <ul>
-                <li>
-                    <a className="btn-floating green">
-                        <i className="material-icons">publish</i>
-                    </a>
-                </li>
-                <li>
-                    <a className="btn-floating blue" href="">
-                        <i className="material-icons">textsms</i>
-                    </a>
-                </li>
-            </ul>
         </section>
 
     );

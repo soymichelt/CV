@@ -26,8 +26,20 @@ export function BlockquoteList(props) {
                     email="mtraatabladaa94@gmail.com"
                     phone="(+505) 8367 - 1719"
                 />
+                <hr className="blue-grey lighten-5" />
                 <BlockquoteItem
-                    key="1"
+                    key="2"
+                    quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
+                    Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
+                    Además como persona es muy amable y honesto."
+                    name="Ing. Michel Roberto Traña Tablada"
+                    job="Responsable de Laboratorio Farem Chontales"
+                    email="mtraatabladaa94@gmail.com"
+                    phone="(+505) 8367 - 1719"
+                />
+                <hr className="blue-grey lighten-5" />
+                <BlockquoteItem
+                    key="3"
                     quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
                     Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
                     Además como persona es muy amable y honesto."
@@ -57,7 +69,7 @@ export function BlockquoteItem(props) {
 
     return(
 
-        <section className="blockquote-item">
+        <article className="blockquote-item">
             <p className="quote">
                 <i className="material-icons right blue-grey-text text-darken-2">format_quote</i>
                 {props.quote}
@@ -75,7 +87,7 @@ export function BlockquoteItem(props) {
                     </span>
                 </p>
             </section>
-        </section>
+        </article>
 
     );
 
