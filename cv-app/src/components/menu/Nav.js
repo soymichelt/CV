@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 /* Components */
-import { Container, ContainerFluid, Row, Col } from '../grid/Grid';
+import { ContainerFluid, Row, Col } from '../grid/Grid';
 
 /* CSS */
 import './Nav.css';

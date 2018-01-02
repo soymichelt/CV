@@ -1,0 +1,25 @@
+.modal-section.modal.modal-fixed-footer .modal-content {
+    padding: 0px!important;
+    margin: 0px!important;
+}
+
+.modal-title .title {
+
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 1px;
+    padding: 0px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+
+.modal-title .title .material-icons {
+
+    line-height: 27px;
+
+}
+.modal-title {
+    padding:12px;
+}

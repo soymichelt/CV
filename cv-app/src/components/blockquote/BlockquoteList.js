@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 /* CSS */
 import './BlockquoteList.css';
 
+/* Components */
+import { FormOpine } from '../form-opine/FormOpine';
+
 export function BlockquoteList(props) {
 
     return(
@@ -50,7 +53,7 @@ export function BlockquoteList(props) {
                 />
             </section>
             <section className="blockquote-actions">
-                <button className="btn red darken-4">
+                <button data-target="form-opine" className="btn red darken-4 modal-trigger">
                     Opinar
                     <i className="material-icons right">add</i>
                 </button>
@@ -59,6 +62,9 @@ export function BlockquoteList(props) {
                     <i className="material-icons right">list</i>
                 </Link>
             </section>
+
+            <FormOpine key="form-opine" id="form-opine" />
+
         </section>
 
     );
