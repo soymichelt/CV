@@ -3,12 +3,18 @@
     margin: 0px!important;
 }
 
+.modal-title {
+    padding:12px;
+    height: 77px;
+}
+
 .modal-title .title {
 
     line-height: 27px;
     font-size: 18px;
     font-weight: bold;
     margin-right: 1px;
+    margin-bottom: 0px;
     padding: 0px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -19,7 +25,4 @@
 
     line-height: 27px;
 
-}
-.modal-title {
-    padding:12px;
 }

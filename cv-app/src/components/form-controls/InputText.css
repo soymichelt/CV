@@ -22,3 +22,8 @@
 .input-text label {
     left: 10px!important;
 }
+
+/* input-transparent */
+.input-text.input-transparent input, .input-text.input-transparent textarea {
+    /*border:none!important;*/
+}

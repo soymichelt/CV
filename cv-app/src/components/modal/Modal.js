@@ -28,6 +28,7 @@ export function ModalTitle(props) {
 
         <section className="modal-title red darken-4">
             <h1 className="title white-text">
+                <i className="material-icons left">stars</i>
                 <i className="material-icons right modal-close red darken-4 red-text text-lighten-3">close</i>
                 { getAttribute(props.title) }
             </h1>
