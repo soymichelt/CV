@@ -19,21 +19,21 @@ export function Nav(props) {
                         <Col className="s12 m12 l10 offset-l1">
                             <div className="nav-wrapper">
                                 <a href="#" data-activates="mobile-section" className="button-collapse black-text"><i className="material-icons">menu</i></a>
-                                <Link className="brand-logo" to="/">
+                                <a className="brand-logo" href="#home-section">
                                     <img className="mnu-logo" src={process.env.PUBLIC_URL + '/Resources/Images/Imagotipo.png'} />
-                                </Link>
+                                </a>
                                 <ul className="right hide-on-med-and-down">
                                     <li>
-                                        <Link to="/" className="mnu-primary blue-grey-text text-darken-3">Inicio</Link>
+                                        <a href="#home-section" className="mnu-primary blue-grey-text text-darken-3">Inicio</a>
                                     </li>
                                     <li>
-                                        <Link to="/about" className="mnu-primary blue-grey-text text-darken-3">Sobre mí</Link>
+                                        <a href="#about-section" className="mnu-primary blue-grey-text text-darken-3">Sobre mí</a>
                                     </li>
                                     <li>
-                                        <Link to="/contact" className="mnu-primary blue-grey-text text-darken-3">
+                                        <a href="#contact-section" className="mnu-primary blue-grey-text text-darken-3">
                                             Contáctame
                                             <img className="mnu-image" src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'} />
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
                                         <Link to="/account/login" className="mnu-primary mnu-last btn red darken-3">
@@ -44,7 +44,7 @@ export function Nav(props) {
                                 </ul>
                                 <ul id="mobile-section" className="main-mobile-section side-nav">
                                     <li className="side-nav-profile">
-                                        <a className="link" href="#">
+                                        <a className="link" href="#home-section">
                                             <section className="side-nav-profile-content">
                                                 <p className="blue-grey-text text-darken-4">
                                                     <img className="left" src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'} />
@@ -59,25 +59,25 @@ export function Nav(props) {
                                         </a>
                                     </li>
                                     <li>
-                                        <Link to="/" className="mnu-primary blue-grey-text text-darken-4">
+                                        <a href="#home-section" className="mnu-primary blue-grey-text text-darken-4">
                                             <i className="material-icons blue-grey-text text-darken-3">home</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Inicio
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link to="/about" className="mnu-primary blue-grey-text text-darken-4">
+                                        <a href="#about-section" className="mnu-primary blue-grey-text text-darken-4">
                                             <i className="material-icons blue-grey-text text-darken-3">person_pin</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Sobre mí
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link to="/contact" className="mnu-primary blue-grey-text text-darken-4">
+                                        <a href="#contact-section" className="mnu-primary blue-grey-text text-darken-4">
                                             <i className="material-icons blue-grey-text text-darken-3">local_phone</i>
                                             <i className="material-icons right">chevron_right</i>
                                             Contáctame
-                                        </Link>
+                                        </a>
                                     </li>
                                     <li>
                                         <Link to="/account/login" className="mnu-primary btn red darken-3">

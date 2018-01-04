@@ -32,11 +32,15 @@ class Index extends Component {
                         </Col>
                         <Col className="s12 m12 l7">
 
-                            <section className="card-panel">
+                            <section id="home-section" className="card-panel scrollspy">
+
+                            </section>
+
+                            <section id="about-section" className="card-panel scrollspy">
                                 <BlockquoteList />
                             </section>
 
-                            <section className="card-panel">
+                            <section id="contact-section" className="card-panel scrollspy">
                                 <FormContact />
                             </section>
 

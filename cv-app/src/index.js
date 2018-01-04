@@ -17,4 +17,5 @@ registerServiceWorker();
 $(document).ready(function() {
     $(".button-collapse").sideNav();
     $(".material-select").material_select();
+    $(".scrollspy").scrollSpy({ scrollOffset: 60 });
 });
