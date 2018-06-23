@@ -2,5 +2,6 @@ body, nav, a, section, p, h1, h2, h3, h4, h5, span {
     font-family: 'Roboto';
 }
 body {
-    background:#ebeff1 !important;
+    background:#f8f8f9 !important;
+    margin: 0;
 }

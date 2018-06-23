@@ -1,26 +1,20 @@
-.footer-section .row {
+.footer-section {
     margin-bottom: 0px;
-}
-
-.footer-copyright {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: #263238;
+    color: #CFD8DC;
+    font-size: 13px;
+    padding: 8px 12px;
     line-height: 32px;
-    font-size: 12px;
 }
 
-.footer-copyright .developed img {
-    width: 32px;
+.footer-section a {
+    color: #03A9F4;
 }
 
-.footer-copyright .developed img, .footer-copyright .copyright {
-    vertical-align: middle;
-}
-
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
     .footer-copyright .developed.right, .footer-copyright .copyright {
         float: none!important;
         display: block;
         text-align: center;
     }
-}
+}*/

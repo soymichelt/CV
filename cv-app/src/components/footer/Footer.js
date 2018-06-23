@@ -1,41 +1,59 @@
 /* Node & ReactJS Modules */
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
 
 /* CSS */
 import './Footer.css';
 
-/* Components */
-import { ContainerFluid, Row, Col } from '../grid/Grid';
+const styles = theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    footerSection: {
+        backgroundColor: '#263238',
+    },
+    devSection: {
+        
+    },
+    devContent: {
+        float: 'right',
+        height: 32,
+    },
+    devProfilePhoto: {
+        width: 32,
+        height: 32,
+    },
+});
 
 export class Footer extends Component {
 
     render() {
 
+        const { classes } = this.props;
+
         return (
             <footer className="footer-section">
-                <ContainerFluid className="blue-grey darken-2">
-                    <Row>
-                        <Col className="s12 l10 offset-l1">
-                            <section className="footer-content">
-                            </section>
-                        </Col>
-                    </Row>
-                </ContainerFluid>
-                <ContainerFluid className="blue-grey darken-4">
-                    <Row>
-                        <Col className="s12 m12 l10 offset-l1">
-                            <section className="footer-copyright white-text">
-                                <span className="copyright">
-                                    &copy; Copyright - <Link to="/" className="red-text">mtraatabladaa94</Link> 2017. All rights reserved.
-                                </span>
-                                <a href="https://www.facebook.com/mtraatabladaa94" target="_blank" className="developed right white-text">
-                                    Diseñador y Desarrollador <span className="red-text">Michel Traña</span> <img src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'} />
-                                </a>
-                            </section>
-                        </Col>
-                    </Row>
-                </ContainerFluid>
+                <Grid container className={classes.root}>
+                    <Grid item xs={12} sm={6} className="blue-grey darken-4">
+                        <span className="copyright">
+                            &copy; Copyright - <Link to="/" className="red-text">mtraatabladaa94</Link> 2018. All rights reserved.
+                        </span>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <a
+                            className={classes.devContent}
+                            href="https://www.facebook.com/mtraatabladaa94"
+                            target="_blank"
+                        >
+                            <img
+                                className={classes.devProfilePhoto}
+                                src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'}
+                            />
+                        </a>
+                    </Grid>
+                </Grid>
             </footer>
         );
 
@@ -43,4 +61,4 @@ export class Footer extends Component {
 
 }
 
-export default Footer;
+export default withStyles(styles)(Footer);

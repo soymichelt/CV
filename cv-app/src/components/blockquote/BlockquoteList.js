@@ -1,5 +1,5 @@
 /* Node & ReactJS Modules */
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 /* CSS */
@@ -8,66 +8,82 @@ import './BlockquoteList.css';
 /* Components */
 import { FormOpine } from '../form-opine/FormOpine';
 
-export function BlockquoteList(props) {
+/* Firebase */
+import { Firestore } from 'firebase';
 
-    return(
+export class BlockquoteList extends Component {
 
-        <section className="blockquote-list-section">
-            <h5>
-                <i className="material-icons right blue-grey-text text-darken-4">assignment</i>
-                <span className="red-text text-darken-4">Lo que las personas</span> dicen sobre mí
-            </h5>
-            <br />
-            <section className="blockquote-items">
-                <BlockquoteItem
-                    key="1"
-                    quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
-                    Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
-                    Además como persona es muy amable y honesto."
-                    name="Ing. Michel Roberto Traña Tablada"
-                    job="Responsable de Laboratorio Farem Chontales"
-                    email="mtraatabladaa94@gmail.com"
-                    phone="(+505) 8367 - 1719"
-                />
-                <hr className="blue-grey lighten-5" />
-                <BlockquoteItem
-                    key="2"
-                    quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
-                    Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
-                    Además como persona es muy amable y honesto."
-                    name="Ing. Michel Roberto Traña Tablada"
-                    job="Responsable de Laboratorio Farem Chontales"
-                    email="mtraatabladaa94@gmail.com"
-                    phone="(+505) 8367 - 1719"
-                />
-                <hr className="blue-grey lighten-5" />
-                <BlockquoteItem
-                    key="3"
-                    quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
-                    Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
-                    Además como persona es muy amable y honesto."
-                    name="Ing. Michel Roberto Traña Tablada"
-                    job="Responsable de Laboratorio Farem Chontales"
-                    email="mtraatabladaa94@gmail.com"
-                    phone="(+505) 8367 - 1719"
-                />
+    constructor(props) {
+        super(props);
+        this.state = { data: [] };
+    }
+
+    render() {
+
+        return(
+    
+            <section className="blockquote-list-section">
+                <h5>
+                    <i className="material-icons right blue-grey-text text-darken-4">assignment</i>
+                    <span className="red-text text-darken-4">Lo que las personas</span> dicen sobre mí
+                </h5>
+                <br />
+                <section className="blockquote-items">
+                    <BlockquoteItem
+                        key="1"
+                        quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
+                        Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
+                        Además como persona es muy amable y honesto."
+                        name="Ing. Michel Roberto Traña Tablada"
+                        job="Responsable de Laboratorio Farem Chontales"
+                        email="mtraatabladaa94@gmail.com"
+                        phone="(+505) 8367 - 1719"
+                    />
+                    <hr className="blue-grey lighten-5" />
+                    <BlockquoteItem
+                        key="2"
+                        quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
+                        Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
+                        Además como persona es muy amable y honesto."
+                        name="Ing. Michel Roberto Traña Tablada"
+                        job="Responsable de Laboratorio Farem Chontales"
+                        email="mtraatabladaa94@gmail.com"
+                        phone="(+505) 8367 - 1719"
+                    />
+                    <hr className="blue-grey lighten-5" />
+                    <BlockquoteItem
+                        key="3"
+                        quote="Conocí al Michel Traña un día que visito la empresa en que laboro para brindarnos un servicio profesional y quedamos encantados con su forma de trabajar.
+                        Destaco que él nos diseño nuestro sistema con el cual controlamos el negocio.
+                        Además como persona es muy amable y honesto."
+                        name="Ing. Michel Roberto Traña Tablada"
+                        job="Responsable de Laboratorio Farem Chontales"
+                        email="mtraatabladaa94@gmail.com"
+                        phone="(+505) 8367 - 1719"
+                    />
+                </section>
+                <section className="blockquote-actions">
+                    <button data-target="form-opine" className="btn red darken-4 modal-trigger">
+                        Opinar
+                        <i className="material-icons right">add</i>
+                    </button>
+                    <Link to="/Home/Quotes" className="btn btn-flat grey lighten-4">
+                        <span className="blue-grey-text text-darken-4">Todas</span>
+                        <i className="material-icons right">list</i>
+                    </Link>
+                </section>
+    
+                <FormOpine key="form-opine" id="form-opine" />
+    
             </section>
-            <section className="blockquote-actions">
-                <button data-target="form-opine" className="btn red darken-4 modal-trigger">
-                    Opinar
-                    <i className="material-icons right">add</i>
-                </button>
-                <Link to="/Home/Quotes" className="btn btn-flat grey lighten-4">
-                    <span className="blue-grey-text text-darken-4">Todas</span>
-                    <i className="material-icons right">list</i>
-                </Link>
-            </section>
+    
+        );
+    
+    }
 
-            <FormOpine key="form-opine" id="form-opine" />
+    componentDidMount() {
 
-        </section>
-
-    );
+    }
 
 }
 

@@ -50,6 +50,8 @@ class Index extends Component {
 
                 </ContainerFluid>
 
+                <BubbleChat />
+
                 <FixedActionButton />
 
                 <Footer />

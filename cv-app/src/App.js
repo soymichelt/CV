@@ -1,10 +1,12 @@
 /* Node & ReactJS Modules */
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 /* Pages Components */
-import Index from './pages/home/index/Index';
-import Quotes from './pages/home/quotes/Quotes';
+import Home from './pages/home/Home'
+import Quotes from './pages/home/quotes/Quotes'
+
+
 
 class App extends Component {
 
@@ -13,8 +15,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route exact path="/" component={Index} />
-          <Route exact path="/Home/Index" component={Index} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Home/Index" component={Home} />
           <Route exact path="/Home/Quotes" component={Quotes} />
         </div>
       </BrowserRouter>
