@@ -7,18 +7,18 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 
-import FaceIcon from '@material-ui/icons/Face'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import PersonPinIcon from '@material-ui/icons/PersonPin'
+import PublicIcon from '@material-ui/icons/Public'
+import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
+import SchoolIcon from '@material-ui/icons/School'
 
 import ContentAcademicList from './ContentAcademicList'
 
 
 function TabContainer(props) {
     return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
+        <div>
             {props.children}
-        </Typography>
+        </div>
     );
 }
 
@@ -30,6 +30,10 @@ TabContainer.propTypes = {
 const styles = {
     root: {
         flexGrow: 1,
+    },
+    tabsAppBar: {
+        position: 'relative',
+        zIndex: 900,
     },
 };
 
@@ -51,7 +55,7 @@ class ContentTabs extends React.Component {
         return (
             <div className={classes.root}>
                 <AppBar
-                    position='static'
+                    className={classes.tabsAppBar}
                     color='default'
                 >
                     <Tabs
@@ -61,9 +65,9 @@ class ContentTabs extends React.Component {
                         textColor='primary'
                         centered
                     >
-                        <Tab label="Estudios" icon={ <PersonPinIcon /> } />
-                        <Tab label="Portafolio" icon={ <FavoriteIcon /> } />
-                        <Tab label="Información" icon={ <FaceIcon /> } />
+                        <Tab label="Estudios" icon={ <SchoolIcon /> } />
+                        <Tab label="Portafolio" icon={ <ImportantDevicesIcon /> } />
+                        <Tab label="Información" icon={ <PublicIcon /> } />
                     </Tabs>
                 </AppBar>
                 {
