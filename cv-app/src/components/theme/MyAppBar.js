@@ -7,7 +7,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
-import AccountCircle from '@material-ui/icons/AccountCircle'
 import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 
@@ -53,50 +52,48 @@ const styles = theme => ({
 });
 
 export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
-    <div className={classes.root}>
-        <AppBar
-            position="fixed"
-            className={classNames(classes.appBar, open && classes.appBarShift)}
+    <AppBar
+        position={'fixed'}
+        className={classNames(classes.appBar, open && classes.appBarShift)}
+    >
+        <Toolbar
+            disableGutters={!open}
+            className={classes.toolbar}
         >
-            <Toolbar
-                disableGutters={!open}
-                className={classes.toolbar}
+            <IconButton
+                aria-label='open drawer'
+                onClick={onDrawerOpen}
+                className={classNames(classes.menuButton, open && classes.hide)}
+                color='secondary'
             >
-                <IconButton
-                    color='inherit'
-                    aria-label='open drawer'
-                    onClick={onDrawerOpen}
-                    className={classNames(classes.menuButton, open && classes.hide)}
+                <MenuIcon />
+            </IconButton>
+            <Typography
+                variant="title" 
+                color="inherit"
+                noWrap
+                className={classes.flex}
+            >
+                <img
+                    src={process.env.PUBLIC_URL + '/res/imagoTipo.png'}
+                    className={classes.imagoTipo}
+                    alt={'mtraatabladaa94'}
+                />
+            </Typography>
+            <div className={classes.menuButtonRightSection}>
+                <Button
                     color='secondary'
                 >
-                    <MenuIcon />
-                </IconButton>
-                <Typography
-                    variant="title" 
-                    color="inherit"
-                    noWrap
-                    className={classes.flex}
+                    Curriculum
+                </Button>
+                <Button
+                    color='secondary'
                 >
-                    <img
-                        src={process.env.PUBLIC_URL + '/res/imagoTipo.png'}
-                        className={classes.imagoTipo}
-                    />
-                </Typography>
-                <div className={classes.menuButtonRightSection}>
-                    <Button
-                        color='secondary'
-                    >
-                        Curriculum
-                    </Button>
-                    <Button
-                        color='secondary'
-                    >
-                        Iniciar Sesión
-                    </Button>
-                </div>
-            </Toolbar>
-        </AppBar>
-    </div>
+                    Iniciar Sesión
+                </Button>
+            </div>
+        </Toolbar>
+    </AppBar>
 );
 
 MyAppBar.propTypes = {

@@ -7,10 +7,11 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Chip from '@material-ui/core/Chip'
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import SortIcon from '@material-ui/icons/Sort'
 import classnames from 'classnames'
+
+import './ContentCategoryFilter.css'
 
 const styles = (theme) => ({
     container: {
@@ -21,18 +22,18 @@ const styles = (theme) => ({
     },
     tag: {
         margin: theme.spacing.unit,
-    },
-    tagActive: {
-        color: '#FFF',
-        backgroundColor: '#C62828',
+        backgroundColor: 'rgba(0,0,0,0.03)',
     },
     sortSection: {
         display: 'flex',
         justifyContent: 'flex-end',
     },
+    iconButton: {
+        backgroundColor: 'rgba(0,0,0,0.03)',
+    },
 });
 
-const ContentAcademicListFilter = ({ classes, categories, active, handleSortClick }) => {
+const ContentCategoryFilter = ({ classes, categories, active, handleCategoryClick, handleSortClick }) => {
 
     return (
         <section
@@ -49,17 +50,23 @@ const ContentAcademicListFilter = ({ classes, categories, active, handleSortClic
                     {
                         categories.map(
                             (item) => {
-                                console.log(item.uid);
-                                var tagActive = '';
-                                if(item.uid == active)
+                                var isTagActive = '';
+                                if(item.uid === active)
                                 {
-                                    tagActive = classes.tagActive;
+                                    isTagActive = 'tag-active';
                                 }
                                 return (
                                     <Chip
                                         key={item.uid}
                                         label={item.name}
-                                        className={classnames(classes.tag, tagActive)}
+                                        onClick={() => { handleCategoryClick(item.uid) }}
+                                        className={
+                                            classnames(
+                                                classes.tag,
+                                                'content-academic-list-filter-tag',
+                                                isTagActive
+                                            )
+                                        }
                                     />
                                 )
                             }
@@ -67,7 +74,11 @@ const ContentAcademicListFilter = ({ classes, categories, active, handleSortClic
                     }
                 </Grid>
                 <Grid className={classes.sortSection} item xs={2}>
-                    <IconButton>
+                    <IconButton
+                        className={classes.iconButton}
+                        onClick={handleSortClick}
+                        aria-label={'Ordenar por'}
+                    >
                         <SortIcon />
                     </IconButton>
                 </Grid>
@@ -77,4 +88,8 @@ const ContentAcademicListFilter = ({ classes, categories, active, handleSortClic
 
 }
 
-export default withStyles(styles)(ContentAcademicListFilter);
+ContentCategoryFilter.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(ContentCategoryFilter);

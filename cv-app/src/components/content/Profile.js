@@ -54,6 +54,7 @@ const Profile = ({classes}) => (
         <img
             className={classes.profile}
             src={process.env.PUBLIC_URL + '/res/circleProfile.png'}
+            alt={'Michel Roberto Traña Tablada'}
         />
         <h1
             className={classNames(classes.primaryText, classes.fontProfile)}
@@ -74,29 +75,39 @@ const Profile = ({classes}) => (
             <a
                 href='https://www.facebook.com/mtraatabladaa94'
                 target='_blank'
+                rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/fb.png'}
+                    alt={'Facebook: mtraatabladaa94'}
                 />
             </a>
             <a
                 href='https://twitter.com/mtraatabladaa94'
                 target='_blank'
+                rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/tw.png'}
+                    alt={'Twitter: mtraatabladaa94'}
                 />
             </a>
             <a
                 href='https://github.com/mtraatabladaa94'
                 target='_blank'
+                rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/gb.png'}
+                    alt={'GitHub: mtraatabladaa94'}
                 />
             </a>
         </section>
     </section>
 );
+
+Profile.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Profile);

@@ -3,28 +3,38 @@
 */
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Button from '@material-ui/core/Button'
 import Theme from './../../components/theme/Theme'
+import { withStyles } from '@material-ui/core/styles'
 import ContentTabs from './../../components/content/ContentTabs'
 import ContentProfile from './../../components/content/ContentProfile'
 
-export default class Home extends Component {
+const styles = (theme) => ({
+});
+
+class Home extends Component {
 
     render() {
+
+        const { classes } = this.props;
+
         return (
             <div>
                 <Theme title={'Capacitaciones'}>
 
                     <ContentProfile />
 
-                    <ContentTabs />
+                    <section
+                        className={classes.tabSection}
+                    >
 
-                    <Button type='submit' color='primary'>
-                        Saludar
-                    </Button>
+                        <ContentTabs />
+
+                    </section>
+
                 </Theme>
             </div>
         )
     }
 }
+
+export default withStyles(styles)(Home);

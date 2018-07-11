@@ -1,0 +1,13 @@
+content-academic-list-filter-tag {
+    background-color: rgba(0,0,0,0.03);
+}
+.content-academic-list-filter-tag:hover {
+    background-color: rgba(0,0,0,0.1)!important;
+    cursor: pointer;
+}
+.content-academic-list-filter-tag.tag-active,
+.content-academic-list-filter-tag.tag-active:hover,
+.content-academic-list-filter-tag.tag-active:active {
+    background-color: #C62828!important;
+    color: #FFF;
+}

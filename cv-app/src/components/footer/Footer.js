@@ -8,14 +8,8 @@ import Grid from '@material-ui/core/Grid'
 import './Footer.css';
 
 const styles = theme => ({
-    root: {
-        flexGrow: 1,
-    },
     footerSection: {
         backgroundColor: '#263238',
-    },
-    devSection: {
-        
     },
     devContent: {
         float: 'right',
@@ -36,20 +30,22 @@ export class Footer extends Component {
         return (
             <footer className="footer-section">
                 <Grid container className={classes.root}>
-                    <Grid item xs={12} sm={6} className="blue-grey darken-4">
+                    <Grid item xs={12} sm={9} className="blue-grey darken-4">
                         <span className="copyright">
                             &copy; Copyright - <Link to="/" className="red-text">mtraatabladaa94</Link> 2018. All rights reserved.
                         </span>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={3}>
                         <a
                             className={classes.devContent}
-                            href="https://www.facebook.com/mtraatabladaa94"
-                            target="_blank"
+                            href='https://www.facebook.com/mtraatabladaa94'
+                            target='_blank'
+                            rel={'noopener noreferrer'}
                         >
                             <img
                                 className={classes.devProfilePhoto}
                                 src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'}
+                                alt={'Michel Roberto Traña Tablada'}
                             />
                         </a>
                     </Grid>

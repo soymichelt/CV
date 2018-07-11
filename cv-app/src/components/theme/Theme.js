@@ -8,7 +8,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey'
 
 /* Custom Elements */
 import MyAppBar from "./MyAppBar"
-import MyDrawer, { drawerWidth } from "./MyDrawer"
+import MyDrawer from "./MyDrawer"
 import Footer from './../footer/Footer'
 
 const styles = theme => ({

@@ -2,7 +2,7 @@
     Media Card
 */
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
@@ -21,6 +21,9 @@ const styles = theme => ({
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9
+    },
+    iconButton: {
+        backgroundColor: 'rgba(0, 0, 0, 0.03)',
     },
 });
 
@@ -43,15 +46,25 @@ const MyMediaCard = ({classes, key, photoURL, photoDescription, cardTitle, cardD
             </Typography>
         </CardContent>
         <CardActions>
-            <IconButton aria-label="Me gusta">
+            <IconButton
+                className={classes.iconButton}
+                aria-label="Me gusta"
+            >
                 <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="Compartir">
+            <IconButton
+                className={classes.iconButton}
+                aria-label="Compartir"
+            >
                 <ShareIcon />
             </IconButton>
         </CardActions>
     </Card>
 
 );
+
+MyMediaCard.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(MyMediaCard);

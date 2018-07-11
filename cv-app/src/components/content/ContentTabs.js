@@ -1,18 +1,24 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
-import Paper from '@material-ui/core/Paper'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import Typography from '@material-ui/core/Typography'
+import red from '@material-ui/core/colors/red'
 
 import PublicIcon from '@material-ui/icons/Public'
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
 import SchoolIcon from '@material-ui/icons/School'
+import AddComment from '@material-ui/icons/Chat'
 
 import ContentAcademicList from './ContentAcademicList'
+import ContentProjectsList from './ContentProjectsList'
+import ContentPersonalProfile from './ContentPersonalProfile'
+import TabFabs from './../theme/TabFabs'
 
+import { onChangeTabIndex } from './../../state/actions/contentTabsAction'
 
 function TabContainer(props) {
     return (
@@ -26,8 +32,7 @@ TabContainer.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-
-const styles = {
+const styles = (theme) => ({
     root: {
         flexGrow: 1,
     },
@@ -35,31 +40,29 @@ const styles = {
         position: 'relative',
         zIndex: 900,
     },
-};
+    tabContentSection: {
+    },
+});
 
 class ContentTabs extends React.Component {
-    state = {
-        value: 0,
-    };
 
     handleChange = (event, value) => {
-        this.setState({ value });
+        this.props.onChangeTabIndex(value);
     };
 
     render() {
 
-        const { classes } = this.props;
-
-        const { value } = this.state;
+        const { classes, theme, tabValue } = this.props;
 
         return (
+
             <div className={classes.root}>
                 <AppBar
                     className={classes.tabsAppBar}
-                    color='default'
+                    color={'default'}
                 >
                     <Tabs
-                        value={this.state.value}
+                        value={tabValue}
                         onChange={this.handleChange}
                         indicatorColor='primary'
                         textColor='primary'
@@ -70,20 +73,96 @@ class ContentTabs extends React.Component {
                         <Tab label="Información" icon={ <PublicIcon /> } />
                     </Tabs>
                 </AppBar>
-                {
-                    value === 0 && <TabContainer>
-                        <ContentAcademicList />
-                    </TabContainer>
-                }
-                {value === 1 && <TabContainer>Item Two</TabContainer>}
-                {value === 2 && <TabContainer>Item Three</TabContainer>}
+
+                <section
+                    className={classes.tabContentSection}
+                >
+                
+                    {
+                        tabValue === 0 && <TabContainer>
+                            <ContentAcademicList />
+                        </TabContainer>
+                    }
+                    {
+                        tabValue === 1 && <TabContainer>
+                            <ContentProjectsList />
+                        </TabContainer>
+                    }
+                    {
+                        tabValue === 2 && <TabContainer>
+                            <ContentPersonalProfile />
+                        </TabContainer>
+                    }
+
+                    <TabFabs
+                        selected={tabValue}
+                        list={
+                            [
+                                {
+                                    key: 0,
+                                    icon: <AddComment />,
+                                    styles: {
+                                        backgroundColor: red[500],
+                                        color: '#FFF',
+                                    },
+                                },
+                                {
+                                    key: 1,
+                                    icon: <AddComment />,
+                                    styles: {
+                                        backgroundColor: red[500],
+                                        color: '#FFF',
+                                    },
+                                },
+                                {
+                                    key: 2,
+                                    icon: <AddComment />,
+                                    styles: {
+                                        backgroundColor: red[500],
+                                        color: '#FFF',
+                                    },
+                                },
+                            ]
+                        }
+                    />
+                </section>
+
             </div>
+
         );
+
     }
+
 }
 
 ContentTabs.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ContentTabs);
+const mapStateToProps = (newState, props) => {
+
+    var { contentTabs } = newState;
+
+    if(!contentTabs) {
+        contentTabs = {
+            tabValue: 0,
+        };
+    }
+
+    const { tabValue } = contentTabs;
+
+    return({
+        tabValue: tabValue ? tabValue : 0,
+    });
+
+};
+
+const mapDispatchToProps = (dispatch) => ({
+
+    onChangeTabIndex: (value) => dispatch(onChangeTabIndex(value)),
+    
+});
+
+const ContentTabsWithStyles = withStyles(styles, { withTheme: true })(ContentTabs);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContentTabsWithStyles);

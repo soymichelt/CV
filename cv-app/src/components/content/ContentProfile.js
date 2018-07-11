@@ -31,6 +31,7 @@ export class ContentProfile extends Component {
                 <img
                     className={classes.coverPhoto}
                     src={process.env.PUBLIC_URL + '/res/main_background.jpg'}
+                    alt={'Portada'}
                 />
                 <Profile />
             </section>
