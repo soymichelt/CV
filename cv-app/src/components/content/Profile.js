@@ -11,8 +11,8 @@ const styles = theme => ({
     root: {
         textAlign: 'center',
         position: 'relative',
-        height: 420,
-        marginTop: -420,
+        height: 416,
+        //marginTop: -420,
         color: '#FFF',
         display: 'flex',
         flexDirection: 'column',

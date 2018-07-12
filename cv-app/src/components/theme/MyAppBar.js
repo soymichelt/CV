@@ -14,13 +14,16 @@ import { drawerWidth } from './MyDrawer';
 
 const styles = theme => ({
     appBar: {
-        backgroundColor: theme.palette.background.default,
+        background: 'linear-gradient(to right, rgb(239, 108, 0), rgb(251, 140, 0))',
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
         minHeight: 72,
+    },
+    appBarButton: {
+        color: 'rgba(255,255,255,0.7)',
     },
     appBarShift: {
         marginLeft: drawerWidth,
@@ -53,8 +56,10 @@ const styles = theme => ({
 
 export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
     <AppBar
-        position={'fixed'}
+        id={'myAppBar'}
         className={classNames(classes.appBar, open && classes.appBarShift)}
+        elevation={0}
+        color={'primary'}
     >
         <Toolbar
             disableGutters={!open}
@@ -63,8 +68,13 @@ export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
             <IconButton
                 aria-label='open drawer'
                 onClick={onDrawerOpen}
-                className={classNames(classes.menuButton, open && classes.hide)}
-                color='secondary'
+                className={
+                    classNames(
+                        classes.appBarButton,
+                        classes.menuButton,
+                        open && classes.hide,
+                    )
+                }
             >
                 <MenuIcon />
             </IconButton>
@@ -82,12 +92,12 @@ export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
             </Typography>
             <div className={classes.menuButtonRightSection}>
                 <Button
-                    color='secondary'
+                    className={classes.appBarButton}
                 >
                     Curriculum
                 </Button>
                 <Button
-                    color='secondary'
+                    className={classes.appBarButton}
                 >
                     Iniciar Sesión
                 </Button>

@@ -1,15 +1,21 @@
 /* Imports Node & ReactJS Elements */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import red from '@material-ui/core/colors/red'
+import deepOrange from '@material-ui/core/colors/deepOrange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 
 /* Custom Elements */
 import MyAppBar from "./MyAppBar"
 import MyDrawer from "./MyDrawer"
 import Footer from './../footer/Footer'
+
+import './../theme/Sticky.css'
+
+/* Actions */
+import { onScrollTop } from './../../state/actions/stickyAppBarAction'
 
 const styles = theme => ({
     root: {
@@ -25,24 +31,18 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        padding: '0 8px',
         ...theme.mixins.toolbar,
+        minHeight: '72px!important',
     },
     content: {
         flexGrow: 1,
-        paddingTop: theme.spacing.unit,
     },
 });
 
 const theme = createMuiTheme({
     palette: {
         type: 'light',
-        primary: {
-            light: red[700],
-            main: red[800],
-            dark: red[900],
-            contrastText: '#fff',
-        },
+        primary: deepOrange,
         secondary: {
             light: blueGrey[700],
             main: blueGrey[800],
@@ -56,7 +56,7 @@ export class Theme extends Component {
 
     static propTypes = {
         classes: PropTypes.object.isRequired,
-    }
+    };
 
     state = {
         open: false,
@@ -68,6 +68,22 @@ export class Theme extends Component {
   
     handleDrawerClose = () => {
         this.setState({ open: false });
+    };
+
+    handleScroll = (event) => {
+
+        let supportPageOffset = window.pageXOffset !== undefined;
+        let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+        let newScrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        
+        var myAppBar = document.getElementById('myAppBar');
+
+        if(newScrollTop >= 416) {
+            myAppBar.style.marginTop = ((416 - newScrollTop)) + 'px';
+        } else {
+            myAppBar.style.marginTop = '0px';
+        }
+    
     };
 
     render() {
@@ -108,6 +124,44 @@ export class Theme extends Component {
 
     }
 
+    componentDidMount() {
+
+        document.addEventListener('scroll', this.handleScroll);
+
+    }
+
+    componentWillUnmount() {
+
+        document.removeEventListener('scroll', this.handleScroll);
+
+    }
+
 }
 
-export default withStyles(styles)(Theme);
+const ThemeWithStyles = withStyles(styles)(Theme);
+
+const mapStateToProps = (newState, props) => {
+
+    var { stickyAppBar } = newState;
+
+    if(!stickyAppBar) {
+        stickyAppBar = {
+            scrollTop: 0,
+        };
+    }
+
+    const { scrollTop } = stickyAppBar;
+
+    return ({
+        scrollTop: scrollTop ? scrollTop : 0,
+    });
+
+};
+
+const mapDispatchToProps = (dispatch) => ({
+
+    onScrollTop: (value) => dispatch(onScrollTop(value)),
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeWithStyles);

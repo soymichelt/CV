@@ -236,8 +236,6 @@ const mapStateToProps = (newState, props) => {
     
     var { academicList } = newState;
     
-    console.log(academicList);
-
     if(!academicList) {
         academicList = {
             state: 0,

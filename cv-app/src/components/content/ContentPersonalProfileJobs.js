@@ -70,7 +70,7 @@ const ContentPersonalProfileJobs = ({classes, data}) => {
 
 ContentPersonalProfileJobs.propTypes = {
     classes: PropTypes.object.isRequired,
-    data: PropTypes.array.isRequired,
+    data: PropTypes.array,
 };
 
 export default withStyles(styles)(ContentPersonalProfileJobs);

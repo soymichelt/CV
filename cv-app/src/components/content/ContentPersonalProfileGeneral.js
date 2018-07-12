@@ -138,7 +138,7 @@ const ContentPersonalProfileGeneral = ({classes, data}) => {
 
 ContentPersonalProfileGeneral.propTypes = {
     classes: PropTypes.object.isRequired,
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object,
 };
 
 export default withStyles(styles)(ContentPersonalProfileGeneral);

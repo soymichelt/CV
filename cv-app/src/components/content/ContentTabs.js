@@ -1,5 +1,4 @@
 import React from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -19,6 +18,8 @@ import ContentPersonalProfile from './ContentPersonalProfile'
 import TabFabs from './../theme/TabFabs'
 
 import { onChangeTabIndex } from './../../state/actions/contentTabsAction'
+import { onScrollTop } from './../../state/actions/stickyAppBarAction'
+import './../theme/Sticky.css'
 
 function TabContainer(props) {
     return (
@@ -41,13 +42,45 @@ const styles = (theme) => ({
         zIndex: 900,
     },
     tabContentSection: {
+        minHeight: window.innerHeight,
     },
 });
 
 class ContentTabs extends React.Component {
 
+    constructor(props) {
+        
+        super(props);
+
+        this.contentTabsAppBar = React.createRef();
+
+        this.tabContentSection = React.createRef();
+
+    }
+
     handleChange = (event, value) => {
         this.props.onChangeTabIndex(value);
+    };
+
+    handleScroll = (event) => {
+        
+        let supportPageOffset = window.pageXOffset !== undefined;
+        let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+        let newScrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        
+        var scrollTopAppBar = this.contentTabsAppBar.current;
+        var tabContentSection = this.tabContentSection.current;
+
+        console.log('HandleScroll: ' + newScrollTop);
+
+        if(newScrollTop >= 488) {
+            scrollTopAppBar.classList.add('appBarSticky');
+            tabContentSection.classList.add('contentAfterSticky');
+        } else {
+            scrollTopAppBar.classList.remove('appBarSticky');
+            tabContentSection.classList.remove('contentAfterSticky');
+        }
+
     };
 
     render() {
@@ -56,25 +89,31 @@ class ContentTabs extends React.Component {
 
         return (
 
-            <div className={classes.root}>
-                <AppBar
-                    className={classes.tabsAppBar}
-                    color={'default'}
+            <div id={'scroll'} className={classes.root}>
+                <section
+                    ref={this.contentTabsAppBar}
                 >
-                    <Tabs
-                        value={tabValue}
-                        onChange={this.handleChange}
-                        indicatorColor='primary'
-                        textColor='primary'
-                        centered
+                    <AppBar
+                        className={classes.tabsAppBar}
+                        elevation={1}
+                        color={'default'}
                     >
-                        <Tab label="Estudios" icon={ <SchoolIcon /> } />
-                        <Tab label="Portafolio" icon={ <ImportantDevicesIcon /> } />
-                        <Tab label="Información" icon={ <PublicIcon /> } />
-                    </Tabs>
-                </AppBar>
+                        <Tabs
+                            value={tabValue}
+                            onChange={this.handleChange}
+                            indicatorColor='primary'
+                            textColor='primary'
+                            centered
+                        >
+                            <Tab label="Estudios" icon={ <SchoolIcon /> } />
+                            <Tab label="Portafolio" icon={ <ImportantDevicesIcon /> } />
+                            <Tab label="Información" icon={ <PublicIcon /> } />
+                        </Tabs>
+                    </AppBar>
+                </section>
 
                 <section
+                    ref={this.tabContentSection}
                     className={classes.tabContentSection}
                 >
                 
@@ -131,6 +170,14 @@ class ContentTabs extends React.Component {
 
         );
 
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
 }
