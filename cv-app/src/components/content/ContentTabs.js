@@ -21,13 +21,21 @@ import { onChangeTabIndex } from './../../state/actions/contentTabsAction'
 import { onScrollTop } from './../../state/actions/stickyAppBarAction'
 import './../theme/Sticky.css'
 
-function TabContainer(props) {
+const containerStyles = {
+    tabContainer: {
+        height: '100%',
+    },
+};
+
+function TabContainer({ children, classes }) {
     return (
-        <div>
-            {props.children}
+        <div className={classes.tabContainer}>
+            {children}
         </div>
     );
 }
+
+const TabContainerWithStyles = withStyles(containerStyles)(TabContainer);
 
 TabContainer.propTypes = {
     children: PropTypes.node.isRequired,
@@ -118,52 +126,21 @@ class ContentTabs extends React.Component {
                 >
                 
                     {
-                        tabValue === 0 && <TabContainer>
+                        tabValue === 0 && <TabContainerWithStyles>
                             <ContentAcademicList />
-                        </TabContainer>
+                        </TabContainerWithStyles>
                     }
                     {
-                        tabValue === 1 && <TabContainer>
+                        tabValue === 1 && <TabContainerWithStyles>
                             <ContentProjectsList />
-                        </TabContainer>
+                        </TabContainerWithStyles>
                     }
                     {
-                        tabValue === 2 && <TabContainer>
+                        tabValue === 2 && <TabContainerWithStyles>
                             <ContentPersonalProfile />
-                        </TabContainer>
+                        </TabContainerWithStyles>
                     }
-
-                    <TabFabs
-                        selected={tabValue}
-                        list={
-                            [
-                                {
-                                    key: 0,
-                                    icon: <AddComment />,
-                                    styles: {
-                                        backgroundColor: red[500],
-                                        color: '#FFF',
-                                    },
-                                },
-                                {
-                                    key: 1,
-                                    icon: <AddComment />,
-                                    styles: {
-                                        backgroundColor: red[500],
-                                        color: '#FFF',
-                                    },
-                                },
-                                {
-                                    key: 2,
-                                    icon: <AddComment />,
-                                    styles: {
-                                        backgroundColor: red[500],
-                                        color: '#FFF',
-                                    },
-                                },
-                            ]
-                        }
-                    />
+                    
                 </section>
 
             </div>

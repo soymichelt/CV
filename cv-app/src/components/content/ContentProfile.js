@@ -14,18 +14,14 @@ const styles = theme => ({
         position: 'relative',
         background: 'linear-gradient(to right, rgb(239, 108, 0), rgb(251, 140, 0))',
     },
-    coverPhoto: {
-        width: '100%',
-        maxHeight: 416,
-        objectFit: 'cover',
-        position: 'relative',
-    },
 })
 
 export class ContentProfile extends Component {
 
     static propTypes = {
+
         classes: PropTypes.object.isRequired,
+
     }
 
     render() {
@@ -36,11 +32,12 @@ export class ContentProfile extends Component {
             <section
                 className={classes.coverPortroit}
             >
-                
                 <Profile />
             </section>
-        )
+        );
+
     }
+    
 }
 
 export default withStyles(styles)(ContentProfile);

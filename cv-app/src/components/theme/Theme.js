@@ -42,7 +42,11 @@ const styles = theme => ({
 const theme = createMuiTheme({
     palette: {
         type: 'light',
-        primary: deepOrange,
+        primary: {
+            light: deepOrange[700],
+            main: deepOrange[800],
+            dark: deepOrange[900],
+        },
         secondary: {
             light: blueGrey[700],
             main: blueGrey[800],
@@ -82,6 +86,13 @@ export class Theme extends Component {
             myAppBar.style.marginTop = ((416 - newScrollTop)) + 'px';
         } else {
             myAppBar.style.marginTop = '0px';
+        }
+
+        if(newScrollTop > 0) {
+            myAppBar.style.boxShadow = '0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)';
+        }
+        else {
+            myAppBar.style.boxShadow = 'none';
         }
     
     };

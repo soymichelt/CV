@@ -3,7 +3,6 @@
 */
 
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -32,7 +31,7 @@ import {
 const styles = {
     containerList: {
         padding: 24,
-        minHeight: 400,
+        minHeight: '100%',
     },
 };
 
@@ -174,7 +173,7 @@ export class ContentAcademicList extends Component {
                 renderList = (
                     <NotFound
                         title={'Ha ocurrido un error :('}
-                        description={'Lo sentimos actualmente estamos teniendo problemas. Estamos trabajando en ello.'}
+                        description={'Lo sentimos actualmente estamos teniendo problemas al obtener los datos. Estamos trabajando en ello.'}
                     />
                 );
                 break;

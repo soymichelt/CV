@@ -16,13 +16,18 @@ import './ContentCategoryFilter.css'
 const styles = (theme) => ({
     container: {
         backgroundColor: '#FFF',
-        padding: '16px 10px',
+        padding: '16px 10px 16px 10px',
         position: 'relative',
         zIndex: 1,
     },
     tag: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing.unit / 4,
         backgroundColor: 'rgba(0,0,0,0.03)',
+    },
+    categorySection: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     sortSection: {
         display: 'flex',
@@ -43,7 +48,7 @@ const ContentCategoryFilter = ({ classes, categories, active, handleCategoryClic
                 container
             >
                 <Grid
-                    className={'categorySection'}
+                    className={classes.categorySection}
                     item
                     xs={10}
                 >
