@@ -19,7 +19,7 @@ import NotFound from './../theme/NotFound'
 /*
     Accions
 */
-import { 
+import {
     setLoadingProjectList,
     setProjectList,
     setErrorProjectList,

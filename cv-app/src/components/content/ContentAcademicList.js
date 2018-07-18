@@ -16,6 +16,8 @@ import SimpleDialog from './../theme/SimpleDialog'
 import ContentLoading from './ContentLoading'
 import NotFound from './../theme/NotFound'
 
+import Avatar from '@material-ui/core/Avatar'
+
 /*
     Accions
 */
@@ -30,7 +32,8 @@ import {
 
 const styles = {
     containerList: {
-        padding: 24,
+        paddingTop: 24,
+        paddingBottom: 24,
         minHeight: '100%',
     },
 };
@@ -152,10 +155,17 @@ export class ContentAcademicList extends Component {
                                 >
                                     <MyCardMedia
                                         key={item.uid}
+                                        avatar={
+                                            <Avatar
+                                                src={item.avatarURL}
+                                            />
+                                        }
                                         photoURL={item.photoURL}
                                         photoDescription={item.photoURL}
                                         cardTitle={item.cardTitle}
-                                        cardDescription={item.cardDescription}
+                                        cardSubtitle={item.cardSubtitle}
+                                        cardFavs={item.cardFavs}
+                                        cardShares={item.cardShares}
                                     />
                                 </Grid>
 
@@ -209,9 +219,13 @@ export class ContentAcademicList extends Component {
 
                 studies[counter] = {
                     uid: doc.id,
+                    avatarURL: doc.data().avatarURL,
                     photoURL: doc.data().photoURL,
                     photoDescription: doc.data().name,
                     cardTitle: doc.data().name,
+                    cardSubtitle: doc.data().school,
+                    cardFavs: doc.data().favs,
+                    cardShares: doc.data().shares,
                     cardDescription: doc.data().description,
                 };
 

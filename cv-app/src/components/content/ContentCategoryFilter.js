@@ -16,7 +16,7 @@ import './ContentCategoryFilter.css'
 const styles = (theme) => ({
     container: {
         backgroundColor: '#FFF',
-        padding: '16px 10px 16px 10px',
+        padding: '10px',
         position: 'relative',
         zIndex: 1,
     },
@@ -32,9 +32,6 @@ const styles = (theme) => ({
     sortSection: {
         display: 'flex',
         justifyContent: 'flex-end',
-    },
-    iconButton: {
-        backgroundColor: 'rgba(0,0,0,0.03)',
     },
 });
 
