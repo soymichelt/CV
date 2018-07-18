@@ -33,6 +33,8 @@ const styles = theme => ({
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        paddingRight: '0px!important',
+        marginRight: '17px!important',
     },
     flex: {
         flex: 1,

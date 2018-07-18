@@ -39,10 +39,9 @@ const styles = theme => ({
     },
     background2: {
         top: -8,
-        right: '-20%',
-        minHeight: 356,
-        height: 356,
-        width: '100%',
+        right: '-5%',
+        minHeight: 400,
+        height: 400,
     },
     profile: {
         width: 128,
