@@ -1,0 +1,15 @@
+.form-input-label {
+    color: #455A64!important;
+}
+
+.form-input:hover:before {
+    border-bottom-color:#546E7A!important;
+}
+
+.form-input::before {
+    border-bottom-color: #546E7A;
+}
+
+.form-input-adornment {
+    color: #455A64;
+}

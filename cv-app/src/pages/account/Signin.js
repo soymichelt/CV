@@ -17,7 +17,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import LockIcon from '@material-ui/icons/Lock'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 
-import deepOrange from '@material-ui/core/colors/deepOrange'
+//import deepOrange from '@material-ui/core/colors/deepOrange'
+
+import './Signin.css'
 
 const styles = (theme) => ({
     signinPage: {
@@ -49,7 +51,7 @@ const styles = (theme) => ({
         marginTop: 24,
     },
     signinButton: {
-        //background: deepOrange[600],
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     },
     changePassword: {
         minHeight: 40,
@@ -91,14 +93,19 @@ class Signin extends Component {
                             fullWidth
                         >
                             <InputLabel
-                                htmlFor="email"
+                                className={'form-input-label'}
+                                htmlFor={'email'}
                             >
                                 E-mail o teléfono
                             </InputLabel>
                             <Input
+                                className={'form-input'}
                                 id="email"
                                 startAdornment={
-                                    <InputAdornment position="start">
+                                    <InputAdornment
+                                        className={'form-input-adornment'}
+                                        position={'start'}
+                                    >
                                         <AccountCircleIcon />
                                     </InputAdornment>
                                 }
@@ -109,13 +116,20 @@ class Signin extends Component {
                             className={classes.separator}
                             fullWidth
                         >
-                            <InputLabel htmlFor="password">
+                            <InputLabel
+                                className={'form-input-label'}
+                                htmlFor="password"
+                            >
                                 Contraseña
                             </InputLabel>
                             <Input
+                                className={'form-input'}
                                 id="password"
                                 startAdornment={
-                                    <InputAdornment position="start">
+                                    <InputAdornment
+                                        className={'form-input-adornment'}
+                                        position="start"
+                                    >
                                         <LockIcon />
                                     </InputAdornment>
                                 }
