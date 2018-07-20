@@ -83,7 +83,7 @@ const styles = theme => ({
     },*/
 });
 
-const MyMediaCard = ({classes, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardFavSelected, cardFavs, cardShares}) => (
+const MyMediaCard = ({classes, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardFavSelected, cardFavs, onClickFav, cardShares, onClickShare}) => (
 
     <Card
         className={classes.card}
@@ -149,12 +149,14 @@ const MyMediaCard = ({classes, key, avatar, photoURL, photoDescription, cardTitl
                 <IconButton
                     className={classes.iconButton}
                     aria-label="Me gusta"
+                    onClick={onClickFav}
                 >
                     <FavoriteIcon />
                 </IconButton>
                 <IconButton
                     className={classes.iconButton}
                     aria-label="Compartir"
+                    onClick={onClickShare}
                 >
                     <ShareIcon />
                 </IconButton>

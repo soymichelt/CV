@@ -1,5 +1,5 @@
 /*
-    Nuevo inicio de sesión
+    Pantalla de Inicio
 */
 
 import React, { Component } from 'react'
@@ -18,21 +18,19 @@ class Home extends Component {
         const { classes } = this.props;
 
         return (
-            <div>
-                <Theme title={'Capacitaciones'}>
+            <Theme>
 
-                    <ContentProfile />
+                <ContentProfile />
 
-                    <section
-                        className={classes.tabSection}
-                    >
+                <section
+                    className={classes.tabSection}
+                >
 
-                        <ContentTabs />
+                    <ContentTabs />
 
-                    </section>
+                </section>
 
-                </Theme>
-            </div>
+            </Theme>
         )
     }
 }

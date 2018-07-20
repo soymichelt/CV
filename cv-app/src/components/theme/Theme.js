@@ -54,6 +54,13 @@ const theme = createMuiTheme({
             contrastText: '#000',
         },
     },
+    overrides: {
+        MuiInput: {
+            underline: {
+                borderBottom: '2px solid ' + blueGrey[600],
+            },
+        },
+    },
 });
 
 export class Theme extends Component {

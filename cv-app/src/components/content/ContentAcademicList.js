@@ -165,6 +165,7 @@ export class ContentAcademicList extends Component {
                                         cardTitle={item.cardTitle}
                                         cardSubtitle={item.cardSubtitle}
                                         cardFavs={item.cardFavs}
+                                        onClickFav={() => this.createFav(item.uid, true, '10.1.184.47')}
                                         cardShares={item.cardShares}
                                     />
                                 </Grid>
@@ -191,6 +192,24 @@ export class ContentAcademicList extends Component {
                 break;
         }
         return (renderList);
+    };
+
+    createFav = (key, value, ipClient) => {
+        
+        var db = firebase.firestore();
+
+        db.collection('studies').doc(key).collection('favs').add({
+            date: new Date(),
+            ipClient: ipClient,
+            fav: value,
+        })
+        .then((docRef) => {
+            console.log(docRef);
+        })
+        .catch((error) => {
+            console.error('Error: ', error);
+        });
+
     };
 
     getAcademicList = () => {
