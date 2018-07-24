@@ -1,5 +1,6 @@
 .form-input-label {
     color: #455A64!important;
+    margin-left: 32px;
 }
 
 .form-input:hover:before {

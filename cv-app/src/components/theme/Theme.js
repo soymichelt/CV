@@ -10,7 +10,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey'
 /* Custom Elements */
 import MyAppBar from "./MyAppBar"
 import MyDrawer from "./MyDrawer"
-import Footer from './../footer/Footer'
+import Footer from './Footer'
 
 import './../theme/Sticky.css'
 

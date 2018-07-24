@@ -1,5 +1,6 @@
 /* Imports Node & ReactJS Elements */
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -53,7 +54,7 @@ const styles = theme => ({
         minHeight: 72,
     },
     imagoTipo: {
-        maxHeight: 38,
+        maxHeight: 40,
     },
 });
 
@@ -81,29 +82,40 @@ export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
             >
                 <MenuIcon />
             </IconButton>
+            
             <Typography
                 variant="title" 
                 color="inherit"
                 noWrap
                 className={classes.flex}
             >
-                <img
-                    src={process.env.PUBLIC_URL + '/res/imagoTipo.png'}
-                    className={classes.imagoTipo}
-                    alt={'mtraatabladaa94'}
-                />
+                <Link
+                    to={'/'}
+                >
+                    <img
+                        src={process.env.PUBLIC_URL + '/res/imagoTipo.png'}
+                        className={classes.imagoTipo}
+                        alt={'mtraatabladaa94'}
+                    />
+                </Link>
             </Typography>
+
             <div className={classes.menuButtonRightSection}>
                 <Hidden
                     only={'xs'}
                 >
                     <Button
                         className={classes.appBarButton}
+                        component={'a'}
+                        href={process.env.PUBLIC_URL + '/res/curriculum.pdf'}
+                        target={'_blank'}
                     >
                         Curriculum
                     </Button>
                     <Button
                         className={classes.appBarButton}
+                        component={ Link }
+                        to={'/Account/Signin'}
                     >
                         Iniciar Sesión
                     </Button>
