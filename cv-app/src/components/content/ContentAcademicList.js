@@ -243,8 +243,8 @@ export class ContentAcademicList extends Component {
                     photoDescription: doc.data().name,
                     cardTitle: doc.data().name,
                     cardSubtitle: doc.data().school,
-                    cardFavs: doc.data().favs,
-                    cardShares: doc.data().shares,
+                    cardFavs: doc.data().favsCount,
+                    cardShares: doc.data().sharesCount,
                     cardDescription: doc.data().description,
                 };
 

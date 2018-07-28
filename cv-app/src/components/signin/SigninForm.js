@@ -60,7 +60,7 @@ const styles = (theme) => ({
     },
 });
 
-let SigninForm = ({ classes, isUserAuth }) => {
+let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
 
     if(!isUserAuth) {
 
@@ -142,7 +142,7 @@ let SigninForm = ({ classes, isUserAuth }) => {
                                         <LockIcon />
                                     </InputAdornment>
                                 }
-                                component={Input}
+                                component={CustomInput}
                                 shrink={'true'}
                             />
                         </FormControl>
@@ -154,6 +154,7 @@ let SigninForm = ({ classes, isUserAuth }) => {
                                 variant="contained"
                                 color="secondary"
                                 className={classes.signinButton}
+                                onClick={onClickAuth}
                             >
                                 Entrar
                                 <KeyboardArrowRightIcon className={classes.rightIcon} />

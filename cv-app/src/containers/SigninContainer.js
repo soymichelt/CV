@@ -3,6 +3,7 @@
 */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { formValueSelector } from 'redux-form'
 import firebase from 'firebase'
 
 import SigninForm from './../components/signin/SigninForm'
@@ -74,6 +75,7 @@ class SigninContainer extends Component {
 
             <SigninForm
                 isUserAuth={this.isUserAuth()}
+                onClickAuth={this.handleClickSignin}
             />
 
         );
@@ -81,6 +83,8 @@ class SigninContainer extends Component {
     }
 
 }
+
+const selectorFormSignin = formValueSelector('formSignin');
 
 const mapStateToProps = (newState, props) => {
 
@@ -93,10 +97,14 @@ const mapStateToProps = (newState, props) => {
         };
     }
 
+    var { email, password } = selectorFormSignin(newState, 'email', 'password');
+
     return {
         isLoading: signin.isLoading ? signin.isLoading : false,
         error: signin.error,
         userAccount: userAccount,
+        email: email,
+        password: password,
     };
 
 };
