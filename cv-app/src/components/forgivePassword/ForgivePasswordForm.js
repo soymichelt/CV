@@ -1,32 +1,30 @@
 /*
-    Formulario de Inicio de Sesión
+    Formulario de Cambiar Contraseña
 */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Redirect, Link } from 'react-router-dom'
 import { Field, reduxForm } from 'redux-form'
-import WrappedComponent from './../../components/theme/WrappedComponent'
+import WrappedComponent from '../theme/WrappedComponent'
 import classnames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 
 import Paper from '@material-ui/core/Paper'
-import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
-import LockIcon from '@material-ui/icons/Lock'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
-
 import blueGrey from '@material-ui/core/colors/blueGrey'
+import Typography from '@material-ui/core/Chip'
 
-import './SigninForm.css'
+import './../signin/SigninForm.css'
 
-import CustomInput from './../helpers/CustomInput'
+import CustomInput from '../helpers/CustomInput'
 
 const styles = (theme) => ({
-    signinPage: {
+    changePasswordPage: {
         height: window.innerHeight,
         display: 'flex',
         flexDirection: 'column',
@@ -34,15 +32,18 @@ const styles = (theme) => ({
         alignItems: 'center',
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     },
-    signinContainer: {
+    changePasswordContainer: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'start',
         alignItems: 'center',
         boxSizing: 'border-box',
         width: 345,
-        minHeight: 345,
+        minHeight: 277,
         padding: 24,
+    },
+    formContainer: {
+        width: '100%',
     },
     logo: {
         width: 216,
@@ -51,16 +52,22 @@ const styles = (theme) => ({
     separator: {
         marginTop: 24,
     },
-    signinButton: {
+    sendPasswordButton: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     },
-    changePassword: {
+    signinButton: {
         color: blueGrey[800],
         minHeight: 40,
     },
+    messageSection: {
+        textAlign: 'center',
+    },
+    message: {
+        color: blueGrey[800],
+    },
 });
 
-let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
+let ForgivePasswordForm = ({ classes, isUserAuth, onClickAuth, message, isError }) => {
 
     if(!isUserAuth) {
 
@@ -70,12 +77,12 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                 className={
                     classnames(
                         'signin-page',
-                        classes.signinPage,
+                        classes.changePasswordPage,
                     )
                 }
             >
                 <Paper
-                    className={classes.signinContainer}
+                    className={classes.changePasswordContainer}
                     elevation={1}
                 >
                     <Link
@@ -87,7 +94,12 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                         />
                     </Link>
                     <section
-                        className={classes.separator}
+                        className={
+                            classnames(
+                                classes.separator,
+                                classes.formContainer,
+                            )
+                        }
                     >
                         
                         <FormControl
@@ -97,14 +109,14 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                                 className={'form-input-label'}
                                 htmlFor={'email'}
                             >
-                                E-mail o teléfono
+                                Correo electrónico
                             </InputLabel>
 
                             <Field
                                 className={'form-input'}
                                 type={'email'}
                                 id={'email'}
-                                name={'email'}
+                                name={'estoEsUnaPrueba'}
                                 startAdornment={
                                     <InputAdornment
                                         className={'form-input-adornment'}
@@ -119,55 +131,45 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
 
                         </FormControl>
 
-                        <FormControl
-                            className={classes.separator}
-                            fullWidth
-                        >
-                            <InputLabel
-                                className={'form-input-label'}
-                                htmlFor="password"
-                            >
-                                Contraseña
-                            </InputLabel>
-                            <Field
-                                className={'form-input'}
-                                type={'password'}
-                                id={'password'}
-                                name={'password'}
-                                startAdornment={
-                                    <InputAdornment
-                                        className={'form-input-adornment'}
-                                        position={'start'}
-                                    >
-                                        <LockIcon />
-                                    </InputAdornment>
-                                }
-                                component={CustomInput}
-                                shrink={'true'}
-                            />
-                        </FormControl>
-
                         <section
                             className={classes.separator}
                         >
                             <Button
                                 variant="contained"
                                 color="secondary"
-                                className={classes.signinButton}
+                                className={classes.sendPasswordButton}
                                 onClick={onClickAuth}
                             >
-                                Entrar
+                                Enviar Acceso
                                 <KeyboardArrowRightIcon className={classes.rightIcon} />
                             </Button>
                             <Button
-                                className={classes.changePassword}
+                                className={classes.signinButton}
                                 variant='text'
                                 component={Link}
-                                to={'/Account/ForgivePassword'}
+                                to={'/Account/Signin'}
                             >
-                                ¿Olvidó contraseña?
+                                Iniciar Sesión
                             </Button>
                         </section>
+
+                        {message &&
+
+                            <section
+                                className={
+                                    classnames(
+                                        classes.separator,
+                                        classes.messageSection,
+                                    )
+                                }
+                            >
+                                <Typography
+                                    className={classes.message}
+                                    label={message}
+                                />
+                            </section>
+
+                        }
 
                     </section>
                 </Paper>
@@ -185,13 +187,16 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
 
 };
 
-SigninForm.propTypes = {
+ForgivePasswordForm.propTypes = {
     classes: PropTypes.object.isRequired,
     isUserAuth: PropTypes.bool.isRequired,
+    onClickAuth: PropTypes.func.isRequired,
+    message: PropTypes.string,
+    isError: PropTypes.bool,
 };
 
-SigninForm = WrappedComponent(reduxForm({ form: 'signinForm' })(SigninForm));
+ForgivePasswordForm = WrappedComponent(reduxForm({ form: 'forgivePasswordForm' })(ForgivePasswordForm));
 
-SigninForm = withStyles(styles)(SigninForm);
+ForgivePasswordForm = withStyles(styles)(ForgivePasswordForm);
 
-export default SigninForm;
+export default ForgivePasswordForm;

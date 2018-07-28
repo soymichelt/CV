@@ -84,7 +84,7 @@ class SigninContainer extends Component {
 
 }
 
-const selectorFormSignin = formValueSelector('formSignin');
+let selectorFormSignin = formValueSelector('signinForm');
 
 const mapStateToProps = (newState, props) => {
 

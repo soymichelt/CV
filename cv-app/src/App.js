@@ -7,6 +7,7 @@ import { store } from './state/store'
 /* Pages Components */
 import Home from './pages/home/Home'
 import Signin from './pages/account/Signin'
+import ForgivePassword from './pages/account/ForgivePassword'
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
                         <Route exact path='/' component={Home} />
                         <Route exact path='/Home/Index' component={Home} />
                         <Route exact path='/Account/Signin' component={Signin} />
+                        <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
                     </div>
                 </BrowserRouter>
             </Provider>

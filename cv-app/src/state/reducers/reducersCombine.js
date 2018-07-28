@@ -9,7 +9,7 @@ import { academicListReducer } from './academicListReducer'
 import { stickyAppBarReducer } from './stickyAppBarReducer'
 import { projectListReducer } from './projectListReducer'
 import { signInReducer } from './signInReducer'
-import { changePasswordReducer } from './changePasswordReducer'
+import { forgivePasswordReducer } from './forgivePasswordReducer'
 
 const rootReducer = combineReducers({
     form: formReducer,
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
     contentTabs: contentTabsReducer,
     stickyAppBar: stickyAppBarReducer,
     signIn: signInReducer,
-    changePassword: changePasswordReducer,
+    forgivePassword: forgivePasswordReducer,
 });
 
 export default rootReducer;
