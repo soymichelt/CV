@@ -50,7 +50,7 @@ const styles = (theme) => ({
         zIndex: 900,
     },
     tabContentSection: {
-        minHeight: window.innerHeight,
+        //minHeight: window.innerHeight,
     },
 });
 
