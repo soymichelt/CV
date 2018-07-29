@@ -30,8 +30,9 @@ import {
 
 const styles = {
     containerList: {
-        padding: 24,
-        minHeight: 400,
+        paddingTop: 24,
+        paddingBottom: 24,
+        minHeight: '425px',
     },
 };
 

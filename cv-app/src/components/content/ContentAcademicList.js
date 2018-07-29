@@ -34,7 +34,7 @@ const styles = {
     containerList: {
         paddingTop: 24,
         paddingBottom: 24,
-        minHeight: '100%',
+        minHeight: '425px',
     },
 };
 
