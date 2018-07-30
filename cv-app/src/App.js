@@ -8,6 +8,7 @@ import { store } from './state/store'
 import Home from './pages/home/Home'
 import Signin from './pages/account/Signin'
 import ForgivePassword from './pages/account/ForgivePassword'
+import Timeline from './pages/timeline/Timeline'
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
                         <Route exact path='/Home/Index' component={Home} />
                         <Route exact path='/Account/Signin' component={Signin} />
                         <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
+                        <Route exact path='/Timeline' component={Timeline} />
                     </div>
                 </BrowserRouter>
             </Provider>

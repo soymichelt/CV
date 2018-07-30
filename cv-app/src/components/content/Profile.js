@@ -9,12 +9,6 @@ import { withStyles } from '@material-ui/core/styles'
 import classNames from 'classnames'
 
 const styles = theme => ({
-    root: {
-        textAlign: 'center',
-        height: 416,
-        //marginTop: -420,
-        color: '#FFF',
-    },
     content: {
         position: 'relative',
         textAlign: 'center',
@@ -25,23 +19,6 @@ const styles = theme => ({
         justifyContent: 'center',
         color: '#FFF',
         zIndex: 800,
-    },
-    backgroundImage: {
-        position: 'absolute',
-        objectFit: 'cover',
-        zIndex: 1,
-    },
-    background1: {
-        left: 0,
-        right: 0,
-        minHeight: 416,
-        width: '100%',
-    },
-    background2: {
-        top: -8,
-        right: '-5%',
-        minHeight: 400,
-        height: 400,
     },
     profile: {
         width: 128,
@@ -74,89 +51,63 @@ const styles = theme => ({
     },
 });
 
-const Profile = ({classes}) => (
-    
-    <section className={classnames(classes.root, classes.background1)}>
-        
-        <img
-            className={
-                classnames(
-                    classes.backgroundImage,
-                    classes.background1
-                )
-            }
-            src={process.env.PUBLIC_URL + '/res/firestore_back@2x.png'}
-            alt={'Fondo 1'}
-        />
+const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
 
+    <section
+        className={classes.content}
+    >
         <img
-            className={
-                classnames(
-                    classes.backgroundImage,
-                    classes.background2,
-                )
-            }
-            src={process.env.PUBLIC_URL + '/res/firestore_mid@2x.png'}
-            alt={'Fondo 2'}
+            className={classes.profile}
+            src={process.env.PUBLIC_URL + '/res/circleProfile.png'}
+            alt={'Michel Roberto Traña Tablada'}
         />
-
-        <section
-            className={classes.content}
+        <h1
+            className={classNames(classes.primaryText, classes.fontProfile)}
         >
-            <img
-                className={classes.profile}
-                src={process.env.PUBLIC_URL + '/res/circleProfile.png'}
-                alt={'Michel Roberto Traña Tablada'}
-            />
-            <h1
-                className={classNames(classes.primaryText, classes.fontProfile)}
+            Michel R. Traña Tablada
+        </h1>
+        <h2
+            className={classNames(classes.secondaryText, classes.fontProfile)}
+        >
+            Ingeniero en Sistemas de Información
+        </h2>
+        <h3
+            className={classNames(classes.otherText, classes.fontProfile)}
+        >
+            (+505) 8367 - 1719
+        </h3>
+        <section className={classes.social}>
+            <a
+                href='https://www.facebook.com/mtraatabladaa94'
+                target='_blank'
+                rel="noopener"
             >
-                Michel R. Traña Tablada
-            </h1>
-            <h2
-                className={classNames(classes.secondaryText, classes.fontProfile)}
+                <img
+                    src={process.env.PUBLIC_URL + '/res/fb.png'}
+                    alt={'Facebook: mtraatabladaa94'}
+                />
+            </a>
+            <a
+                href='https://twitter.com/mtraatabladaa94'
+                target='_blank'
+                rel="noopener"
             >
-                Ingeniero en Sistemas de Información
-            </h2>
-            <h3
-                className={classNames(classes.otherText, classes.fontProfile)}
+                <img
+                    src={process.env.PUBLIC_URL + '/res/tw.png'}
+                    alt={'Twitter: mtraatabladaa94'}
+                />
+            </a>
+            <a
+                href='https://github.com/mtraatabladaa94'
+                target='_blank'
+                rel="noopener"
             >
-                (+505) 8367 - 1719
-            </h3>
-            <section className={classes.social}>
-                <a
-                    href='https://www.facebook.com/mtraatabladaa94'
-                    target='_blank'
-                    rel="noopener"
-                >
-                    <img
-                        src={process.env.PUBLIC_URL + '/res/fb.png'}
-                        alt={'Facebook: mtraatabladaa94'}
-                    />
-                </a>
-                <a
-                    href='https://twitter.com/mtraatabladaa94'
-                    target='_blank'
-                    rel="noopener"
-                >
-                    <img
-                        src={process.env.PUBLIC_URL + '/res/tw.png'}
-                        alt={'Twitter: mtraatabladaa94'}
-                    />
-                </a>
-                <a
-                    href='https://github.com/mtraatabladaa94'
-                    target='_blank'
-                    rel="noopener"
-                >
-                    <img
-                        src={process.env.PUBLIC_URL + '/res/gb.png'}
-                        alt={'GitHub: mtraatabladaa94'}
-                    />
-                </a>
-            </section>
+                <img
+                    src={process.env.PUBLIC_URL + '/res/gb.png'}
+                    alt={'GitHub: mtraatabladaa94'}
+                />
+            </a>
         </section>
-
     </section>
 
 );

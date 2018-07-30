@@ -8,8 +8,8 @@ import deepOrange from '@material-ui/core/colors/deepOrange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 
 /* Custom Elements */
-import MyAppBar from "./MyAppBar"
-import MyDrawer from "./MyDrawer"
+import MyAppBar from './MyAppBar'
+import MyDrawer from './MyDrawer'
 import Footer from './Footer'
 
 import './../theme/Sticky.css'
@@ -66,7 +66,13 @@ const theme = createMuiTheme({
 export class Theme extends Component {
 
     static propTypes = {
+
         classes: PropTypes.object.isRequired,
+
+        children: PropTypes.node.isRequired,
+
+        headerBackground: PropTypes.string,
+
     };
 
     state = {
@@ -106,7 +112,7 @@ export class Theme extends Component {
 
     render() {
 
-        const { classes, children } = this.props;
+        const { classes, children, headerBackground } = this.props;
 
         return (
 
@@ -117,6 +123,7 @@ export class Theme extends Component {
                     <MyAppBar
                         open={this.state.open}
                         onDrawerOpen={this.handleDrawerOpen}
+                        background={headerBackground && headerBackground}
                     />
 
                     <MyDrawer

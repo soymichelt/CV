@@ -16,7 +16,6 @@ import { drawerWidth } from './MyDrawer';
 
 const styles = theme => ({
     appBar: {
-        background: 'linear-gradient(to right, rgb(239, 108, 0), rgb(251, 140, 0))',
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
@@ -58,12 +57,20 @@ const styles = theme => ({
     },
 });
 
-export const MyAppBar = ({ classes, open, onDrawerOpen }) => (
+export const MyAppBar = ({ classes, open, onDrawerOpen, background }) => (
     <AppBar
         id={'myAppBar'}
         className={classNames(classes.appBar, open && classes.appBarShift)}
         elevation={0}
-        color={'primary'}
+        style={background ?
+            {
+                background: background,
+            }
+            :
+            {
+                background: 'linear-gradient(to right, rgb(239, 108, 0), rgb(251, 140, 0))',
+            }
+        }
     >
         <Toolbar
             disableGutters={!open}
@@ -129,6 +136,7 @@ MyAppBar.propTypes = {
     classes: PropTypes.object.isRequired,
     open: PropTypes.bool.isRequired,
     onDrawerOpen: PropTypes.func.isRequired,
+    background: PropTypes.string,
 };
 
 export default withStyles(styles, { withTheme: true })(MyAppBar);
