@@ -1,0 +1,13 @@
+.suscribe-root::before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: url(/res/suscribe-icon-pattern-header.svg);
+    background-position-x: center;
+    opacity: .1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}

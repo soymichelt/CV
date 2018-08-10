@@ -10,6 +10,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey'
 /* Custom Elements */
 import MyAppBar from './MyAppBar'
 import MyDrawer from './MyDrawer'
+import Suscribe from './../../containers/SuscribeContainer'
 import Footer from './Footer'
 
 import './../theme/Sticky.css'
@@ -136,6 +137,8 @@ export class Theme extends Component {
                         <div className={classes.toolbar} />
                         
                         {children}
+
+                        <Suscribe />
 
                         <Footer />
 

@@ -113,6 +113,13 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background }) => (
                 >
                     <Button
                         className={classes.appBarButton}
+                        component={ Link }
+                        to={'/Timeline'}
+                    >
+                        Timeline
+                    </Button>
+                    <Button
+                        className={classes.appBarButton}
                         component={'a'}
                         href={process.env.PUBLIC_URL + '/res/curriculum.pdf'}
                         target={'_blank'}
