@@ -63,15 +63,25 @@ let TimelineList = ({ classes, data }) => {
                     <MyCardMedia
                         avatar={
                             <Avatar
-                                src={process.env.PUBLIC_URL + '/res/images-data/microsoft.png'}
+                                src={process.env.PUBLIC_URL + '/res/circleProfile64x64.png'}
                             />
                         }
                         photoURL={process.env.PUBLIC_URL + '/res/main_background.jpg'}
                         photoDescription={'Platzi'}
-                        cardTitle={'Programación orientada objetos vs Programación orientada a Aspectos'}
+                        cardTitle={'Michel Roberto Traña Tablada'}
                         cardSubtitle={'hace 1 minuto'}
                         cardFavs={35}
                         cardShares={150}
+                        cardDescription={
+                            <p>
+                                La programación orientada a objetos muy conocida por todos, o por casi todos,
+                                es un paradigma que trata el desarrollo de software como entidades de la vida real. 
+                                Pero este presenta algunos problemas como por ejemplo a la hora de escribir un programa
+                                donde hay código que se repite en responsabilidades que no están relacionadas. Es aquí
+                                donde nace la Programación Orientada a Aspectos que busca separar las obligaciones
+                                transversales (mejor conocidas como aspectos) de la parte principal...
+                            </p>
+                        }
                     />
                 </Paper>
 

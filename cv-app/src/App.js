@@ -9,6 +9,7 @@ import Home from './pages/home/Home'
 import Signin from './pages/account/Signin'
 import ForgivePassword from './pages/account/ForgivePassword'
 import Timeline from './pages/timeline/Timeline'
+import Article from './pages/timeline/Article'
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
                         <Route exact path='/Account/Signin' component={Signin} />
                         <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
                         <Route exact path='/Timeline' component={Timeline} />
+                        <Route path='/Timeline/Article' component={Article} />
                     </div>
                 </BrowserRouter>
             </Provider>
