@@ -45,6 +45,7 @@ const styles = (theme) => ({
         width: '100%',
         position: 'relative',
         zIndex: 1000,
+        boxSizing: 'border-box',
     },
     emailRoot: {
         width: '100%',
@@ -108,7 +109,7 @@ let Suscribe = ({ classes }) => {
                 <Grid
                     item
                     sm={8}
-                    xs={10}
+                    xs={11}
                 >
                     <Paper
                         className={classes.containerForm}
@@ -126,8 +127,9 @@ let Suscribe = ({ classes }) => {
                         >
                             <Grid
                                 item
-                                xs={7}
-                                sm={5}
+                                xs={8}
+                                sm={6}
+                                lg={5}
                             >
                                 <FormControl
                                     className={classes.emailRoot}
@@ -144,8 +146,9 @@ let Suscribe = ({ classes }) => {
                             </Grid>
                             <Grid
                                 item
-                                xs={3}
-                                sm={2}
+                                xs={5}
+                                sm={4}
+                                lg={3}
                             >
                                 <Button
                                     variant="contained"

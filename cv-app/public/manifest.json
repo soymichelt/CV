@@ -1,5 +1,5 @@
 {
-  "short_name": "Portafolio",
+  "short_name": "Michel Traña",
   "name": "Portafolio Ing. Michel Roberto Traña Tablada (mtraatabladaa94)",
   "icons": [
     {
@@ -10,6 +10,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#D84315",
   "background_color": "#ffffff"
 }

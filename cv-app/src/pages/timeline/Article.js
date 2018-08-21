@@ -27,7 +27,6 @@ class Home extends Component {
                     background={'linear-gradient(to right, rgb(106, 27, 154), rgb(142, 36, 170))'}
                     imageUrl1={process.env.PUBLIC_URL + '/res/mlkit_back@2x.png'}
                 >
-                    <Profile />
                 </ContentProfile>
 
                 <ArticleDetailContainer 

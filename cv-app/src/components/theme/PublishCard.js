@@ -21,8 +21,6 @@ import blue from '@material-ui/core/colors/blue'*/
 const styles = theme => ({
     card: {
         width: '100%',
-        borderBottom: '1px solid #ECEFF1',
-        borderRadius: 0,
     },
     header: {
         display: 'block',
@@ -85,11 +83,17 @@ const styles = theme => ({
     },*/
 });
 
-const PublishCard = ({classes, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardDescription, cardFavSelected, cardFavs, onClickFav, cardShares, onClickShare}) => (
+const PublishCard = ({classes, children, withoutDivider, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardFavSelected, cardFavs, onClickFav, cardShares, onClickShare}) => (
 
     <Card
-        className={classes.card}
         elevation={0}
+        className={classes.card}
+        style={
+            !withoutDivider ? {
+                borderBottom: '1px solid #ECEFF1',
+                borderRadius: 0,
+            } : null
+        }
     >
         <CardHeader
             avatar={avatar}
@@ -122,7 +126,7 @@ const PublishCard = ({classes, key, avatar, photoURL, photoDescription, cardTitl
             className={classes.cardContent}
         >
             <section>
-                {cardDescription}
+                {children}
             </section>
             <section
                 className={classes.socialSection}
@@ -178,6 +182,7 @@ const PublishCard = ({classes, key, avatar, photoURL, photoDescription, cardTitl
 
 PublishCard.propTypes = {
     classes: PropTypes.object.isRequired,
+    withoutDivider: PropTypes.bool,
 };
 
 export default withStyles(styles)(PublishCard);
