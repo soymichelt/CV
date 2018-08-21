@@ -17,24 +17,24 @@ import { drawerWidth } from './MyDrawer';
 const styles = theme => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
-        transition: theme.transitions.create(['margin', 'width'], {
+        /*transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
-        }),
+        }),*/
         minHeight: 72,
     },
     appBarButton: {
         color: 'rgba(255,255,255,0.7)',
     },
     appBarShift: {
-        marginLeft: drawerWidth,
+        /*marginLeft: drawerWidth,
         width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['margin', 'width'], {
+        inherittransition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        marginRight: '17px!important',*/
         paddingRight: '0px!important',
-        marginRight: '17px!important',
     },
     flex: {
         flex: 1,
@@ -44,7 +44,7 @@ const styles = theme => ({
     },
     menuButton: {
         marginLeft: 12,
-        marginRight: 36,
+        marginRight: 12,
     },
     menuButtonRightSection: {
         marginRight: 12,
