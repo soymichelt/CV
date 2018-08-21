@@ -1,11 +1,14 @@
 import React from 'react'
+import classnames from 'classnames'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Avatar from '@material-ui/core/Avatar'
 import blueGrey from '@material-ui/core/colors/blueGrey'
-
+import grey from '@material-ui/core/colors/grey'
+import lightBlue from '@material-ui/core/colors/lightBlue'
 import TagIcon from '@material-ui/icons/LocalOffer'
 import DateIcon from '@material-ui/icons/Event'
 
@@ -21,7 +24,19 @@ const styles = {
     },
     title: {
         color: blueGrey[800],
-        fontWieght: 600,
+        fontFamily: '"Source Sans Pro", sans-serif',
+        fontWieght: 300,
+        fontSize: '28px',
+        lineHeight: '38px',
+    },
+    caption: {
+        fontSize: '18px',
+        lineHeight: '28px',
+        color: grey[900],
+    },
+    readMore: {
+        color: lightBlue[600],
+        textDecoration: 'none',
     },
 
 };
@@ -68,7 +83,9 @@ let TimelineList = ({ classes, data }) => {
                         >
                             Introducción a la Programación Orientada a Aspectos. Patrones y Anti-patrones.
                         </h1>
-                        <p>
+                        <p
+                            className={classes.caption}
+                        >
                             La programación orientada a objetos muy conocida por todos, o por casi todos,
                             es un paradigma que trata el desarrollo de software como entidades de la vida real. 
                             Pero este presenta algunos problemas como por ejemplo a la hora de escribir un programa
@@ -76,6 +93,17 @@ let TimelineList = ({ classes, data }) => {
                             donde nace la Programación Orientada a Aspectos que busca separar las obligaciones
                             transversales (mejor conocidas como aspectos) de la parte principal...
                         </p>
+                        <Link
+                            to={'/Timeline/Article'}
+                            className={
+                                classnames(
+                                    classes.caption,
+                                    classes.readMore,
+                                )
+                            }
+                        >
+                            Leer más
+                        </Link>
                     </PublishCard>
                     <PublishCard
                         avatar={
@@ -99,7 +127,9 @@ let TimelineList = ({ classes, data }) => {
                         >
                             Introducción a la Programación Orientada a Aspectos. Patrones y Anti-patrones.
                         </h1>
-                        <p>
+                        <p
+                            className={classes.caption}
+                        >
                             La programación orientada a objetos muy conocida por todos, o por casi todos,
                             es un paradigma que trata el desarrollo de software como entidades de la vida real. 
                             Pero este presenta algunos problemas como por ejemplo a la hora de escribir un programa
@@ -107,6 +137,17 @@ let TimelineList = ({ classes, data }) => {
                             donde nace la Programación Orientada a Aspectos que busca separar las obligaciones
                             transversales (mejor conocidas como aspectos) de la parte principal...
                         </p>
+                        <Link
+                            to={'/Timeline/Article'}
+                            className={
+                                classnames(
+                                    classes.caption,
+                                    classes.readMore,
+                                )
+                            }
+                        >
+                            Leer más
+                        </Link>
                     </PublishCard>
                 </Paper>
 
