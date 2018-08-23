@@ -16,22 +16,36 @@ import StoreIcon from '@material-ui/icons/Store'
 import InboxIcon from '@material-ui/icons/Timeline';
 import SendIcon from '@material-ui/icons/AccountCircle';
 import StarIcon from '@material-ui/icons/School';
+import { Link } from 'react-router-dom'
 
 export const mailFolderListItems = (
   <div>
-    <ListItem button>
+    <ListItem
+      button
+      component={Link}
+      to={'/'}
+    >
       <ListItemIcon>
         <StoreIcon />
       </ListItemIcon>
       <ListItemText primary="Inicio" />
     </ListItem>
-    <ListItem button>
+    <ListItem
+      button
+      component={Link}
+      to={'/Timeline'}
+    >
       <ListItemIcon>
         <InboxIcon />
       </ListItemIcon>
       <ListItemText primary="Timeline" />
     </ListItem>
-    <ListItem button>
+    <ListItem
+      button
+      component={'a'}
+      href={process.env.PUBLIC_URL + '/res/curriculum.pdf'}
+      target={'_blank'}
+    >
       <ListItemIcon>
         <StarIcon />
       </ListItemIcon>
@@ -42,7 +56,11 @@ export const mailFolderListItems = (
 
 export const otherMailFolderListItems = (
   <div>
-    <ListItem button>
+    <ListItem
+      button
+      component={Link}
+      to={'/Signin'}
+    >
       <ListItemIcon>
         <SendIcon />
       </ListItemIcon>
