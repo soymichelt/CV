@@ -5,12 +5,11 @@ import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import red from '@material-ui/core/colors/red'
+import Hidden from '@material-ui/core/Hidden'
 
 import PublicIcon from '@material-ui/icons/Public'
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
 import SchoolIcon from '@material-ui/icons/School'
-import AddComment from '@material-ui/icons/Chat'
 
 import ContentAcademicList from './ContentAcademicList'
 import ContentProjectsList from './ContentProjectsList'
@@ -106,17 +105,36 @@ class ContentTabs extends React.Component {
                         elevation={1}
                         color={'default'}
                     >
-                        <Tabs
-                            value={tabValue}
-                            onChange={this.handleChange}
-                            indicatorColor='primary'
-                            textColor='primary'
-                            centered
+                        <Hidden
+                            only={'xs'}
                         >
-                            <Tab label="Estudios" icon={ <SchoolIcon /> } />
-                            <Tab label="Portafolio" icon={ <ImportantDevicesIcon /> } />
-                            <Tab label="Información" icon={ <PublicIcon /> } />
-                        </Tabs>
+                            <Tabs
+                                value={tabValue}
+                                onChange={this.handleChange}
+                                indicatorColor='primary'
+                                textColor='primary'
+                                centered
+                            >
+                                <Tab label={'Estudios'} icon={ <SchoolIcon /> } />
+                                <Tab label={'Portafolio'} icon={ <ImportantDevicesIcon /> } />
+                                <Tab label={'Información'} icon={ <PublicIcon /> } />
+                            </Tabs>
+                        </Hidden>
+                        <Hidden
+                            only={['sm', 'md', 'lg', 'xl']}
+                        >
+                            <Tabs
+                                value={tabValue}
+                                onChange={this.handleChange}
+                                indicatorColor='primary'
+                                textColor='primary'
+                                fullWidth
+                            >
+                                <Tab icon={ <SchoolIcon /> } />
+                                <Tab icon={ <ImportantDevicesIcon /> } />
+                                <Tab icon={ <PublicIcon /> } />
+                            </Tabs>
+                        </Hidden>
                     </AppBar>
                 </section>
 

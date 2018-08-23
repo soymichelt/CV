@@ -53,8 +53,8 @@ let TimelineList = ({ classes, data }) => {
             <Grid
                 item
                 xs={11}
-                sm={8}
-                lg={6}
+                sm={9}
+                lg={7}
             >
 
                 <Paper

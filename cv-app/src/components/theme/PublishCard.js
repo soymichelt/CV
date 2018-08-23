@@ -24,14 +24,15 @@ const styles = theme => ({
     },
     header: {
         display: 'block',
-        width: 'calc(100% - 48px - 40px - 16px)',
+        //width: 'calc(100% - 48px - 40px - 16px)',
+        width: '100%',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
     },
     media: {
         height: 0,
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '52.32%', // 16:9
     },
     cardContent: {
         paddingBottom: '16px!important',
@@ -67,9 +68,6 @@ const styles = theme => ({
         fontSize: '11px',
         color: blueGrey[100],
     },
-    /*cardActions: {
-        borderTop: '1px solid #EBEBEB',
-    },*/
     iconButton: {
         width: 40,
         height: 40,
