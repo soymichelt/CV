@@ -14,10 +14,8 @@ import SchoolIcon from '@material-ui/icons/School'
 import ContentAcademicList from './ContentAcademicList'
 import ContentProjectsList from './ContentProjectsList'
 import ContentPersonalProfile from './ContentPersonalProfile'
-import TabFabs from './../theme/TabFabs'
 
 import { onChangeTabIndex } from './../../state/actions/contentTabsAction'
-import { onScrollTop } from './../../state/actions/stickyAppBarAction'
 import './../theme/Sticky.css'
 
 const containerStyles = {

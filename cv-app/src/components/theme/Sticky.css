@@ -6,5 +6,11 @@
 }
 
 .contentAfterSticky {
-    padding-top: 48px;
+    padding-top: 72px;
+}
+
+@media only screen and (max-width: 360px) {
+    .contentAfterSticky {
+        padding-top: 48px;
+    }
 }
