@@ -47,7 +47,7 @@ export class ContentAcademicList extends Component {
     categories = [
         {
             uid: '0',
-            name: 'Todos'
+            name: 'Todo'
         },
         {
             uid: '1',
@@ -55,11 +55,11 @@ export class ContentAcademicList extends Component {
         },
         {
             uid: '2',
-            name: 'Certificados'
+            name: 'Certificado'
         },
         {
             uid: '3',
-            name: 'Cursos'
+            name: 'Curso'
         },
     ];
 
@@ -213,6 +213,8 @@ export class ContentAcademicList extends Component {
     };
 
     getAcademicList = () => {
+
+        this.props.setLoadingAcademicList();
 
         var db = firebase.firestore();
 

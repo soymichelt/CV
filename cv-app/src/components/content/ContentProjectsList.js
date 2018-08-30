@@ -45,19 +45,15 @@ export class ContentProjectsList extends Component {
     categories = [
         {
             uid: '0',
-            name: 'Todos'
+            name: 'Todo'
         },
         {
             uid: '1',
-            name: 'Grado'
+            name: 'Personal'
         },
         {
             uid: '2',
-            name: 'Certificados'
-        },
-        {
-            uid: '3',
-            name: 'Cursos'
+            name: 'Empresarial'
         },
     ];
 
