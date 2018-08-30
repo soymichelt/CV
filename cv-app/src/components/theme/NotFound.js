@@ -17,7 +17,7 @@ const styles = ({
         minHeight: '100%',
     },
     image: {
-        height: '120px',
+        height: '100px',
     },
     informationSection: {
         maxWidth: '280px',

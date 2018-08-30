@@ -80,7 +80,7 @@ class ContentTabs extends React.Component {
 
         console.log('HandleScroll: ' + newScrollTop);
 
-        if(newScrollTop >= 488) {
+        if(newScrollTop >= 416) {
             scrollTopAppBar.classList.add('appBarSticky');
             tabContentSection.classList.add('contentAfterSticky');
         } else {

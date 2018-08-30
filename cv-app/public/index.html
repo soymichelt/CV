@@ -43,15 +43,37 @@
         src="https://www.facebook.com/tr?id=1034520126756281&ev=PageView&noscript=1"
       />
     </noscript>
-<!-- End Facebook Pixel Code -->
+    <!-- End Facebook Pixel Code -->
   </head>
   <body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="536722706761934"
+      theme_color="#ff5722"
+      logged_in_greeting="Hola! Como puedo ayudarte?"
+      logged_out_greeting="Hola! Como puedo ayudarte?">
+    </div>
+    <div id="root"></div>
+    <!--End Facebook Messenger-->
+
     <noscript>
       Tu necesitas habilitar JavaScript para ejecutar esta <b>App</b>.
       <br />
-      Att. <b>Ing. Michel Roberto Traña Tablada</b>
+      Att. <a href="https://www.facebook.com/mtraatabladaa94"><b>Ing. Michel Roberto Traña Tablada</b></a>
     </noscript>
-    <div id="root"></div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
