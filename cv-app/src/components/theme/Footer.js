@@ -44,7 +44,7 @@ export class Footer extends Component {
                         >
                             <img
                                 className={classes.devProfilePhoto}
-                                src={process.env.PUBLIC_URL + '/Resources/Images/Profile64x64.png'}
+                                src={process.env.PUBLIC_URL + '/res/circleProfile64x64.png'}
                                 alt={'Michel Roberto Traña Tablada'}
                             />
                         </a>
