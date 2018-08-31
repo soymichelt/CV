@@ -195,6 +195,8 @@ export class ContentProjectsList extends Component {
 
     getProjectList = () => {
 
+        this.props.setLoadingProjectList();
+
         var db = firebase.firestore();
 
         var projects = [];

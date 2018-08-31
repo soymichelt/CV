@@ -94,7 +94,9 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 className={classes.socialContainer}
             >
                 <a
-                    href='https://www.facebook.com/mtraatabladaa94'
+                    href='https://www.facebook.com/soymichelt'
+                    target='_blank'
+                    rel="noopener"
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -102,7 +104,9 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     />
                 </a>
                 <a
-                    href='https://twitter.com/mtraatabladaa94'
+                    href='https://twitter.com/soymichelt'
+                    target='_blank'
+                    rel="noopener"
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -110,7 +114,9 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     />
                 </a>
                 <a
-                    href='https://github.com/mtraatabladaa94'
+                    href='https://github.com/soymichelt'
+                    target='_blank'
+                    rel="noopener"
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -118,7 +124,9 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     />
                 </a>
                 <a
-                    href='https://www.linkedin.com/mtraatabladaa94'
+                    href='https://www.linkedin.com/soymichelt'
+                    target='_blank'
+                    rel="noopener"
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -126,7 +134,9 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     />
                 </a>
                 <a
-                    href='https://www.instagram.com/mtraatabladaa94'
+                    href='https://www.instagram.com/soymichelt'
+                    target='_blank'
+                    rel="noopener"
                 >
                     <Avatar
                         className={classes.socialAvatar}

@@ -77,33 +77,33 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
         </h3>
         <section className={classes.social}>
             <a
-                href='https://www.facebook.com/mtraatabladaa94'
+                href='https://www.facebook.com/soymichelt'
                 target='_blank'
                 rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/fb.png'}
-                    alt={'Facebook: mtraatabladaa94'}
+                    alt={'Facebook: Soymichelt'}
                 />
             </a>
             <a
-                href='https://twitter.com/mtraatabladaa94'
+                href='https://twitter.com/soymichelt'
                 target='_blank'
                 rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/tw.png'}
-                    alt={'Twitter: mtraatabladaa94'}
+                    alt={'Twitter: Soymichelt'}
                 />
             </a>
             <a
-                href='https://github.com/mtraatabladaa94'
+                href='https://github.com/soymichelt'
                 target='_blank'
                 rel="noopener"
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/gb.png'}
-                    alt={'GitHub: mtraatabladaa94'}
+                    alt={'GitHub: Soymichelt'}
                 />
             </a>
         </section>
