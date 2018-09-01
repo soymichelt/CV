@@ -70,7 +70,7 @@ export class ContentAcademicList extends Component {
         },
         {
             uid: '1',
-            label: 'Nombres de proyecto',
+            label: 'Nombre de Estudio',
         },
         {
             uid: '2',

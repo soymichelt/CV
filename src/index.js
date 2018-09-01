@@ -15,14 +15,7 @@ import 'materialize-css/dist/js/materialize';*/
 import './index.css';
 
 /* Inicializando App Firebase */
-const config = {
-    apiKey: "AIzaSyCtpa-R4jkHLTsaEphnCNhdHjpULqZ4M1E",
-    authDomain: "mtraatabladaa.firebaseapp.com",
-    databaseURL: "https://mtraatabladaa.firebaseio.com",
-    projectId: "mtraatabladaa",
-    storageBucket: "mtraatabladaa.appspot.com",
-    messagingSenderId: "217863552976"
-};
+import config from './firebaseCredentials';
 firebase.initializeApp(config);
 
 ReactDOM.render(<App />, document.getElementById('root'));
