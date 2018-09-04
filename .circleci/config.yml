@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: node:10.9-alpine
+      - image: circleci/node:10.9
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -17,7 +17,7 @@ jobs:
     working_directory: ~/soymicheltWebApp
 
     steps:
-      #- checkout
+      - checkout
 
       # Download and cache dependencies
       #- restore_cache:
