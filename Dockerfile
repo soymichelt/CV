@@ -1,15 +1,15 @@
 FROM node:10.9-alpine
 
-EXPOSE 3000
+EXPOSE 9000
 
-WORKDIR /app
+WORKDIR /soymicheltWebApp
 
-ADD package.json /app/
+ADD package.json /soymicheltWebApp/
 
 RUN npm cache clean --force
 
 RUN npm install
 
-ADD . /app/
+ADD . /soymicheltWebApp/
 
 CMD ["npm", "run", "start"]
