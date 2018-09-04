@@ -2,7 +2,6 @@
     Foto de Portada
 */
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -117,10 +116,5 @@ export class ContentProfile extends Component {
     
 }
 
-ContentProfile = withStyles(styles)(ContentProfile);
 
-const mapStateToProps = (newState, props) => {};
-
-const mapDispatchToProps = (dispatch) => {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContentProfile);
+export default withStyles(styles)(ContentProfile);

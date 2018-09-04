@@ -217,6 +217,8 @@ export class ContentAcademicList extends Component {
         this.props.setLoadingAcademicList();
 
         var db = firebase.firestore();
+        const settings = {/* your settings... */ timestampsInSnapshots: true};
+        db.settings(settings);
 
         var studies = [];
 

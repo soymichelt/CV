@@ -215,7 +215,7 @@ export class ContentProjectsList extends Component {
 
             var counter = 0;
 
-            snapshot.docChanges.forEach((change) => {
+            snapshot.docChanges().forEach((change) => {
 
                 const { doc } = change;
 
