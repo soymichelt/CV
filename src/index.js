@@ -6,11 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 /* Firebase */
 import firebase from "firebase";
 
-/* UI Library */
-/*import $  from 'jquery';
-import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize';*/
-
 /* CSS */
 import './index.css';
 
