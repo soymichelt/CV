@@ -40,14 +40,16 @@ jobs:
           name: Ejecución de Tests
           command: npm test
 
+      # run build
+      - run:
+          name: Preparando archivos para Deployment (Build)
+          command: npm run build
+
   deploy-job:
     docker:
       - image: circleci/node:10.9
     working_directory: ~/soymicheltWebApp
     steps:
-      - run:
-          name: Preparando archivos para Deployment (Build)
-          command: npm run build
       - run:
           name: Deploy Master to Firebase
           command: ./node_modules/.bin/firebase deploy --token=$SOYMICHELT_FIREBASE_TOKEN
