@@ -26,7 +26,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
+      - run:
+          name: Instalación de paquetes NPM
+          command: npm install
 
       - save_cache:
           paths:
@@ -40,8 +42,8 @@ jobs:
 
   deploy-job:
     docker:
-      - image: my-image-version-tag
-    working_directory: /tmp/my-project
+      - image: circleci/node:10.9
+    working_directory: ~/soymicheltWebApp
     steps:
       - run:
           name: Deploy Master to Firebase
