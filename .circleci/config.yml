@@ -47,6 +47,10 @@ deploy-job:
   working_directory: ~/soymicheltWebApp
   steps:
     - run:
+        name: Preparando archivos para Deploy Firebase (Build)
+        command: npm build
+        
+    - run:
         name: Deploy Branch Master hacia Firebase
         command: ./node_modules/.bin/firebase deploy --only hosting --token=$SOYMICHELT_FIREBASE_TOKEN
 
