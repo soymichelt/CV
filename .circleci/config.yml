@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  build-job:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.9
@@ -26,9 +26,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run:
-          name: Instalación de Paquetes NPM
-          command: npm install
+      - run: npm install
 
       - save_cache:
           paths:
@@ -40,29 +38,24 @@ jobs:
           name: Ejecución de Tests
           command: npm test
 
-  # Deployment
   deploy-job:
     docker:
-      image: circleci/node:10.9
-    working_directory: ~/soymicheltWebApp
+      - image: my-image-version-tag
+    working_directory: /tmp/my-project
     steps:
       - run:
-          name: Preparando archivos para Deploy Firebase (Build)
-          command: npm build
-          
-      - run:
-          name: Deploy Branch Master hacia Firebase
-          command: ./node_modules/.bin/firebase deploy --only hosting --token=$SOYMICHELT_FIREBASE_TOKEN
+          name: Deploy Master to Firebase
+          command: ./node_modules/.bin/firebase deploy --token=$SOYMICHELT_FIREBASE_TOKEN
 
-# Workflows
 workflows:
   version: 2
+
   -deploy:
     jobs:
       - build-job
       - deploy-job:
           requires:
             - build-job
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
