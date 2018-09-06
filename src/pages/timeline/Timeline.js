@@ -4,19 +4,13 @@
 
 import React, { Component } from 'react'
 import Theme from './../../components/theme/Theme'
-import { withStyles } from '@material-ui/core/styles'
 import ContentProfile from './../../components/content/ContentProfile'
 import Profile from './../../components/content/Profile'
 import TimelineContainer from './../../containers/TimelineListContainer'
 
-const styles = (theme) => ({
-});
-
 class Home extends Component {
 
     render() {
-
-        const { classes } = this.props;
 
         return (
             <Theme
@@ -38,4 +32,4 @@ class Home extends Component {
     }
 }
 
-export default withStyles(styles)(Home);
+export default Home;

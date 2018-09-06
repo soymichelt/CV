@@ -96,7 +96,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 <a
                     href='https://www.facebook.com/soymichelt'
                     target='_blank'
-                    rel="noopener"
+                    rel='noopener noreferrer'
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -106,7 +106,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 <a
                     href='https://twitter.com/soymichelt'
                     target='_blank'
-                    rel="noopener"
+                    rel='noopener noreferrer'
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -116,7 +116,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 <a
                     href='https://github.com/soymichelt'
                     target='_blank'
-                    rel="noopener"
+                    rel='noopener noreferrer'
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -126,7 +126,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 <a
                     href='https://www.linkedin.com/soymichelt'
                     target='_blank'
-                    rel="noopener"
+                    rel='noopener noreferrer'
                 >
                     <Avatar
                         className={classes.socialAvatar}
@@ -136,7 +136,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                 <a
                     href='https://www.instagram.com/soymichelt'
                     target='_blank'
-                    rel="noopener"
+                    rel='noopener noreferrer'
                 >
                     <Avatar
                         className={classes.socialAvatar}

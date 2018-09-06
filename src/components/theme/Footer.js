@@ -40,7 +40,7 @@ export class Footer extends Component {
                             className={classes.devContent}
                             href='https://www.facebook.com/mtraatabladaa94'
                             target='_blank'
-                            rel={'noopener noreferrer'}
+                            rel='noopener noreferrer'
                         >
                             <img
                                 className={classes.devProfilePhoto}

@@ -4,8 +4,8 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formValueSelector } from 'redux-form'
-import firebase from 'firebase'
+//import { formValueSelector } from 'redux-form'
+//import firebase from 'firebase'
 
 import ForgivePasswordForm from './../components/forgivePassword/ForgivePasswordForm'
 
@@ -56,7 +56,7 @@ class ForgivePasswordContainer extends Component {
 
 }
 
-const selectorFormForgivePassword = formValueSelector('forgivePasswordForm');
+//const selectorFormForgivePassword = formValueSelector('forgivePasswordForm');
 
 const mapStateToProps = (newState, props) => {
 
@@ -70,7 +70,7 @@ const mapStateToProps = (newState, props) => {
         };
     }
 
-    let { email } = selectorFormForgivePassword(newState, 'estoEsUnaPrueba', 'password');
+    //let { email } = selectorFormForgivePassword(newState, 'estoEsUnaPrueba', 'password');
 
     return {
         isLoading: forgivePassword.isLoading ? forgivePassword.isLoading : false,

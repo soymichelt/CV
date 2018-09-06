@@ -7,12 +7,6 @@ import TimelineList from './../components/timeline/TimelineList'
 
 class TimelineContainer extends Component {
 
-    constructor(props) {
-
-        super(props);
-        
-    }
-
     render() {
 
         return (

@@ -12,8 +12,6 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 
-import { drawerWidth } from './MyDrawer';
-
 const styles = theme => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,

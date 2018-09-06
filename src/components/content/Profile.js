@@ -79,7 +79,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             <a
                 href='https://www.facebook.com/soymichelt'
                 target='_blank'
-                rel="noopener"
+                rel='noopener noreferrer'
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/fb.png'}
@@ -89,7 +89,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             <a
                 href='https://twitter.com/soymichelt'
                 target='_blank'
-                rel="noopener"
+                rel='noopener noreferrer'
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/tw.png'}
@@ -99,7 +99,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             <a
                 href='https://github.com/soymichelt'
                 target='_blank'
-                rel="noopener"
+                rel='noopener noreferrer'
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/gb.png'}

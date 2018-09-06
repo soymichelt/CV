@@ -38,7 +38,7 @@ TabContainer.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const styles = (theme) => ({
+const styles = {
     root: {
         flexGrow: 1,
     },
@@ -49,7 +49,7 @@ const styles = (theme) => ({
     tabContentSection: {
         //minHeight: window.innerHeight,
     },
-});
+};
 
 class ContentTabs extends React.Component {
 
@@ -88,7 +88,7 @@ class ContentTabs extends React.Component {
 
     render() {
 
-        const { classes, theme, tabValue } = this.props;
+        const { classes, tabValue } = this.props;
 
         return (
 

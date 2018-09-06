@@ -91,6 +91,7 @@ let ForgivePasswordForm = ({ classes, isUserAuth, onClickAuth, message, isError 
                         <img
                             className={classes.logo}
                             src={process.env.PUBLIC_URL + '/res/imagoTipo2.png'}
+                            alt={'Logo'}
                         />
                     </Link>
                     <section

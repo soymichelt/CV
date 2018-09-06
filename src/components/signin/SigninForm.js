@@ -10,7 +10,6 @@ import classnames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 
 import Paper from '@material-ui/core/Paper'
-import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControl from '@material-ui/core/FormControl'
@@ -84,6 +83,7 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                         <img
                             className={classes.logo}
                             src={process.env.PUBLIC_URL + '/res/imagoTipo2.png'}
+                            alt={'Logo'}
                         />
                     </Link>
                     <section

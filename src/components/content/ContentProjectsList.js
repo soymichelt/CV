@@ -90,7 +90,7 @@ export class ContentProjectsList extends Component {
 
     render() {
 
-        const { classes, stateList, list, category, isOpenDialogOrderBy, itemsBySort } = this.props;
+        const { classes, stateList, list, category, isOpenDialogOrderBy } = this.props;
 
         return (
 
