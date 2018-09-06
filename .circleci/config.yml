@@ -16,10 +16,6 @@ jobs:
 
     working_directory: ~/soymicheltWebApp/testing
 
-    # Ignore branch master (because is only for deployment)
-    branches:
-      ignore: master
-
     steps:
       - checkout
 
