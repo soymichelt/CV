@@ -1,10 +1,14 @@
+# Configuration CircleCI 2.0 for soymichelt.com
 # Javascript Node CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
 jobs:
-  build-job:
+
+  # Preparing App: Download project, install packages, etc.
+  init-job:
+
     docker:
       # specify the version you desire here
       - image: circleci/node:10.9
@@ -35,61 +39,73 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run:
-          name: Ejecución de Tests
-          command: npm test
-
       - persist_to_workspace:
           root: .
           paths:
             - .
 
 
+  # Build process
+  build-job:
+
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.9
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/soymicheltWebApp
+
+    steps:
+      # attaching workspace!
+      - attach_workspace:
+          at: .
+
+      # run tests!
+      - run:
+          name: Ejecución de Build
+          command: npm run build
+
+      # persist workspace!
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  
+  # Testing process
+  testing-job:
+
+    docker:
+      - image: circleci/node:10.9
+
+    working_directory: ~/soymicheltWebApp
+    steps:
+
+      # attaching workspace!
+      - attach_workspace:
+          at: .
+
+      # run tests!
+      - run:
+          name: Ejecución de Tests
+          command: npm run test
+      
+
   deploy-job:
+
     docker:
       - image: circleci/node:10.9
     working_directory: ~/soymicheltWebApp
     steps:
-      #- checkout
-
-      #- run:
-      #    name: Mostrando Directorios y Archivos del Working_Directory
-      #    command: ls
-
-      ## Download and cache dependencies
-      #- restore_cache:
-      #    keys:
-      #    - v1-dependencies-{{ checksum "package.json" }}
-      #    # fallback to using the latest cache if no exact match is found
-      #    - v1-dependencies-
-
-      #- run:
-      #    name: Instalación de paquetes NPM
-      #    command: npm install
-
-      #- save_cache:
-      #    paths:
-      #      - node_modules
-      #    key: v1-dependencies-{{ checksum "package.json" }}
-
-      ## run tests!
-      #- run:
-      #    name: Ejecución de Tests
-      #    command: npm test
 
       # attaching workspace of build-job
       - attach_workspace:
           at: .
 
-      - run: ls
-
-      # run build
-      - run:
-          name: Preparando archivos para Deployment (Build)
-          command: npm run build
-      
-      # run build
+      # run deploy
       - run:
           name: Deploy Master to Firebase
           command: ~/soymicheltWebApp/node_modules/.bin/firebase deploy --only hosting --non-interactive --token=$SOYMICHELT_FIREBASE_TOKEN
@@ -99,9 +115,19 @@ workflows:
 
   -deploy:
     jobs:
-      - build-job
+      - init-job
+      - testing-job:
+          requires:
+            - init-job
+      - build-job:
+          requires:
+            - init-job
+          filters:
+            branches:
+              only: master
       - deploy-job:
           requires:
+            - testing-job
             - build-job
           filters:
             branches:
