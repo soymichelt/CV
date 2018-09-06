@@ -64,11 +64,6 @@ jobs:
       - attach_workspace:
           at: .
 
-      # run ls!
-      - run:
-          name: Mostrando los archivos que hay
-          command: ls
-
       # run tests!
       - run:
           name: Ejecución de Build
@@ -109,6 +104,11 @@ jobs:
       # attaching workspace of build-job
       - attach_workspace:
           at: .
+
+      # run ls!
+      - run:
+          name: Mostrando los archivos que hay
+          command: ls
 
       # run deploy
       - run:
