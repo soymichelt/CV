@@ -77,6 +77,8 @@ jobs:
       - run:
           name: Preparando archivos para Deployment (Build)
           command: npm run build
+
+      - run: ls
       
       # run build
       - run:
