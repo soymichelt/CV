@@ -41,7 +41,7 @@ jobs:
           command: npm test
 
       - persist_to_workspace:
-          root: TestedApp
+          root: .
           paths:
             - .
 
@@ -80,7 +80,7 @@ jobs:
 
       # attaching workspace of build-job
       - attach_workspace:
-          at: /tmp/TestedApp
+          at: .
 
       - run: ls
 
