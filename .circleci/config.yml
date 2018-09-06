@@ -71,7 +71,7 @@ jobs:
 
       # persist workspace!
       - persist_to_workspace:
-          root: build
+          root: .
           paths:
             - .
   
