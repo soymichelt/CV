@@ -76,6 +76,8 @@ jobs:
       - attach_workspace:
           at: ~/soymicheltWebApp
 
+      - run: ls
+
       # run build
       - run:
           name: Preparando archivos para Deployment (Build)
