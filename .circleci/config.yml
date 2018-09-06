@@ -14,7 +14,11 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/soymicheltWebApp
+    working_directory: ~/soymicheltWebApp/testing
+
+    # Ignore branch master (because is only for deployment)
+    branches:
+      ignore: master
 
     steps:
       - checkout
@@ -39,54 +43,52 @@ jobs:
       - run:
           name: Ejecución de Tests
           command: npm test
-
-      # run build
-      - run:
-          name: Preparando archivos para Deployment (Build)
-          command: npm run build
 
   deploy-job:
     docker:
       - image: circleci/node:10.9
-    working_directory: ~/soymicheltWebApp
+    working_directory: ~/soymicheltWebApp/production
     steps:
-      - checkout
+      #- checkout
 
-      - run: ls
+      #- run:
+      #    name: Mostrando Directorios y Archivos del Working_Directory
+      #    command: ls
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+      ## Download and cache dependencies
+      #- restore_cache:
+      #    keys:
+      #    - v1-dependencies-{{ checksum "package.json" }}
+      #    # fallback to using the latest cache if no exact match is found
+      #    - v1-dependencies-
 
-      - run:
-          name: Instalación de paquetes NPM
-          command: npm install
+      #- run:
+      #    name: Instalación de paquetes NPM
+      #    command: npm install
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      #- save_cache:
+      #    paths:
+      #      - node_modules
+      #    key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run:
-          name: Ejecución de Tests
-          command: npm test
+      ## run tests!
+      #- run:
+      #    name: Ejecución de Tests
+      #    command: npm test
+
+      # attaching workspace of build-job
+      - attach_workspace:
+          at: ~/soymicheltWebApp/testing
 
       # run build
       - run:
           name: Preparando archivos para Deployment (Build)
           command: npm run build
-
-      - run: ls
       
       # run build
       - run:
           name: Deploy Master to Firebase
           command: ~/soymicheltWebApp/node_modules/.bin/firebase deploy --only hosting --non-interactive --token=$SOYMICHELT_FIREBASE_TOKEN
-          #command: ln -s ./node_modules/.bin/firebase . && ./firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
