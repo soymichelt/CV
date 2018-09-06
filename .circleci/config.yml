@@ -52,7 +52,7 @@ jobs:
     steps:
       - run:
           name: Deploy Master to Firebase
-          command: ./node_modules/.bin/firebase deploy --token=$SOYMICHELT_FIREBASE_TOKEN
+          command: ./node_modules/.bin/firebase-tools deploy --token=$SOYMICHELT_FIREBASE_TOKEN
 
 workflows:
   version: 2
