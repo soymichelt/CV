@@ -28,6 +28,6 @@
   "devDependencies": {
     "firebase-tools": "^4.2.1",
     "react-test-renderer": "^16.5.0",
-    "redux-devtools-extension": "^2.13.5",
+    "redux-devtools-extension": "^2.13.5"
   }
 }
