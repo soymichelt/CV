@@ -32,7 +32,7 @@ export class Footer extends Component {
                 <Grid container className={classes.root}>
                     <Grid item xs={12} sm={9} className="blue-grey darken-4">
                         <span className="copyright">
-                            &copy; Copyright - <Link to="/" className="red-text">mtraatabladaa94</Link> 2018. All rights reserved.
+                            &copy; Copyright - <Link to="/" className="red-text">soymichel.com</Link> 2018.
                         </span>
                     </Grid>
                     <Grid item xs={12} sm={3}>
