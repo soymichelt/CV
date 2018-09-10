@@ -98,6 +98,14 @@ jobs:
 
     docker:
       - image: circleci/node:10.9
+        environment:
+          FIREBASE_API_KEY: $FIREBASE_API_KEY
+          FIREBASE_AUTH_DOMAIN: $FIREBASE_AUTH_DOMAIN
+          FIREBASE_DATABASE_URL: $FIREBASE_DATABASE_URL
+          FIREBASE_PROJECT_ID: $FIREBASE_PROJECT_ID
+          FIREBASE_STORAGE_BUCKET: $FIREBASE_STORAGE_BUCKET
+          FIREBASE_MESSAGING_SENDER_ID: $FIREBASE_MESSAGING_SENDER_ID
+          
     working_directory: ~/soymicheltWebApp
     steps:
 
