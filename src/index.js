@@ -19,7 +19,6 @@ if(process.env.FIREBASE_API_KEY !== undefined) {
         storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
         messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
     };
-    console.log(configProd);
     firebase.initializeApp(configProd);
 }
 else {
