@@ -1,4 +1,4 @@
-![Foto de Perfil](https://drive.google.com/file/d/0Bxd0iHLY1r3PczYtSkRoQUZrTU0/view?usp=sharing)
+![Foto de Perfil](https://github.com/soymichelt/CV/blob/master/public/res/circleProfile.png)
 
 Este es mi blog personal y está desarrollado con el en React con [Create React App](https://github.com/facebookincubator/create-react-app), además de otras herramientas de Frontend y Backend. Si tienes alguna sugerencia o crees que el sitio presenta un problema puedes crear un [Issue](https://github.com/soymichelt/CV/issues/new), estaré interesado por leer tu recomendación.
 
