@@ -20,7 +20,7 @@ const styles = (theme) => ({
     root: {
         width: '100%',
         height: '350px',
-        backgroundColor: lightBlue[900],
+        backgroundColor: blueGrey[700],
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -31,8 +31,9 @@ const styles = (theme) => ({
         margin: 0,
         marginBottom: '24px',
         fontSize: '28px',
-        fontWieght: 600,
-        fontFamily: '"Source Sans Pro", sans-serif',
+        fontWeight: 500,
+        //fontFamily: '"Source Sans Pro", sans-serif',
+        fontFamily: 'Roboto',
         color: blueGrey[900],
         zIndex: 1000,
         textAlign: 'center',
@@ -85,6 +86,27 @@ const styles = (theme) => ({
         height: '41px',
         background: 'linear-gradient(to right, ' + lightBlue[800] + ', ' + lightBlue[600] +')',
         color: '#FFFFFF',
+    },
+    followMeCaption: {
+        margin: 0,
+        marginTop: '18px',
+        fontSize: '16px',
+        fontWeight: 500,
+        //fontFamily: '"Source Sans Pro", sans-serif',
+        fontFamily: 'Roboto',
+        color: blueGrey[900],
+        zIndex: 1000,
+        textAlign: 'center',
+        height: '32px',
+        lineHeight: '32px!important',
+        verticalAlign: 'middle',
+    },
+    socialAvatar: {
+        width: '32px',
+        height: '32px',
+        marginLeft: '4px',
+        lineHeight: '32px!important',
+        verticalAlign: 'middle',
     },
 });
 
@@ -155,6 +177,44 @@ let Suscribe = ({ classes }) => {
                                 </Button>
                             </Grid>
                         </Grid>
+                        <h2
+                            className={classes.followMeCaption}
+                        >
+                            Sigueme en 
+                            <a
+                                href='https://www.facebook.com/soymichelt'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <img
+                                    className={classes.socialAvatar}
+                                    src={process.env.PUBLIC_URL + '/res/fb-64x64.png'}
+                                    alt={'Facebook: Soymichelt'}
+                                />
+                            </a>
+                            <a
+                                href='https://twitter.com/soymichelt'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <img
+                                    className={classes.socialAvatar}
+                                    src={process.env.PUBLIC_URL + '/res/tw-64x64.png'}
+                                    alt={'Twitter: Soymichelt'}
+                                />
+                            </a>
+                            <a
+                                href='https://github.com/soymichelt'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <img
+                                    className={classes.socialAvatar}
+                                    src={process.env.PUBLIC_URL + '/res/gb-black-64x64.png'}
+                                    alt={'GitHub: Soymichelt'}
+                                />
+                            </a>
+                        </h2>
                     </Paper>
                 </Grid>
             </Grid>

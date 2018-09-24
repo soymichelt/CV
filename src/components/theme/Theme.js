@@ -73,6 +73,8 @@ export class Theme extends Component {
         children: PropTypes.node.isRequired,
 
         headerBackground: PropTypes.string,
+        
+        appBarElevation: PropTypes.number.isRequired,
 
     };
 
@@ -90,23 +92,27 @@ export class Theme extends Component {
 
     handleScroll = (event) => {
 
-        let supportPageOffset = window.pageXOffset !== undefined;
-        let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-        let newScrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-        
-        var myAppBar = document.getElementById('myAppBar');
+        if(!this.props.shadowScrollDisabled || this.props.shadowScrollDisabled === false) {
 
-        /*if(newScrollTop >= 416) {
-            myAppBar.style.marginTop = ((416 - newScrollTop)) + 'px';
-        } else {
-            myAppBar.style.marginTop = '0px';
-        }*/
+            let supportPageOffset = window.pageXOffset !== undefined;
+            let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+            let newScrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+            
+            var myAppBar = document.getElementById('myAppBar');
 
-        if(newScrollTop > 0 && newScrollTop <= 416) {
-            myAppBar.style.boxShadow = '0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)';
-        }
-        else {
-            myAppBar.style.boxShadow = 'none';
+            /*if(newScrollTop >= 416) {
+                myAppBar.style.marginTop = ((416 - newScrollTop)) + 'px';
+            } else {
+                myAppBar.style.marginTop = '0px';
+            }*/
+
+            if(newScrollTop > 0 && newScrollTop <= 416) {
+                myAppBar.style.boxShadow = '0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)';
+            }
+            else {
+                myAppBar.style.boxShadow = 'none';
+            }
+
         }
     
     };
@@ -125,6 +131,7 @@ export class Theme extends Component {
                         open={this.state.open}
                         onDrawerOpen={this.handleDrawerOpen}
                         background={headerBackground && headerBackground}
+                        elevation={this.props.appBarElevation}
                     />
 
                     <MyDrawer

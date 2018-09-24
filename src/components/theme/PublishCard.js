@@ -21,10 +21,10 @@ import blue from '@material-ui/core/colors/blue'*/
 const styles = theme => ({
     card: {
         width: '100%',
+        backgroundColor: 'transparent',
     },
     header: {
         display: 'block',
-        //width: 'calc(100% - 48px - 40px - 16px)',
         width: '100%',
         whiteSpace: 'nowrap',
         overflow: 'hidden',

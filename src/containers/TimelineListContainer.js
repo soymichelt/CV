@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import TimelineList from './../components/timeline/TimelineList'
+import 'firebase/firestore'
 
 class TimelineContainer extends Component {
 
@@ -11,7 +12,7 @@ class TimelineContainer extends Component {
 
         return (
             <TimelineList
-
+                
             />
         );
 
