@@ -15,23 +15,12 @@ import classNames from 'classnames'
 const styles = theme => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
-        /*transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),*/
         minHeight: 72,
     },
     appBarButton: {
         color: 'rgba(255,255,255,0.7)',
     },
     appBarShift: {
-        /*marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        inherittransition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginRight: '17px!important',*/
         paddingRight: '0px!important',
     },
     flex: {
@@ -55,11 +44,11 @@ const styles = theme => ({
     },
 });
 
-export const MyAppBar = ({ classes, open, onDrawerOpen, background }) => (
+export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation }) => (
     <AppBar
         id={'myAppBar'}
         className={classNames(classes.appBar, open && classes.appBarShift)}
-        elevation={0}
+        elevation={elevation}
         style={background ?
             {
                 background: background,
@@ -142,6 +131,7 @@ MyAppBar.propTypes = {
     open: PropTypes.bool.isRequired,
     onDrawerOpen: PropTypes.func.isRequired,
     background: PropTypes.string,
+    elevation: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(MyAppBar);

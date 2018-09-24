@@ -101,6 +101,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     <Avatar
                         className={classes.socialAvatar}
                         src={process.env.PUBLIC_URL + '/res/fb-64x64.png'}
+                        alt={'Facebook'}
                     />
                 </a>
                 <a
@@ -111,6 +112,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     <Avatar
                         className={classes.socialAvatar}
                         src={process.env.PUBLIC_URL + '/res/tw-64x64.png'}
+                        alt={'Twitter'}
                     />
                 </a>
                 <a
@@ -121,6 +123,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     <Avatar
                         className={classes.socialAvatar}
                         src={process.env.PUBLIC_URL + '/res/gb-black-64x64.png'}
+                        alt={'Github'}
                     />
                 </a>
                 <a
@@ -131,6 +134,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     <Avatar
                         className={classes.socialAvatar}
                         src={process.env.PUBLIC_URL + '/res/in-64x64.png'}
+                        alt={'Linkedin'}
                     />
                 </a>
                 <a
@@ -141,6 +145,7 @@ const ContentPersonalProfileBiography = ({classes, biography, personalObjectives
                     <Avatar
                         className={classes.socialAvatar}
                         src={process.env.PUBLIC_URL + '/res/im-purple-64x64.png'}
+                        alt={'Instagram'}
                     />
                 </a>
             </section>

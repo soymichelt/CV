@@ -71,7 +71,7 @@ export const otherMailFolderListItems = (
 
 export const drawerWidth = 260;
 
-const styles = theme => ({
+const styles = {
     drawerList: {
       width: drawerWidth,
     },
@@ -82,7 +82,7 @@ const styles = theme => ({
         padding: '0 8px',
         minHeight: 72,
     },
-});
+};
 
 export const MyDrawer = ({ classes, theme, open, onDrawerClose }) => (
   <Drawer

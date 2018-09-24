@@ -6,21 +6,29 @@ import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Avatar from '@material-ui/core/Avatar'
+import Typography from '@material-ui/core/Typography'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import grey from '@material-ui/core/colors/grey'
 import lightBlue from '@material-ui/core/colors/lightBlue'
 import TagIcon from '@material-ui/icons/LocalOffer'
 import DateIcon from '@material-ui/icons/Event'
+import TimelineIcon from '@material-ui/icons/Timeline'
 
 import PublishCard from './../theme/PublishCard'
 
 const styles = {
 
     root: {
-        padding: '16px 8px',
+        padding: '32px 8px 40px 8px',
     },
     container: {
         maxWidth: '100%',
+    },
+    groupCaption:{
+        marginBottom: '8px',
+        fontWeight: 'bold',
+        color: 'rgba(0,0,0,.54)',
+        textTransform: 'uppercase',
     },
     title: {
         color: blueGrey[800],
@@ -57,9 +65,19 @@ let TimelineList = ({ classes, data }) => {
                 lg={7}
             >
 
+                <Typography
+                    className={
+                        classnames(
+                            classes.groupCaption
+                        )
+                    }
+                    autoCapitalize={'true'}
+                >
+                    <TimelineIcon style={{fontSize: '16px', verticalAlign: 'middle'}} /> Timeline
+                </Typography>
+
                 <Paper
                     className={classes.container}
-                    elevation={1}
                 >
                     <PublishCard
                         avatar={
@@ -121,6 +139,7 @@ let TimelineList = ({ classes, data }) => {
                         }
                         cardFavs={35}
                         cardShares={150}
+                        withoutDivider
                     >
                         <h1
                             className={classes.title}

@@ -19,7 +19,9 @@ class Home extends Component {
         const { classes } = this.props;
 
         return (
-            <Theme>
+            <Theme
+                appBarElevation={0}
+            >
 
                 <ContentProfile>
                     <Profile />

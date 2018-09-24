@@ -15,6 +15,8 @@ class Home extends Component {
         return (
             <Theme
                 headerBackground={'linear-gradient(to right, rgb(106, 27, 154), rgb(142, 36, 170))'}
+                shadowScrollDisabled={true}
+                appBarElevation={2}
             >
 
                 <ContentProfile
