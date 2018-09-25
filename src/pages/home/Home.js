@@ -20,10 +20,14 @@ class Home extends Component {
 
         return (
             <Theme
-                appBarElevation={0}
+                headerBackground={'linear-gradient(to right, rgb(106, 27, 154), rgb(142, 36, 170))'}
+                appBarElevation={2}
             >
 
-                <ContentProfile>
+                <ContentProfile
+                    background={'linear-gradient(to right, rgb(106, 27, 154), rgb(142, 36, 170))'}
+                    imageUrl1={process.env.PUBLIC_URL + '/res/mlkit_back@2x.png'}
+                >
                     <Profile />
                 </ContentProfile>
 
