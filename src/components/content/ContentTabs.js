@@ -122,8 +122,8 @@ class ContentTabs extends React.Component {
                             <Tabs
                                 value={tabValue}
                                 onChange={this.handleChange}
-                                indicatorColor='primary'
-                                textColor='primary'
+                                indicatorColor='secondary'
+                                textColor='secondary'
                                 fullWidth
                             >
                                 <Tab icon={ <SchoolIcon /> } />

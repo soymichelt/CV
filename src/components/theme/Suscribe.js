@@ -86,6 +86,7 @@ const styles = (theme) => ({
         height: '41px',
         background: 'linear-gradient(to right, ' + lightBlue[800] + ', ' + lightBlue[600] +')',
         color: '#FFFFFF',
+        borderBottom: '4px solid ' + lightBlue[900],
     },
     followMeCaption: {
         margin: 0,
