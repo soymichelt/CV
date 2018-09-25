@@ -5,7 +5,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import lightBlue from '@material-ui/core/colors/lightBlue'
+import lightBlue from '@material-ui/core/colors/red'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import classnames from 'classnames'
 import Paper from '@material-ui/core/Paper'
