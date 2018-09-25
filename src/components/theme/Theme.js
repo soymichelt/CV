@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import deepOrange from '@material-ui/core/colors/deepOrange'
-import blueGrey from '@material-ui/core/colors/blueGrey'
+import deepOrange from '@material-ui/core/colors/purple'
+import blueGrey from '@material-ui/core/colors/red'
 
 /* Custom Elements */
 import MyAppBar from './MyAppBar'
