@@ -30,12 +30,12 @@ export class Footer extends Component {
         return (
             <footer className="footer-section">
                 <Grid container className={classes.root}>
-                    <Grid item xs={12} sm={9} className="blue-grey darken-4">
+                    <Grid item xs={10} sm={9} className="blue-grey darken-4">
                         <span className="copyright">
                             &copy; Copyright - <Link to="/" className="red-text">soymichel.com</Link> 2018.
                         </span>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={2} sm={3}>
                         <a
                             className={classes.devContent}
                             href='https://www.facebook.com/mtraatabladaa94'

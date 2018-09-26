@@ -29,7 +29,7 @@ const styles = (theme) => ({
     },
     title: {
         margin: 0,
-        marginBottom: '24px',
+        marginBottom: '16px',
         fontSize: '28px',
         fontWeight: 500,
         //fontFamily: '"Source Sans Pro", sans-serif',
@@ -147,7 +147,7 @@ let Suscribe = ({ classes }) => {
                         >
                             <Grid
                                 item
-                                xs={8}
+                                xs={10}
                                 sm={6}
                                 lg={5}
                             >
