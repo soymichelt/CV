@@ -79,7 +79,7 @@ const styles = theme => ({
         paddingTop: theme.spacing.unit,
         paddingRight: theme.spacing.unit,
         paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
+        paddingLeft: theme.spacing.unit * 8,
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
@@ -148,7 +148,7 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation })
                     <SearchIcon />
                 </div>
                 <Input
-                    placeholder="¿Qué buscas?"
+                    placeholder="Ey! ¿Qué buscas?"
                     disableUnderline
                     classes={{
                         root: classes.inputRoot,

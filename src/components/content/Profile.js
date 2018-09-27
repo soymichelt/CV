@@ -83,6 +83,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/fb.png'}
+                    srcSet={process.env.PUBLIC_URL + '/res/fb-64x64.png 2x'}
                     alt={'Facebook: Soymichelt'}
                 />
             </a>
@@ -93,6 +94,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/tw.png'}
+                    srcSet={process.env.PUBLIC_URL + '/res/tw-64x64.png 2x'}
                     alt={'Twitter: Soymichelt'}
                 />
             </a>
@@ -103,6 +105,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/gb.png'}
+                    srcSet={process.env.PUBLIC_URL + '/res/gb-black-64x64.png 2x'}
                     alt={'GitHub: Soymichelt'}
                 />
             </a>
