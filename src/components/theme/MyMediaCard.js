@@ -14,9 +14,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 
-/*import PersonIcon from '@material-ui/icons/Person'
-import blue from '@material-ui/core/colors/blue'*/
-
 const styles = theme => ({
     card: {
         width: 345,
@@ -67,9 +64,6 @@ const styles = theme => ({
         fontSize: '11px',
         color: blueGrey[100],
     },
-    /*cardActions: {
-        borderTop: '1px solid #EBEBEB',
-    },*/
     iconButton: {
         width: 40,
         height: 40,
