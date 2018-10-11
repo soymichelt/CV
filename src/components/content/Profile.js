@@ -105,7 +105,7 @@ const Profile = ({ classes, backgroundUrl1, backgroundUrl2 }) => (
             >
                 <img
                     src={process.env.PUBLIC_URL + '/res/gb.png'}
-                    srcSet={process.env.PUBLIC_URL + '/res/gb-black-64x64.png 2x'}
+                    srcSet={process.env.PUBLIC_URL + '/res/gb-64x64.png 2x'}
                     alt={'GitHub: Soymichelt'}
                 />
             </a>
