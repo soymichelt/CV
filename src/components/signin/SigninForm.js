@@ -26,7 +26,7 @@ import CustomInput from './../helpers/CustomInput'
 
 const styles = (theme) => ({
     signinPage: {
-        height: window.innerHeight,
+        height: '100%!important',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

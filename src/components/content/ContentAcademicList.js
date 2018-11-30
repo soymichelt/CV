@@ -258,6 +258,10 @@ export class ContentAcademicList extends Component {
 
             this.upgradeStudies(studies);
 
+        }, (error) => {
+
+            this.props.setErrorAcademicList();
+
         });
 
     };

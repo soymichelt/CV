@@ -32,29 +32,37 @@ const styles = ({
     },
 });
 
-const NotFound = ({classes, title, description}) => {
+const NotFound = ({classes, title, description, minHeight}) => {
     return(
         <section
-            className={classes.container}
+            style={
+                minHeight && {
+                    minHeight: minHeight,
+                }
+            }
         >
-            <img
-                className={classes.image}
-                src={process.env.PUBLIC_URL + '/res/not-found.webp'}
-                alt={'Not-Found.webp'}
-            />
             <section
-                className={classes.informationSection}
+                className={classes.container}
             >
-                <h1
-                    className={classes.title}
+                <img
+                    className={classes.image}
+                    src={process.env.PUBLIC_URL + '/res/not-found.webp'}
+                    alt={'Not-Found.webp'}
+                />
+                <section
+                    className={classes.informationSection}
                 >
-                    {title}
-                </h1>
-                <p
-                    className={classes.description}
-                >
-                    {description}
-                </p>
+                    <h1
+                        className={classes.title}
+                    >
+                        {title}
+                    </h1>
+                    <p
+                        className={classes.description}
+                    >
+                        {description}
+                    </p>
+                </section>
             </section>
         </section>
     )
@@ -62,6 +70,9 @@ const NotFound = ({classes, title, description}) => {
 
 NotFound.propTypes = {
     classes: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    minHeight: PropTypes.string,
 };
 
 export default withStyles(styles)(NotFound);

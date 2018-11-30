@@ -186,6 +186,7 @@ export class ContentProjectsList extends Component {
                         description={'Lo sentimos actualmente estamos teniendo problemas al obtener los datos. Estamos trabajando en ello.'}
                     />
                 );
+                console.log("Error: 2");
                 break;
             default:
                 break;
@@ -233,6 +234,10 @@ export class ContentProjectsList extends Component {
 
             this.upgradeProjects(projects);
 
+        }, function(error) {
+
+            this.props.setErrorProjectList();
+
         });
 
     };
@@ -260,8 +265,6 @@ const mapStateToProps = (newState, props) => {
     }
     
     const { state, list, category, isOpenDialogOrderBy, itemToSort } = projectList;
-
-    console.log(projectList);
     
     return {
         stateList: state,

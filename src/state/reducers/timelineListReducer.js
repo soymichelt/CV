@@ -3,11 +3,9 @@
 */
 import {
     SET_LOADING_DATA_IN_TIMELINE_LIST,
-    SET_NOTFOUND_DATA_IN_TIMELINE_LIST,
     SET_ERROR_IN_TIMELINE_LIST,
     SET_DATA_IN_TIMELINE_LIST,
-    SET_OPEN_DIALOG_ORDER_BY,
-    SET_FILTER_BY_CATEGORY,
+    SET_PAGINATION_VALUE,
 } from './../actions/timelineListAction'
 
 export const timelineListReducer = (state = {}, action) => {
@@ -24,24 +22,14 @@ export const timelineListReducer = (state = {}, action) => {
             const newState = { ...state, ...timelineList }
             return newState;
         }
-        case SET_NOTFOUND_DATA_IN_TIMELINE_LIST: {
-            const { timelineList } = action.payload;
-            const newState = { ...state, ...timelineList }
-            return newState;
-        }
         case SET_ERROR_IN_TIMELINE_LIST: {
             const { timelineList } = action.payload;
             const newState = { ...state, ...timelineList }
             return newState;
         }
-        case SET_OPEN_DIALOG_ORDER_BY: {
+        case SET_PAGINATION_VALUE: {
             const { timelineList } = action.payload;
-            const newState = { ...state, ...timelineList }
-            return newState;
-        }
-        case SET_FILTER_BY_CATEGORY: {
-            const { timelineList } = action.payload;
-            const newState = { ...state, ...timelineList }
+            const newState = {...state, ...timelineList }
             return newState;
         }
         default: {
