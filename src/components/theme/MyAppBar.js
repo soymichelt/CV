@@ -18,7 +18,7 @@ import classNames from 'classnames'
 const styles = theme => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
-        minHeight: 72,
+        minHeight: 60,
     },
     appBarButton: {
         color: 'rgba(255,255,255,0.7)',
@@ -40,7 +40,7 @@ const styles = theme => ({
         marginRight: 12,
     },
     toolbar: {
-        minHeight: 72,
+        minHeight: 60,
     },
     imagoTipo: {
         maxHeight: 40,

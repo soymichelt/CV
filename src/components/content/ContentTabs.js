@@ -111,9 +111,9 @@ class ContentTabs extends React.Component {
                                 textColor='secondary'
                                 centered
                             >
-                                <Tab label={'Estudios'} icon={ <SchoolIcon /> } />
-                                <Tab label={'Portafolio'} icon={ <ImportantDevicesIcon /> } />
-                                <Tab label={'Información'} icon={ <PublicIcon /> } />
+                                <Tab label={'Estudios'} />
+                                <Tab label={'Portafolio'} />
+                                <Tab label={'Información'} />
                             </Tabs>
                         </Hidden>
                         <Hidden

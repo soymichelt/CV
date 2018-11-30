@@ -13,22 +13,20 @@ import 'firebase/firestore'
 import { 
     setLoadingTimelineList,
     setTimelineList,
-    setNotfoundTimelineList,
     setErrorTimelineList,
-    filterByCategory,
-    openDialogSortBy,
-    onClickSortItem,
+    setPaginationTimelineList,
 } from './../state/actions/timelineListAction'
 
 class TimelineContainer extends Component {
 
-
-
     render() {
+
+        const { list, stateList } = this.props;
 
         return (
             <TimelineList
-                
+                data={list}
+                state={stateList}
             />
         );
 
@@ -39,6 +37,21 @@ class TimelineContainer extends Component {
         this.getTimelineList();
 
     }
+
+    goToHome = () => {
+        this.props.setPaginationTimelineList(1);
+    };
+
+    goToForward = () => {
+        this.props.setPaginationTimelineList(this.props.paginationIndex + 1);
+    };
+
+    goToBack = () => {
+        if(this.props.paginationIndex > 1)
+        {
+            this.props.setPaginationTimelineList(this.props.paginationIndex - 1);
+        }
+    };
 
     getTimelineList = () => {
 
@@ -80,19 +93,25 @@ class TimelineContainer extends Component {
 
             this.upgradeTimeline(timelineList);
 
+        }, (error) => {
+
+            this.props.setErrorTimelineList();
+            
         });
 
     };
 
     upgradeTimeline = (timelineList) => {
+
         this.props.setTimelineList(timelineList);
+        
     };
 
 }
 
 const mapStateToProps = (newState, props) => {
 
-    var { timelineList } = newState;
+    let { timelineList } = newState;
     
     if(!timelineList) {
         timelineList = {
@@ -107,7 +126,7 @@ const mapStateToProps = (newState, props) => {
     const { state, list, category, isOpenDialogOrderBy, itemToSort } = timelineList;
     
     return {
-        stateList: state,
+        stateList: state ? state : 0,
         list,
         category,
         isOpenDialogOrderBy: isOpenDialogOrderBy ? isOpenDialogOrderBy : false,
@@ -116,14 +135,11 @@ const mapStateToProps = (newState, props) => {
 
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     setLoadingTimelineList: () => dispatch(setLoadingTimelineList()),
     setTimelineList: (list) => dispatch(setTimelineList(list)),
-    setNotfoundTimelineList: () => dispatch(setNotfoundTimelineList()),
     setErrorTimelineList: () => dispatch(setErrorTimelineList()),
-    filterByCategory: (category) => dispatch(filterByCategory(category)),
-    openDialogSortBy: (isOpen) => dispatch(openDialogSortBy(isOpen)),
-    onClickSortItem: (itemToSort) => dispatch(onClickSortItem(itemToSort)),
+    setPaginationTimelineList: (paginationIndex) => dispatch(setPaginationTimelineList(paginationIndex)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TimelineContainer);

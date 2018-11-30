@@ -33,7 +33,7 @@ const styles = theme => ({
         alignItems: 'center',
         justifyContent: 'flex-end',
         ...theme.mixins.toolbar,
-        minHeight: '72px!important',
+        minHeight: '60px!important',
     },
     content: {
         flexGrow: 1,

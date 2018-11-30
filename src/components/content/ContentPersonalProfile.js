@@ -56,7 +56,7 @@ class ContentPersonalProfile extends Component {
                         sm={6}
                     >
                         <ContentPersonalProfileBiography
-                            biography={'Nicaragüense nacido el 02 de septiembre de 1994. Egresado como ingeniero en sistemas de información por la UNAN, Managua. Me considero un loco apasionado por la programación; fiel defensor del uso de TDD y patrones de diseño, así como de la escritura de código limpio legible sin comentar en vez de código no legible con exceso de comentarios. Cada día trato de aprender algo nuevo. Otros hobbies son la lectura y escritura (en esto no me considero muy bueno). Trabajo para algún día llegar a ser emprendedor.'}
+                            biography={'Nicaragüense nacido el 02 de septiembre de 1994. Egresado como ingeniero en sistemas de información por la UNAN, Managua. Me considero un loco apasionado por la programación; fiel defensor del uso de TDD y patrones de diseño. Cada día trato de aprender algo nuevo. Otros hobbies son la lectura y escritura (en esto no me considero muy bueno). Trabajo para algún día llegar a ser emprendedor.'}
                             personalObjectives={'Crecer personal, académica y profesionalmente.'}
                         />
                     </Grid>
