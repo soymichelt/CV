@@ -161,7 +161,7 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation })
 
             <div className={classes.menuButtonRightSection}>
                 <Hidden
-                    only={'xs'}
+                    only={['xs', 'sm']}
                 >
                     <Button
                         className={classes.appBarButton}
