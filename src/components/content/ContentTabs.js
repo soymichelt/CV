@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
@@ -46,8 +46,8 @@ const styles = {
         position: 'relative',
         zIndex: 900,
     },
-    tabContentSection: {
-        //minHeight: window.innerHeight,
+    iconTab: {
+        verticalAlign: 'middle',
     },
 };
 
@@ -111,9 +111,30 @@ class ContentTabs extends React.Component {
                                 textColor='secondary'
                                 centered
                             >
-                                <Tab label={'Estudios'} />
-                                <Tab label={'Portafolio'} />
-                                <Tab label={'Información'} />
+                                <Tab
+                                    label={
+                                        <Fragment>
+                                            <SchoolIcon className={classes.iconTab} />
+                                            <span>&nbsp;Estudios</span>
+                                        </Fragment>
+                                    }
+                                />
+                                <Tab
+                                    label={
+                                        <Fragment>
+                                            <ImportantDevicesIcon className={classes.iconTab} />
+                                            <span>&nbsp;Portafolio</span>
+                                        </Fragment>
+                                    }
+                                />
+                                <Tab
+                                    label={
+                                        <Fragment>
+                                            <PublicIcon className={classes.iconTab} />
+                                            <span>&nbsp;Información</span>
+                                        </Fragment>
+                                    }
+                                />
                             </Tabs>
                         </Hidden>
                         <Hidden
