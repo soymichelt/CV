@@ -100,12 +100,6 @@ export class Theme extends Component {
             
             var myAppBar = document.getElementById('myAppBar');
 
-            /*if(newScrollTop >= 416) {
-                myAppBar.style.marginTop = ((416 - newScrollTop)) + 'px';
-            } else {
-                myAppBar.style.marginTop = '0px';
-            }*/
-
             if(newScrollTop <= 416) {
                 myAppBar.style.boxShadow = '0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)';
             }
@@ -175,28 +169,4 @@ export class Theme extends Component {
 
 const ThemeWithStyles = withStyles(styles)(Theme);
 
-const mapStateToProps = (newState, props) => {
-
-    var { stickyAppBar } = newState;
-
-    if(!stickyAppBar) {
-        stickyAppBar = {
-            scrollTop: 0,
-        };
-    }
-
-    const { scrollTop } = stickyAppBar;
-
-    return ({
-        scrollTop: scrollTop ? scrollTop : 0,
-    });
-
-};
-
-const mapDispatchToProps = (dispatch) => ({
-
-    onScrollTop: (value) => dispatch(onScrollTop(value)),
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ThemeWithStyles);
+export default ThemeWithStyles;
