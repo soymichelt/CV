@@ -1,7 +1,6 @@
 /* Imports Node & ReactJS Elements */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import deepOrange from '@material-ui/core/colors/purple'
@@ -14,9 +13,6 @@ import Suscribe from './../../containers/SuscribeContainer'
 import Footer from './Footer'
 
 import './../theme/Sticky.css'
-
-/* Actions */
-import { onScrollTop } from './../../state/actions/stickyAppBarAction'
 
 const styles = theme => ({
     root: {
