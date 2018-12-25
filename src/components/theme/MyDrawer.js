@@ -43,7 +43,7 @@ export const mailFolderListItems = (
     <ListItem
       button
       component={'a'}
-      href={process.env.PUBLIC_URL + '/res/curriculum.pdf'}
+      href={'https://github.com/soymichelt/cv-cdn/raw/master/pdf-files/curriculum.pdf'}
       target={'_blank'}
     >
       <ListItemIcon>

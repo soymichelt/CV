@@ -136,7 +136,7 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation })
                     <img
                         src={process.env.PUBLIC_URL + '/res/imagoTipo.png'}
                         className={classes.imagoTipo}
-                        alt={'mtraatabladaa94'}
+                        alt={'soymichel'}
                     />
                 </Link>
             </Typography>
@@ -173,7 +173,7 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation })
                     <Button
                         className={classes.appBarButton}
                         component={'a'}
-                        href={process.env.PUBLIC_URL + '/res/curriculum.pdf'}
+                        href={'https://github.com/soymichelt/cv-cdn/raw/master/pdf-files/curriculum.pdf'}
                         target={'_blank'}
                     >
                         Curriculum
