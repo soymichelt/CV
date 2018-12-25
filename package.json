@@ -12,23 +12,30 @@
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.5",
     "react": "^16.4.1",
+    "react-app-rewire-workbox": "^2.0.1",
+    "react-app-rewired": "^1.5.2",
     "react-dom": "^16.4.1",
+    "react-ga": "^2.5.6",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-swipeable-views": "^0.12.14",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^9.2.0",
+    "workbox-webpack-plugin": "^3.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "dev": "react-app-rewired start",
+    "start:rewired": "react-app-rewired start",
+    "start": "npm run build && serve build -s -p ${PORT:-5000}",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "firebase-tools": "^4.2.1",
+    "firebase-tools": "^6.1.2",
     "react-test-renderer": "^16.5.0",
     "redux-devtools-extension": "^2.13.5"
   }
