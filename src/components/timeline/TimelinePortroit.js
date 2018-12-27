@@ -1,14 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
 import { withStyles } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import Hidden from '@material-ui/core/Hidden'
-
-import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
-import SchoolIcon from '@material-ui/icons/School'
 
 const styles = {
     container: {
@@ -60,8 +53,6 @@ const styles = {
         verticalAlign: 'middle',
     },
 };
-
-let tabValue = 0;
 
 const TimelinePortroit = ({ classes }) => {
     return (

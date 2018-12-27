@@ -5,9 +5,6 @@ import {
     EditorState,
     RichUtils,
     getDefaultKeyBinding,
-    convertToRaw,
-    convertFromRaw,
-    SelectionState,
 } from 'draft-js'
 
 import {
