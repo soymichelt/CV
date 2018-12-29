@@ -5,19 +5,16 @@
  */
 
 // Precarga la app
-console.log("Pre-catching")
 self.__precacheManifest = [].concat(self.__precacheManifest || [])
 workbox.precaching.suppressWarnings()
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
 // App Shell
-console.log("Catching index.html")
 workbox.routing.registerNavigationRoute(
     '/index.html'
 )
 
 // Precargar datos de cache y cuando se obtengan de la web se actualizan
-console.log("Catching firestore")
 workbox.routing.registerRoute(
     /^https?:\/\/firestore.googleapis.com\/(.*)/,
     workbox.strategies.staleWhileRevalidate(),
@@ -25,7 +22,6 @@ workbox.routing.registerRoute(
 )
 
 // Last fuentes van con Cache First y vencen al mes
-console.log("Catching fonts")
 workbox.routing.registerRoute(
     /^https?:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/, 
     workbox.strategies.cacheFirst({
@@ -40,7 +36,6 @@ workbox.routing.registerRoute(
 )
 
 // Estrategia por defecto. Todas usan Network First
-console.log("Catch by default")
 workbox.routing.registerRoute(
     /^https?.*/,
     workbox.strategies.networkFirst(),
