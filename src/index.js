@@ -4,7 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Firebase */
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 /* CSS */
 import './index.css';
