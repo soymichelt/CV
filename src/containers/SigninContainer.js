@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formValueSelector } from 'redux-form'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 
 import SigninForm from './../components/signin/SigninForm'
 
