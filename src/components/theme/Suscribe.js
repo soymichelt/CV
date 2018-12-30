@@ -102,6 +102,22 @@ const styles = (theme) => ({
         lineHeight: '32px!important',
         verticalAlign: 'middle',
     },
+    dividerOr: {
+        display: 'flex',
+        alignItems: 'center',
+        margin: '0 auto',
+        marginTop: '18px',
+        maxWidth: '320px',
+    },
+    divider: {
+        flex: 1,
+        height: 1,
+        background: '#EFEFEF',
+    },
+    or: {
+        width: '48px',
+        textAlign: 'center',
+    },
     socialAvatar: {
         width: '32px',
         height: '32px',
@@ -200,6 +216,11 @@ let Suscribe = ({
                                 }
                             </Grid>
                         </Grid>
+                        <div className={classes.dividerOr}>
+                            <div className={classes.divider}></div>
+                            <div className={classes.or}>o</div>
+                            <div className={classes.divider}></div>
+                        </div>
                         <h2
                             className={classes.followMeCaption}
                         >
