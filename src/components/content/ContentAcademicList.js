@@ -119,7 +119,7 @@ export class ContentAcademicList extends Component {
                     onListItemClick={this.handleListItemClick}
                 />
 
-                <Grid className={classes.containerList} container spacing={16} justify={'center'}>
+                <Grid className={classes.containerList} container spacing={8} justify={'center'}>
                     {this.renderAcademicList(list, stateList)}
                 </Grid>
 

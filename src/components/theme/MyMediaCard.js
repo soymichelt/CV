@@ -16,8 +16,8 @@ import blueGrey from '@material-ui/core/colors/blueGrey'
 
 const styles = theme => ({
     card: {
-        width: 345,
-        maxWidth: 345,
+        width: 340,
+        maxWidth: 340,
     },
     header: {
         display: 'block',
@@ -71,10 +71,6 @@ const styles = theme => ({
         marginLeft: 2,
         marginRight: 2,
     },
-    /*iconProfile: {
-        backgroundColor: blue[50],
-        color: blue[500],
-    },*/
 });
 
 const MyMediaCard = ({classes, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardFavSelected, cardFavs, onClickFav, cardShares, onClickShare}) => (
