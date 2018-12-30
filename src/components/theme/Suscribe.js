@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
 import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import './Suscribe.css'
 
@@ -61,18 +62,6 @@ const styles = (theme) => ({
         padding: '10px 12px',
         width: 'calc(100% - 24px)',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
-        fontFamily: [
-            '-apple-system',
-            'BlinkMacSystemFont',
-            '"Segoe UI"',
-            'Roboto',
-            '"Helvetica Neue"',
-            'Arial',
-            'sans-serif',
-            '"Apple Color Emoji"',
-            '"Segoe UI Emoji"',
-            '"Segoe UI Symbol"',
-        ].join(','),
         '&:focus': {
             borderColor: '#aaa',
             boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
@@ -81,12 +70,23 @@ const styles = (theme) => ({
     emailLabel: {
         fontSize: 18,
     },
+    wrapperButton: {
+        position: 'relative',
+    },
     suscribeButton: {
         width: '100%',
         height: '41px',
         background: 'linear-gradient(to right, ' + lightBlue[800] + ', ' + lightBlue[600] +')',
         color: '#FFFFFF',
         borderBottom: '4px solid ' + lightBlue[900],
+    },
+    progress: {
+        position: 'absolute',
+        color: '#FFF',
+        top: '50%',
+        left: '50%',
+        marginTop: -12,
+        marginLeft: -12,
     },
     followMeCaption: {
         margin: 0,
@@ -111,7 +111,16 @@ const styles = (theme) => ({
     },
 });
 
-let Suscribe = ({ classes }) => {
+let Suscribe = ({
+    classes,
+    onEmailChange,
+    onEmailKeyDown,
+    onSuscribeClick,
+    email,
+    state,
+    emailInvalidateError,
+    suscribeMessage
+}) => {
 
     return (
         <section
@@ -161,10 +170,15 @@ let Suscribe = ({ classes }) => {
                                         }}
                                         type={'email'}
                                         placeholder={'Tu dirección de correo electrónico'}
+                                        onChange={onEmailChange}
+                                        value={email}
+                                        onKeyDown={onEmailKeyDown}
+                                        disabled={ state === 1 ? true : false }
                                     />
                                 </FormControl>
                             </Grid>
                             <Grid
+                                className={classes.wrapperButton}
                                 item
                                 xs={5}
                                 sm={4}
@@ -172,10 +186,18 @@ let Suscribe = ({ classes }) => {
                             >
                                 <Button
                                     variant="contained"
-                                    className={classes.suscribeButton}
+                                    className={ classes.suscribeButton }
+                                    onClick={ onSuscribeClick }
+                                    disabled={ state === 1 ? true : false }
                                 >
-                                    Suscribirse
+                                    {state !== 1 ? 'Suscribirse' : 'Guardando...'}
                                 </Button>
+                                {
+                                    state === 1 && <CircularProgress
+                                        size={24}
+                                        className={classes.progress}
+                                    />
+                                }
                             </Grid>
                         </Grid>
                         <h2
