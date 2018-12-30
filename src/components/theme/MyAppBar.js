@@ -83,7 +83,7 @@ const styles = theme => ({
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
-            width: 120,
+            width: 115,
             '&:focus': {
             width: 160,
             },
