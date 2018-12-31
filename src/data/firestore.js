@@ -27,6 +27,10 @@ export const connect = (enablePersistence = false) => {
     else {
         _db = firebase.firestore()
     }
+    
+    const settings = {/* your settings... */ timestampsInSnapshots: true}
+    _db.settings(settings)
+
 }
 
 export const getDb = () => {
