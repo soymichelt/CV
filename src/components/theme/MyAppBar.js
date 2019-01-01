@@ -85,7 +85,7 @@ const styles = theme => ({
         [theme.breakpoints.up('sm')]: {
             width: 115,
             '&:focus': {
-            width: 160,
+                width: 190,
             },
         },
     },
