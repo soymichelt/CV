@@ -1,3 +1,5 @@
+import { getSuscriptionsQuery } from './../../data/suscribeData'
+
 export const SET_EMAIL_TO_SUSCRIBE          =   'SET_EMAIL_TO_SUSCRIBE';
 export const SET_ERROR_OF_EMAIL_INVALIDATE  =   'SET_ERROR_IN_EMAIL';
 export const SET_LOADING_AT_SUSCRIBE        =   'SET_LOADING_AT_SUSCRIBE';
@@ -18,10 +20,7 @@ export const suscribe = (email) => {
 
         dispatch(showLoadingSuscribe())
 
-        const { getDb } = require('./../../data/firestore')
-        const db = getDb()
-
-        db.collection('suscriptions').add({
+        getSuscriptionsQuery().add({
             date:       new Date(),
             confirm:    false,
             email:      email,
