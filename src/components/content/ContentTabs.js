@@ -11,7 +11,7 @@ import PublicIcon from '@material-ui/icons/Public'
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
 import SchoolIcon from '@material-ui/icons/School'
 
-import ContentAcademicList from './ContentAcademicList'
+import ContentAcademicList from './../../containers/AcademicListContainer'
 import ContentProjectsList from './ContentProjectsList'
 import ContentPersonalProfile from './ContentPersonalProfile'
 
