@@ -27,7 +27,6 @@
   },
   "scripts": {
     "dev": "react-app-rewired start",
-    "start:rewired": "react-app-rewired start",
     "start": "npm run build && serve build -s",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",

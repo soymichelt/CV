@@ -3,7 +3,6 @@
 */
 import { combineReducers } from 'redux'
 
-import { reducer as formReducer } from 'redux-form'
 import { contentTabsReducer } from './contentTabsReducer'
 import { academicListReducer } from './academicListReducer'
 import { stickyAppBarReducer } from './stickyAppBarReducer'
@@ -14,7 +13,6 @@ import { suscribeReducer } from './suscribeReducer'
 import { timelineListReducer } from './timelineListReducer'
 
 const rootReducer = combineReducers({
-    form:               formReducer,
     academicList:       academicListReducer,
     projectList:        projectListReducer,
     contentTabs:        contentTabsReducer,
