@@ -4,8 +4,6 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-//import { formValueSelector } from 'redux-form'
-//import firebase from 'firebase'
 
 import ForgivePasswordForm from './../components/forgivePassword/ForgivePasswordForm'
 
