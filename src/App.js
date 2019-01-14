@@ -11,6 +11,7 @@ import ForgivePassword from './pages/account/ForgivePassword'
 import Timeline from './pages/timeline/Timeline'
 import Article from './pages/timeline/Article'
 import EditorTest from './pages/editor/Test'
+import TimelinePost from './pages/timeline/Post'
 
 class App extends Component {
 
@@ -27,8 +28,9 @@ class App extends Component {
                         <Route exact path='/Account/Signin' component={Signin} />
                         <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
                         <Route exact path='/Timeline' component={Timeline} />
-                        <Route path='/Timeline/Article' component={Article} />
-                        <Route path='/EditorTest' component={EditorTest} />
+                        <Route exact path='/Timeline/Article' component={Article} />
+                        <Route exact path='/EditorTest' component={EditorTest} />
+                        <Route exact path='/Timeline/Post' component={TimelinePost} />
                     </div>
                 </BrowserRouter>
             </Provider>

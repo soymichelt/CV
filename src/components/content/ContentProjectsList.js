@@ -2,31 +2,16 @@
     Portafolio Personal
 */
 
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import firebase from 'firebase/app'
-import 'firebase/firestore'
 
 import MyCardMedia from './../theme/MyMediaCard'
 import ContentCategoryFilter from './ContentCategoryFilter'
 import SimpleDialog from './../theme/SimpleDialog'
 import ContentLoading from './ContentLoading'
 import NotFound from './../theme/NotFound'
-
-/*
-    Accions
-*/
-import {
-    setLoadingProjectList,
-    setProjectList,
-    setErrorProjectList,
-    filterByCategory,
-    openDialogSortBy,
-    onClickSortItem,
-} from './../../state/actions/projectListAction'
 
 const styles = {
     containerList: {
@@ -36,255 +21,115 @@ const styles = {
     },
 };
 
-export class ContentProjectsList extends Component {
+const ContentProjectList = (props) => {
 
-    static propTypes = {
-        classes: PropTypes.object.isRequired,
-    };
+    const {
+        classes,
+        stateList,
+        list,
+        categories,
+        categorySelected,
+        isOpenDialogOrderBy,
+        itemsForSort,
+        onDialogSortOpen,
+        onDialogSortClose,
+        onCategoryClick,
+        onListItemClick,
+        addFav,
+    } = props;
 
-    categories = [
-        {
-            uid: '0',
-            name: 'Todo'
-        },
-        {
-            uid: '1',
-            name: 'Personal'
-        },
-        {
-            uid: '2',
-            name: 'Empresarial'
-        },
-    ];
+    return (
 
-    itemsBySort = [
-        {
-            uid: '0',
-            label: 'Sin ordenar',
-        },
-        {
-            uid: '1',
-            label: 'Nombres de proyecto',
-        },
-        {
-            uid: '2',
-            label: 'Favoritos',
-        },
-    ];
+        <div
+            className={'contentAcademicListSection'}
+        >
 
-    handleDialogSortOpen = () => {
-        this.props.openDialogSortBy(true);
-    };
+            <ContentCategoryFilter
+                categories={ categories }
+                active={ categorySelected ? categorySelected : '0' }
+                handleSortClick={ onDialogSortOpen }
+                handleCategoryClick={ onCategoryClick }
+            />
 
-    handleDialogSortClose = () => {
-        this.props.openDialogSortBy(false);
-    };
+            <SimpleDialog
+                title={ 'Ordenar por...' }
+                list={ itemsForSort }
+                open={ isOpenDialogOrderBy }
+                onClose={ onDialogSortClose }
+                onListItemClick={ onListItemClick }
+            />
 
-    handleCategoryClick = (category) => {
-        this.props.filterByCategory(category);
-    };
-
-    handleListItemClick = (orderBy) => {
-        this.props.onClickSortItem(orderBy);
-    };
-
-    render() {
-
-        const { classes, stateList, list, category, isOpenDialogOrderBy } = this.props;
-
-        return (
-
-            <div
-                className={'contentAcademicListSection'}
+            <Grid
+                className={classes.containerList}
+                container
+                spacing={8}
+                justify={'center'}
             >
+                {renderProjectList(list, stateList, addFav)}
+            </Grid>
 
-                <ContentCategoryFilter
-                    categories={this.categories}
-                    active={category ? category : '0'}
-                    handleSortClick={this.handleDialogSortOpen}
-                    handleCategoryClick={this.handleCategoryClick}
-                />
+        </div>
 
-                <SimpleDialog
-                    title={'Ordenar por...'}
-                    list={[
-                        {
-                            uid: '0',
-                            label: 'Sin ordenar',
-                        },
-                        {
-                            uid: '1',
-                            label: 'Nombres de proyecto',
-                        },
-                        {
-                            uid: '2',
-                            label: 'Favoritos',
-                        },
-                    ]}
-                    open={isOpenDialogOrderBy}
-                    onClose={this.handleDialogSortClose}
-                    onListItemClick={this.handleListItemClick}
-                />
-
-                <Grid className={classes.containerList} container spacing={8} justify={'center'}>
-                    {this.renderProjectList(list, stateList)}
-                </Grid>
-
-            </div>
-
-        );
-
-    }
-
-    componentDidMount() {
-
-        this.getProjectList();
-
-    }
-
-    renderProjectList = (list, stateList) => {
-        var renderList;
-        switch (stateList) {
-            case 0:
-                renderList = (
-                    <ContentLoading />
-                );
-                break;
-            case 1:
-                renderList = (
-                    list && list.length > 0 ?
-                        list.map((item) => {
-
-                            return (
-                                <Grid
-                                    key={item.uid}
-                                    item
-                                >
-                                    <MyCardMedia
-                                        key={item.uid}
-                                        photoURL={item.photoURL}
-                                        photoDescription={item.photoURL}
-                                        cardTitle={item.cardTitle}
-                                        cardDescription={item.cardDescription}
-                                    />
-                                </Grid>
-
-                            )
-
-                        })
-                    :
-                        <NotFound
-                            title={'Por ahora no hay datos :('}
-                            description={'Al parecer aún no se ha ingresado proyectos al portafolio. Pero pronto los añadiremos.'}
-                        />
-                );
-                break;
-            case 2:
-                renderList = (
-                    <NotFound
-                        title={'Ha ocurrido un error :('}
-                        description={'Lo sentimos actualmente estamos teniendo problemas al obtener los datos. Estamos trabajando en ello.'}
-                    />
-                );
-                console.log("Error: 2");
-                break;
-            default:
-                break;
-        }
-        return (renderList);
-    };
-
-    getProjectList = () => {
-
-        this.props.setLoadingProjectList();
-
-        var db = firebase.firestore();
-
-        var projects = [];
-
-        var query = db.collection('projects');
-
-        /*if(this.state.category){
-            if(this.state.category === '0') {
-                query.where('category', '==', this.state.category);
-            }
-        }*/
-
-        query.onSnapshot((snapshot) => {
-
-            this.props.setLoadingProjectList();
-
-            var counter = 0;
-
-            snapshot.docChanges().forEach((change) => {
-
-                const { doc } = change;
-
-                projects[counter] = {
-                    uid: doc.id,
-                    photoURL: doc.data().photoURL,
-                    photoDescription: doc.data().name,
-                    cardTitle: doc.data().name,
-                    cardDescription: doc.data().description,
-                };
-
-                counter++;
-
-            });
-
-            this.upgradeProjects(projects);
-
-        }, function(error) {
-
-            this.props.setErrorProjectList();
-
-        });
-
-    };
-
-    upgradeProjects = (projects) => {
-
-        this.props.setProjectList(projects);
-
-    };
+    );
 
 }
 
-const mapStateToProps = (newState, props) => {
-    
-    var { projectList } = newState;
-    
-    if(!projectList) {
-        projectList = {
-            state: 0,
-            list: [],
-            category: '0',
-            isOpenDialogOrderBy: false,
-            itemToSort: '0',
-        };
-    }
-    
-    const { state, list, category, isOpenDialogOrderBy, itemToSort } = projectList;
-    
-    return {
-        stateList: state,
-        list,
-        category,
-        isOpenDialogOrderBy: isOpenDialogOrderBy ? isOpenDialogOrderBy : false,
-        itemToSort,
-    };
+ContentProjectList.propTypes = {
+    classes: PropTypes.object.isRequired,
+}
 
+const renderProjectList = (list, stateList, addFav) => {
+    var renderList;
+    switch (stateList) {
+        case 0:
+            renderList = (
+                <ContentLoading />
+            );
+            break;
+        case 1:
+            renderList = (
+                list && list.length > 0 ?
+                    list.map((item) => {
+
+                        return (
+                            <Grid
+                                key={item.uid}
+                                item
+                            >
+                                <MyCardMedia
+                                    key={item.uid}
+                                    photoURL={item.photoURL}
+                                    photoDescription={item.photoURL}
+                                    cardTitle={item.cardTitle}
+                                    cardDescription={item.cardDescription}
+                                    cardFavs={item.cardFavs}
+                                    onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
+                                    cardShares={item.cardShares}
+                                />
+                            </Grid>
+
+                        )
+
+                    })
+                :
+                    <NotFound
+                        title={'Por ahora no hay datos :('}
+                        description={'Al parecer aún no se ha ingresado proyectos al portafolio. Pero pronto los añadiremos.'}
+                    />
+            );
+            break;
+        case 2:
+            renderList = (
+                <NotFound
+                    title={'Ha ocurrido un error :('}
+                    description={'Lo sentimos actualmente estamos teniendo problemas al obtener los datos. Estamos trabajando en ello.'}
+                />
+            );
+            break;
+        default:
+            break;
+    }
+    return (renderList);
 };
 
-const mapDispatchToProps = dispatch => ({
-    setLoadingProjectList: () => dispatch(setLoadingProjectList()),
-    setProjectList: (list) => dispatch(setProjectList(list)),
-    setErrorProjectList: () => dispatch(setErrorProjectList()),
-    filterByCategory: (category) => dispatch(filterByCategory(category)),
-    openDialogSortBy: (isOpen) => dispatch(openDialogSortBy(isOpen)),
-    onClickSortItem: (itemToSort) => dispatch(onClickSortItem(itemToSort)),
-});
-
-const ContentProjectListWithStyles = withStyles(styles)(ContentProjectsList);
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContentProjectListWithStyles);
+export default withStyles(styles)(ContentProjectList)

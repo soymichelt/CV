@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import firebase from 'firebase/app'
-import 'firebase/firestore'
 
 /*
     Actions
@@ -10,13 +8,13 @@ import {
     filterByCategory,
     openDialogSortBy,
     onClickSortItem,
-    getAcademicList,
+    getProjectList,
     addFav,
-} from './../state/actions/academicListAction'
+} from './../state/actions/projectListAction'
 
-import ContentAcademicList from './../components/content/ContentAcademicList'
+import ContentProjectList from './../components/content/ContentProjectsList'
 
-class AcademicListContainer extends Component {
+class ProjectListContainer extends Component {
 
     categories = [
         {
@@ -25,26 +23,22 @@ class AcademicListContainer extends Component {
         },
         {
             uid: '1',
-            name: 'Grado'
+            name: 'Personal'
         },
         {
             uid: '2',
-            name: 'Certificado'
-        },
-        {
-            uid: '3',
-            name: 'Curso'
+            name: 'Empresarial'
         },
     ];
 
-    itemsForSort = [
+    itemsBySort = [
         {
             uid: '0',
             label: 'Sin ordenar',
         },
         {
             uid: '1',
-            label: 'Nombre de Estudio',
+            label: 'Nombres de proyecto',
         },
         {
             uid: '2',
@@ -79,10 +73,8 @@ class AcademicListContainer extends Component {
             addFav,
         } = this.props;
 
-        console.log(category)
-
         return (
-            <ContentAcademicList
+            <ContentProjectList
                 onDialogSortOpen={this.handleDialogSortOpen}
                 onDialogSortClose={this.handleDialogSortClose}
                 onCategoryClick={this.handleCategoryClick}
@@ -97,30 +89,11 @@ class AcademicListContainer extends Component {
                 addFav={addFav}
             />
         )
-
     }
-
-    createFav = (key, value, ipClient) => {
-        
-        var db = firebase.firestore();
-
-        db.collection('studies').doc(key).collection('favs').add({
-            date: new Date(),
-            ipClient: ipClient,
-            fav: value,
-        })
-        .then((docRef) => {
-            console.log(docRef);
-        })
-        .catch((error) => {
-            console.error('Error: ', error);
-        });
-
-    };
 
     componentDidMount() {
 
-        this.props.getAcademicList()
+        this.props.getProjectList()
 
     }
 
@@ -129,7 +102,7 @@ class AcademicListContainer extends Component {
         const { category } = this.props;
 
         if(category) {
-            this.props.getAcademicList()
+            this.props.getProjectList()
         }
 
     }
@@ -138,10 +111,10 @@ class AcademicListContainer extends Component {
 
 const mapStateToProps = (newState, props) => {
     
-    var { academicList } = newState;
+    var { projectList } = newState;
     
-    if(!academicList) {
-        academicList = {
+    if(!projectList) {
+        projectList = {
             state: 0,
             list: [],
             category: '0',
@@ -150,7 +123,7 @@ const mapStateToProps = (newState, props) => {
         };
     }
     
-    const { state, list, category, isOpenDialogOrderBy, itemToSort } = academicList;
+    const { state, list, category, isOpenDialogOrderBy, itemToSort } = projectList;
     
     return {
         stateList: state,
@@ -164,12 +137,12 @@ const mapStateToProps = (newState, props) => {
 
 const mapDispatchToProps = dispatch => ({
 
-    filterByCategory:       (category)              =>      dispatch(filterByCategory(category)),
-    openDialogSortBy:       (isOpen)                =>      dispatch(openDialogSortBy(isOpen)),
-    onClickSortItem:        (itemToSort)            =>      dispatch(onClickSortItem(itemToSort)),
-    getAcademicList:        ()                      =>      dispatch(getAcademicList()),
-    addFav:                 (studyId, IP, value)    =>      dispatch(addFav(studyId, IP, value)),
+    filterByCategory:   (category)                          => dispatch(filterByCategory(category)),
+    openDialogSortBy:   (isOpen)                            => dispatch(openDialogSortBy(isOpen)),
+    onClickSortItem:    (itemToSort)                        => dispatch(onClickSortItem(itemToSort)),
+    getProjectList:     (category = '', unsuscribe = false) => dispatch(getProjectList(category, unsuscribe)),
+    addFav:             (studyId, IP, value)                => dispatch(addFav(studyId, IP, value)),
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AcademicListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectListContainer)

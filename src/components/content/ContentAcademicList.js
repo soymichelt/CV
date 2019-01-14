@@ -32,11 +32,11 @@ const ContentAcademicList = (props) => {
         categorySelected,
         isOpenDialogOrderBy,
         itemsForSort,
-        itemToSort,
         onDialogSortOpen,
         onDialogSortClose,
         onCategoryClick,
-        onListItemClick
+        onListItemClick,
+        addFav,
     } = props;
 
     return (
@@ -66,7 +66,7 @@ const ContentAcademicList = (props) => {
                 spacing={ 8 }
                 justify={ 'center' }
             >
-                {renderAcademicList(list, stateList)}
+                {renderAcademicList(list, stateList, addFav)}
             </Grid>
 
         </div>
@@ -75,7 +75,7 @@ const ContentAcademicList = (props) => {
 
 };
 
-const renderAcademicList = (list, stateList) => {
+const renderAcademicList = (list, stateList, addFav) => {
 
     var renderList;
     switch (stateList) {
@@ -106,7 +106,7 @@ const renderAcademicList = (list, stateList) => {
                                     cardTitle={item.cardTitle}
                                     cardSubtitle={item.cardSubtitle}
                                     cardFavs={item.cardFavs}
-                                    onClickFav={() => this.createFav(item.uid, true, '10.1.184.47')}
+                                    onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
                                     cardShares={item.cardShares}
                                 />
                             </Grid>
