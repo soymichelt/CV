@@ -1,6 +1,6 @@
 ![Foto de Perfil](https://github.com/soymichelt/CV/blob/master/public/res/circleProfile64x64.png)
 
-Este es mi blog personal y está desarrollado con el en React con [Create React App](https://github.com/facebookincubator/create-react-app), además de otras herramientas de Frontend y Backend. Si tienes alguna sugerencia o crees que el sitio presenta un problema puedes crear un [Issue](https://github.com/soymichelt/CV/issues/new), estaré interesado por leer tu recomendación.
+Este es mi blog personal y está desarrollado en React con [Create React App](https://github.com/facebookincubator/create-react-app), además de otras herramientas de Frontend y Backend. Si tienes alguna sugerencia o crees que el sitio presenta un problema puedes crear un [Issue](https://github.com/soymichelt/CV/issues/new), estaré interesado por leer tu recomendación.
 
 ## Listado de herramientas empleadas en el desarrollo
 
@@ -12,6 +12,7 @@ Este es mi blog personal y está desarrollado con el en React con [Create React 
 - [GitHub](https://github.com)
 
 ## Información de Contacto
+
 - [Correo electrónico: mtraatabladaa94@gmail.com](mailto:mtraatabladaa94@gmail.com)
 - [Facebook](https://www.facebook.com/mtraatabladaa94)
 - [Twitter](https://twitter.com/soymichelt)
