@@ -4,8 +4,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Redirect, Link } from 'react-router-dom'
-import { Field, reduxForm } from 'redux-form'
-import WrappedComponent from '../theme/WrappedComponent'
 import classnames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -113,7 +111,7 @@ let ForgivePasswordForm = ({ classes, isUserAuth, onClickAuth, message, isError 
                                 Correo electrónico
                             </InputLabel>
 
-                            <Field
+                            <CustomInput
                                 className={'form-input'}
                                 type={'email'}
                                 id={'email'}
@@ -126,7 +124,6 @@ let ForgivePasswordForm = ({ classes, isUserAuth, onClickAuth, message, isError 
                                         <AccountCircleIcon />
                                     </InputAdornment>
                                 }
-                                component={CustomInput}
                                 shrink={'true'}
                             />
 
@@ -195,8 +192,6 @@ ForgivePasswordForm.propTypes = {
     message: PropTypes.string,
     isError: PropTypes.bool,
 };
-
-ForgivePasswordForm = WrappedComponent(reduxForm({ form: 'forgivePasswordForm' })(ForgivePasswordForm));
 
 ForgivePasswordForm = withStyles(styles)(ForgivePasswordForm);
 
