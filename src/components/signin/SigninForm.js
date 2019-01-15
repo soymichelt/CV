@@ -4,8 +4,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Redirect, Link } from 'react-router-dom'
-import { Field, reduxForm } from 'redux-form'
-import WrappedComponent from './../../components/theme/WrappedComponent'
 import classnames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -50,8 +48,14 @@ const styles = (theme) => ({
     separator: {
         marginTop: 24,
     },
+    buttonContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
     signinButton: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        backgroundColor: '#d5d5d5',
+        color: '#fff',
     },
     changePassword: {
         color: blueGrey[800],
@@ -100,11 +104,9 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                                 E-mail o teléfono
                             </InputLabel>
 
-                            <Field
+                            <CustomInput
                                 className={'form-input'}
                                 type={'email'}
-                                id={'email'}
-                                name={'email'}
                                 startAdornment={
                                     <InputAdornment
                                         className={'form-input-adornment'}
@@ -113,7 +115,6 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                                         <AccountCircleIcon />
                                     </InputAdornment>
                                 }
-                                component={CustomInput}
                                 shrink={'true'}
                             />
 
@@ -129,11 +130,9 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                             >
                                 Contraseña
                             </InputLabel>
-                            <Field
+                            <CustomInput
                                 className={'form-input'}
                                 type={'password'}
-                                id={'password'}
-                                name={'password'}
                                 startAdornment={
                                     <InputAdornment
                                         className={'form-input-adornment'}
@@ -142,17 +141,21 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                                         <LockIcon />
                                     </InputAdornment>
                                 }
-                                component={CustomInput}
                                 shrink={'true'}
                             />
                         </FormControl>
 
                         <section
-                            className={classes.separator}
+                            className={
+                                classnames(
+                                    classes.separator,
+                                    classes.buttonContainer,
+                                )
+                            }
                         >
                             <Button
                                 variant="contained"
-                                color="secondary"
+                                color="inherit"
                                 className={classes.signinButton}
                                 onClick={onClickAuth}
                             >
@@ -165,7 +168,7 @@ let SigninForm = ({ classes, isUserAuth, onClickAuth }) => {
                                 component={Link}
                                 to={'/Account/ForgivePassword'}
                             >
-                                ¿Olvidó contraseña?
+                                ¿No puedes entrar?
                             </Button>
                         </section>
 
@@ -189,8 +192,6 @@ SigninForm.propTypes = {
     classes: PropTypes.object.isRequired,
     isUserAuth: PropTypes.bool.isRequired,
 };
-
-SigninForm = WrappedComponent(reduxForm({ form: 'signinForm' })(SigninForm));
 
 SigninForm = withStyles(styles)(SigninForm);
 
