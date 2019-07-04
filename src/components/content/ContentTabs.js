@@ -12,7 +12,7 @@ import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices'
 import SchoolIcon from '@material-ui/icons/School'
 
 import ContentAcademicList from './../../containers/AcademicListContainer'
-import ContentProjectsList from './ContentProjectsList'
+import ContentProjectsList from './../../containers/ProjectListContainer'
 import ContentPersonalProfile from './ContentPersonalProfile'
 
 import { onChangeTabIndex } from './../../state/actions/contentTabsAction'

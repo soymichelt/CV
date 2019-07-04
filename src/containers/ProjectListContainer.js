@@ -31,7 +31,7 @@ class ProjectListContainer extends Component {
         },
     ];
 
-    itemsBySort = [
+    itemsForSort = [
         {
             uid: '0',
             label: 'Sin ordenar',
@@ -127,7 +127,7 @@ const mapStateToProps = (newState, props) => {
     
     return {
         stateList: state,
-        list,
+        list: list ? list : [],
         category,
         isOpenDialogOrderBy: isOpenDialogOrderBy ? isOpenDialogOrderBy : false,
         itemToSort,

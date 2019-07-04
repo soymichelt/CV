@@ -55,11 +55,11 @@ const errorInAddToFavorite = (studyId) => setErrorInAddToFavorite({
     },
 })
 
-export const getAcademicList = (category = '', unsuscribe = false) => {
+export const getAcademicList = (unsuscribe = false) => {
     return (dispatch, getState) => {
         dispatch(loadingAcademicList())
 
-        const query = getStudiesQuery(category)
+        const query = getStudiesQuery()
 
         if(!unsuscribe) {
 
@@ -95,6 +95,7 @@ const extractStudyData = (doc) => ({
     cardFavs:           doc.data().favsCount,
     cardShares:         doc.data().sharesCount,
     cardDescription:    doc.data().description,
+    category:           doc.data().category,
 })
 
 const extractStudiesList = (getState) => {
@@ -107,29 +108,30 @@ const extractStudiesList = (getState) => {
 }
 
 const updateStudies = (studies, data, type) => {
-    if(type === 'added') {
-        studies.unshift(data)
-    } else {
 
-        const studyToChange = studies.find(item => item.uid === data.uid)
+    const indexStudyInArray = studies.findIndex(study => study.uid === data.uid);
 
-        let indexStudyInArray = studies.indexOf(studyToChange)
+    switch(type) {
 
-        console.log(indexStudyInArray)
-
-        if(type === 'modified') {
-            if(indexStudyInArray > -1) {
-                studies[indexStudyInArray] = data
-            } else {
-                studies.unshift(data)
+        case 'added':
+        case 'modified': {
+            if(indexStudyInArray === -1) {
+                studies.unshift(data);
             }
-        }
-        else if(type === 'remove') {
-            if(indexStudyInArray > -1) {
-                studies.splice(indexStudyInArray, 1)
+            else {
+                studies[indexStudyInArray] = data;
             }
+            break;
         }
+        case 'removed': {
+            if(indexStudyInArray !== -1) {
+                studies.splice(indexStudyInArray, 1);
+            }
+            break;
+        }
+
     }
+
 }
 
 const loadingAcademicList = () => {

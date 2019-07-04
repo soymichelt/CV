@@ -13,26 +13,10 @@ export const academicListReducer = (state = {}, action) => {
 
     switch(action.type) {
 
-        case SET_LOADING_DATA_IN_ACADEMIC_LIST: {
-            const { academicList } = action.payload;
-            const newState = { ...state, ...academicList }
-            return newState;
-        }
-        case SET_DATA_IN_ACADEMIC_LIST: {
-            const { academicList } = action.payload;
-            const newState = { ...state, ...academicList }
-            return newState;
-        }
-        case SET_ERROR_IN_ACADEMIC_LIST: {
-            const { academicList } = action.payload;
-            const newState = { ...state, ...academicList }
-            return newState;
-        }
-        case SET_OPEN_DIALOG_ORDER_BY: {
-            const { academicList } = action.payload;
-            const newState = { ...state, ...academicList }
-            return newState;
-        }
+        case SET_LOADING_DATA_IN_ACADEMIC_LIST:
+        case SET_DATA_IN_ACADEMIC_LIST:
+        case SET_ERROR_IN_ACADEMIC_LIST:
+        case SET_OPEN_DIALOG_ORDER_BY:
         case SET_FILTER_BY_CATEGORY: {
             const { academicList } = action.payload;
             const newState = { ...state, ...academicList }
