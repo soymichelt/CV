@@ -64,13 +64,26 @@ class AcademicListContainer extends Component {
         this.props.filterByCategory(category);
     };
 
-    handleListItemClick = (orderBy) => {
-        this.props.onClickSortItem(orderBy);
+    handleListItemClick = (sortBy) => {
+        console.log("handleListItemClick", sortBy)
+        this.props.onClickSortItem(sortBy);
+    };
+
+    getAcademicListFilter = (category, sortBy, studies) => {
+
+        if(!studies) return [];
+
+        if((!category || category === '0') && (!sortBy || sortBy === '0')) return studies;
+
+        let studiesFilter = this.getAcademicListByCategory(category, studies);
+
+        studiesFilter = this.getAcademicListSort(sortBy, studiesFilter);
+
+        return studiesFilter;
+
     };
 
     getAcademicListByCategory = (category, studies) => {
-
-        if(!studies) return [];
 
         if(!category || category === '0') return studies;
 
@@ -80,9 +93,40 @@ class AcademicListContainer extends Component {
 
     };
 
-    render() {
+    getAcademicListSort = (sortBy, studies) => {
 
-        console.log("Se hizo render hp!!!")
+        if(!sortBy || sortBy === '0') return studies;
+
+        return studies.sort((prevStudy, nextStudy) => {
+            switch(sortBy) {
+                case '1': {
+
+                    const prevStudyName = prevStudy.cardTitle.toLowerCase();
+                    const nextStudyName =  nextStudy.cardTitle.toLowerCase();
+
+                    if(prevStudyName < nextStudyName) return -1;
+
+                    if(prevStudyName > nextStudyName) return 1;
+
+                    return 0;
+
+                }
+                case '2': {
+
+                    if(prevStudy.cardFavs < nextStudy.cardFavs) return -1;
+
+                    if(prevStudy.cardFavs > nextStudy.cardFavs) return 1;
+
+                    return 0;
+
+                }
+                default: return 0;
+            }
+        });
+        
+    };
+
+    render() {
 
         const {
             stateList,
@@ -100,7 +144,7 @@ class AcademicListContainer extends Component {
                 onCategoryClick={this.handleCategoryClick}
                 onListItemClick={this.handleListItemClick}
                 stateList={stateList}
-                list={this.getAcademicListByCategory(category, list)}
+                list={this.getAcademicListFilter(category, itemToSort, list)}
                 categories={this.categories}
                 categorySelected={category}
                 itemsForSort={this.itemsForSort}

@@ -129,6 +129,7 @@ const updateStudies = (studies, data, type) => {
             }
             break;
         }
+        default: break;
 
     }
 
@@ -186,10 +187,10 @@ export const openDialogSortBy = (isOpen) => {
 };
 
 export const onClickSortItem = (itemToSort) => {
-
+    
     return setItemToSort({
         academicList: {
-            itemToSort,
+            itemToSort: itemToSort,
         },
     });
     
