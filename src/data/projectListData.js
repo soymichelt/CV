@@ -1,16 +1,10 @@
 import { getDb } from './firestore'
 
-export const getProjectsQuery = (category = '') => {
+export const getProjectsQuery = () => {
     const db = getDb()
-    if(category) {
-        db.collection('projects').where('category', '==', category)
-    }
-    else {
-        return db.collection('projects')
-    }
+    return db.collection('posts').where("postType", "==", "projects")
 }
 
 export const getFavsForProjectsQuery = (studyId) => {
-    const db = getDb()
-    return db.collection('projects').doc(studyId).collection('favs')
+    return this.getProjectsQuery().doc(studyId).collection('favs')
 }

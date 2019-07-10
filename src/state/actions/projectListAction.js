@@ -58,11 +58,11 @@ const errorInAddToFavorite = (projectId) => setErrorInAddToFavorite({
     },
 })
 
-export const getProjectList = (category = '', unsuscribe = false) => {
+export const getProjectList = (unsuscribe = false) => {
     return (dispatch, getState) => {
         dispatch(loadingProjectList())
 
-        const query = getProjectsQuery(category)
+        const query = getProjectsQuery()
 
         if(!unsuscribe) {
 
@@ -70,13 +70,13 @@ export const getProjectList = (category = '', unsuscribe = false) => {
             query.onSnapshot((snapshot) => {
 
                 dispatch(loadingProjectList())
-                const studies = extractProjectsList(getState)
+                const projects = extractProjectsList(getState)
                 snapshot.docChanges().forEach((change) => {
                     const { doc } = change;
                     const data = extractProjectData(doc)
-                    updateProjects(studies, data, change.type)
+                    updateProjects(projects, data, change.type)
                 });
-                dispatch(pushProjectList(studies))
+                dispatch(pushProjectList(projects))
     
             }, (error) => {
                 dispatch(errorProjectList())
@@ -88,7 +88,7 @@ export const getProjectList = (category = '', unsuscribe = false) => {
     }
 }
 
-const extractProjectData = (doc) => ({
+/*const extractProjectData = (doc) => ({
     uid:                doc.id,
     avatarURL:          doc.data().avatarURL,
     photoURL:           doc.data().photoURL,
@@ -98,6 +98,18 @@ const extractProjectData = (doc) => ({
     cardFavs:           doc.data().favsCount,
     cardShares:         doc.data().sharesCount,
     cardDescription:    doc.data().description,
+})*/
+const extractProjectData = (doc) => ({
+    uid:                doc.id,
+    avatarURL:          doc.data().avatarURL,
+    createdDate:        doc.data().createdDate,
+    data:               doc.data().data,
+    favsCount:          doc.data().favsCount,
+    modifiedDate:       doc.data().modifiedDate,
+    photoURL:           doc.data().photoURL,
+    postType:           doc.data().postType,
+    sharesCount:        doc.data().sharesCount,
+    title:              doc.data().title,
 })
 
 const extractProjectsList = (getState) => {
@@ -110,29 +122,31 @@ const extractProjectsList = (getState) => {
 }
 
 const updateProjects = (projects, data, type) => {
-    if(type === 'added') {
-        projects.unshift(data)
-    } else {
 
-        const projectToChange = projects.find(item => item.uid === data.uid)
+    const indexProjectInArray = projects.findIndex(project => project.uid === data.uid);
 
-        let indexProjectInArray = projects.indexOf(projectToChange)
+    switch(type) {
 
-        console.log(indexProjectInArray)
-
-        if(type === 'modified') {
-            if(indexProjectInArray > -1) {
-                projects[indexProjectInArray] = data
-            } else {
-                projects.unshift(data)
+        case 'added':
+        case 'modified': {
+            if(indexProjectInArray === -1) {
+                projects.unshift(data);
             }
-        }
-        else if(type === 'remove') {
-            if(indexProjectInArray > -1) {
-                projects.splice(indexProjectInArray, 1)
+            else {
+                projects[indexProjectInArray] = data;
             }
+            break;
         }
+        case 'removed': {
+            if(indexProjectInArray !== -1) {
+                projects.splice(indexProjectInArray, 1);
+            }
+            break;
+        }
+        default: break;
+
     }
+
 }
 
 const loadingProjectList = () => {

@@ -13,6 +13,8 @@ import SimpleDialog from './../theme/SimpleDialog'
 import ContentLoading from './ContentLoading'
 import NotFound from './../theme/NotFound'
 
+import Avatar from '@material-ui/core/Avatar'
+
 const styles = {
     containerList: {
         paddingTop: 24,
@@ -97,14 +99,19 @@ const renderProjectList = (list, stateList, addFav) => {
                                 item
                             >
                                 <MyCardMedia
-                                    key={item.uid}
-                                    photoURL={item.photoURL}
-                                    photoDescription={item.photoURL}
-                                    cardTitle={item.cardTitle}
-                                    cardDescription={item.cardDescription}
-                                    cardFavs={item.cardFavs}
+                                    key={               item.uid            }
+                                    avatar={
+                                        <Avatar
+                                            src={item.avatarURL}
+                                        />
+                                    }
+                                    photoURL={          item.photoURL       }
+                                    photoDescription={  item.title          }
+                                    cardTitle={         item.title          }
+                                    cardSubtitle={      item.data.projectCompany          }
+                                    cardFavs={          item.favsCount      }
                                     onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
-                                    cardShares={item.cardShares}
+                                    cardShares={        item.sharesCount    }
                                 />
                             </Grid>
 
