@@ -42,7 +42,7 @@ const styles = (theme) => ({
         padding: 24,
     },
     logo: {
-        width: 216,
+        width: 186.47,
         height: 38,
     },
     separator: {
