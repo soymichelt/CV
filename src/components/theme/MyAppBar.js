@@ -43,7 +43,7 @@ const styles = theme => ({
         minHeight: 60,
     },
     imagoTipo: {
-        maxHeight: 40,
+        maxHeight: 32,
     },
     grow: {
         flexGrow: 1,
