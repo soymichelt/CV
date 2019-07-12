@@ -103,11 +103,11 @@ const renderAcademicList = (list, stateList, addFav) => {
                                     }
                                     photoURL={item.photoURL}
                                     photoDescription={item.photoURL}
-                                    cardTitle={item.cardTitle}
-                                    cardSubtitle={item.cardSubtitle}
-                                    cardFavs={item.cardFavs}
+                                    cardTitle={item.title}
+                                    cardSubtitle={item.data.school}
+                                    cardFavs={item.favsCount}
                                     onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
-                                    cardShares={item.cardShares}
+                                    cardShares={item.sharesCount}
                                 />
                             </Grid>
 

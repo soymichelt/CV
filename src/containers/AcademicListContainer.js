@@ -100,8 +100,8 @@ class AcademicListContainer extends Component {
             switch(sortBy) {
                 case '1': {
 
-                    const prevStudyName = prevStudy.cardTitle.toLowerCase();
-                    const nextStudyName =  nextStudy.cardTitle.toLowerCase();
+                    const prevStudyName = prevStudy.title.toLowerCase();
+                    const nextStudyName =  nextStudy.title.toLowerCase();
 
                     if(prevStudyName < nextStudyName) return -1;
 
@@ -112,9 +112,9 @@ class AcademicListContainer extends Component {
                 }
                 case '2': {
 
-                    if(prevStudy.cardFavs < nextStudy.cardFavs) return -1;
+                    if(prevStudy.cardFavs < nextStudy.favsCount) return -1;
 
-                    if(prevStudy.cardFavs > nextStudy.cardFavs) return 1;
+                    if(prevStudy.cardFavs > nextStudy.favsCount) return 1;
 
                     return 0;
 

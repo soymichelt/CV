@@ -85,7 +85,7 @@ export const getAcademicList = (unsuscribe = false) => {
     }
 }
 
-const extractStudyData = (doc) => ({
+/*const extractStudyData = (doc) => ({
     uid:                doc.id,
     avatarURL:          doc.data().avatarURL,
     photoURL:           doc.data().photoURL,
@@ -96,6 +96,19 @@ const extractStudyData = (doc) => ({
     cardShares:         doc.data().sharesCount,
     cardDescription:    doc.data().description,
     category:           doc.data().category,
+})*/
+const extractStudyData = (doc) => ({
+    uid:                doc.id,
+    avatarURL:          doc.data().avatarURL,
+    createdDate:        doc.data().createdDate,
+    data:               doc.data().data,
+    favsCount:          doc.data().favsCount,
+    modifiedDate:       doc.data().modifiedDate,
+    photoURL:           doc.data().photoURL,
+    postType:           doc.data().postType,
+    sharesCount:        doc.data().sharesCount,
+    title:              doc.data().title,
+    category:           doc.data().data.category,
 })
 
 const extractStudiesList = (getState) => {
