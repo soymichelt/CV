@@ -110,6 +110,7 @@ const extractProjectData = (doc) => ({
     postType:           doc.data().postType,
     sharesCount:        doc.data().sharesCount,
     title:              doc.data().title,
+    category:           doc.data().data.category,
 })
 
 const extractProjectsList = (getState) => {
@@ -183,7 +184,9 @@ const errorProjectList = () => {
 export const filterByCategory = (category) => {
 
     return setFilterByCategory({
-        category: category,
+        projectList: {
+            category: category,
+        }
     });
 
 };
@@ -201,7 +204,7 @@ export const openDialogSortBy = (isOpen) => {
 export const onClickSortItem = (itemToSort) => {
 
     return setItemToSort({
-        academicList: {
+        projectList: {
             itemToSort,
         },
     });

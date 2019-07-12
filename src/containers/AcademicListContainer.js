@@ -65,7 +65,6 @@ class AcademicListContainer extends Component {
     };
 
     handleListItemClick = (sortBy) => {
-        console.log("handleListItemClick", sortBy)
         this.props.onClickSortItem(sortBy);
     };
 
@@ -137,6 +136,8 @@ class AcademicListContainer extends Component {
             addFav,
         } = this.props;
 
+        const studies = list ? list.slice() : [];
+
         return (
             <ContentAcademicList
                 onDialogSortOpen={this.handleDialogSortOpen}
@@ -144,7 +145,7 @@ class AcademicListContainer extends Component {
                 onCategoryClick={this.handleCategoryClick}
                 onListItemClick={this.handleListItemClick}
                 stateList={stateList}
-                list={this.getAcademicListFilter(category, itemToSort, list)}
+                list={this.getAcademicListFilter(category, itemToSort, studies)}
                 categories={this.categories}
                 categorySelected={category}
                 itemsForSort={this.itemsForSort}
@@ -177,14 +178,6 @@ class AcademicListContainer extends Component {
     componentDidMount() {
 
         this.props.getAcademicList()
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        
-        if(prevProps.category !== this.props.category) {
-            console.log("se actualizó la categoria " + this.props.category)
-        }
 
     }
 

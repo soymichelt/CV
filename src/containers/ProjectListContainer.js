@@ -58,8 +58,67 @@ class ProjectListContainer extends Component {
         this.props.filterByCategory(category);
     };
 
-    handleListItemClick = (orderBy) => {
-        this.props.onClickSortItem(orderBy);
+    handleListItemClick = (sortBy) => {
+        this.props.onClickSortItem(sortBy);
+    };
+
+    getProjectListFilter = (category, sortBy, projects) => {
+
+        if(!projects) return [];
+
+        if((!category || category === '0') && (!sortBy || sortBy === '0')) return projects;
+
+        let projectsFilter = this.getProjectListByCategory(category, projects);
+
+        projectsFilter = this.getProjectListSort(sortBy, projectsFilter);
+
+        return projectsFilter;
+
+    };
+
+    getProjectListByCategory = (category, projects) => {
+
+        if(!category || category === '0') return projects;
+
+        return projects.filter(project => {
+            return project.category === category
+        })
+
+    };
+
+    getProjectListSort = (sortBy, projects) => {
+
+        if(!sortBy || sortBy === '0') return projects;
+
+        console.log("getProjectListSort: sortBy ", sortBy, projects)
+
+        return projects.sort((prevProject, nextProject) => {
+            switch(sortBy) {
+                case '1': {
+
+                    const prevProjectName = prevProject.title.toLowerCase();
+                    const nextProjectName =  nextProject.title.toLowerCase();
+
+                    if(prevProjectName < nextProjectName) return -1;
+
+                    if(prevProjectName > nextProjectName) return 1;
+
+                    return 0;
+
+                }
+                case '2': {
+
+                    if(prevProject.favsCount < nextProject.favsCount) return -1;
+
+                    if(prevProject.favsCount > nextProject.favsCount) return 1;
+
+                    return 0;
+
+                }
+                default: return 0;
+            }
+        });
+        
     };
 
     render() {
@@ -73,6 +132,8 @@ class ProjectListContainer extends Component {
             addFav,
         } = this.props;
 
+        const projects = list ? list.slice() : [];
+
         return (
             <ContentProjectList
                 onDialogSortOpen={this.handleDialogSortOpen}
@@ -80,7 +141,7 @@ class ProjectListContainer extends Component {
                 onCategoryClick={this.handleCategoryClick}
                 onListItemClick={this.handleListItemClick}
                 stateList={stateList}
-                list={list}
+                list={this.getProjectListFilter(category, itemToSort, list.slice())}
                 categories={this.categories}
                 categorySelected={category}
                 itemsForSort={this.itemsForSort}
@@ -94,16 +155,6 @@ class ProjectListContainer extends Component {
     componentDidMount() {
 
         this.props.getProjectList()
-
-    }
-
-    componentWillUpdate() {
-
-        const { category } = this.props;
-
-        if(category) {
-            this.props.getProjectList()
-        }
 
     }
 
