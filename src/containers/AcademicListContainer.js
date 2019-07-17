@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment, } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
@@ -15,6 +15,7 @@ import {
 } from './../state/actions/academicListAction'
 
 import ContentAcademicList from './../components/content/ContentAcademicList'
+import PostContainer from './post-container'
 
 class AcademicListContainer extends Component {
 
@@ -51,6 +52,14 @@ class AcademicListContainer extends Component {
             label: 'Favoritos',
         },
     ];
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            postOpenId: '',
+        };
+    }
 
     handleDialogSortOpen = () => {
         this.props.openDialogSortBy(true);
@@ -125,6 +134,18 @@ class AcademicListContainer extends Component {
         
     };
 
+    setPostOpen = (postId) => {
+        this.setState({
+            postOpenId: postId,
+        });
+    };
+
+    onClosePost = () => {
+        this.setState({
+            postOpenId: undefined,
+        });
+    };
+
     render() {
 
         const {
@@ -136,23 +157,37 @@ class AcademicListContainer extends Component {
             addFav,
         } = this.props;
 
+        const { 
+            postOpenId,
+        } = this.state;
+
         const studies = list ? list.slice() : [];
 
         return (
-            <ContentAcademicList
-                onDialogSortOpen={this.handleDialogSortOpen}
-                onDialogSortClose={this.handleDialogSortClose}
-                onCategoryClick={this.handleCategoryClick}
-                onListItemClick={this.handleListItemClick}
-                stateList={stateList}
-                list={this.getAcademicListFilter(category, itemToSort, studies)}
-                categories={this.categories}
-                categorySelected={category}
-                itemsForSort={this.itemsForSort}
-                itemToSort={itemToSort}
-                isOpenDialogOrderBy={isOpenDialogOrderBy}
-                addFav={addFav}
-            />
+            <Fragment>
+                <ContentAcademicList
+                    onDialogSortOpen={this.handleDialogSortOpen}
+                    onDialogSortClose={this.handleDialogSortClose}
+                    onCategoryClick={this.handleCategoryClick}
+                    onListItemClick={this.handleListItemClick}
+                    stateList={stateList}
+                    list={this.getAcademicListFilter(category, itemToSort, studies)}
+                    categories={this.categories}
+                    categorySelected={category}
+                    itemsForSort={this.itemsForSort}
+                    itemToSort={itemToSort}
+                    isOpenDialogOrderBy={isOpenDialogOrderBy}
+                    addFav={addFav}
+                    postOpen={this.setPostOpen}
+                />
+                {postOpenId && (
+                    <PostContainer
+                        postId={postOpenId}
+                        open={true}
+                        onClose={this.onClosePost}
+                    />
+                )}
+            </Fragment>
         )
 
     }
@@ -183,9 +218,9 @@ class AcademicListContainer extends Component {
 
 }
 
-const mapStateToProps = (newState, props) => {
+const mapStateToProps = (newState) => {
     
-    var { academicList } = newState;
+    let { academicList } = newState;
     
     if(!academicList) {
         academicList = {

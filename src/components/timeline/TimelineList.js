@@ -117,7 +117,7 @@ const renderTimelineList = (list, stateList, classes) => {
                 :
                     <NotFound
                         title={'Por ahora no hay datos :('}
-                        description={'Al parecer aún no se ha ingresado la información académica. Pero pronto la añadiremos.'}
+                        description={'Al parecer aún no se han realizado publicaciones de blog. Pero pronto la añadiremos.'}
                     />
             );
             break;

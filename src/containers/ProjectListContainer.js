@@ -141,7 +141,7 @@ class ProjectListContainer extends Component {
                 onCategoryClick={this.handleCategoryClick}
                 onListItemClick={this.handleListItemClick}
                 stateList={stateList}
-                list={this.getProjectListFilter(category, itemToSort, list.slice())}
+                list={this.getProjectListFilter(category, itemToSort, projects)}
                 categories={this.categories}
                 categorySelected={category}
                 itemsForSort={this.itemsForSort}

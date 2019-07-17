@@ -2,7 +2,7 @@
     Información Académica
 */
 
-import React from 'react'
+import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
@@ -37,12 +37,12 @@ const ContentAcademicList = (props) => {
         onCategoryClick,
         onListItemClick,
         addFav,
+        postOpen,
     } = props;
 
     return (
 
-        <div
-            className={'contentAcademicListSection'}
+        <Fragment
         >
 
             <ContentCategoryFilter
@@ -66,16 +66,16 @@ const ContentAcademicList = (props) => {
                 spacing={ 8 }
                 justify={ 'center' }
             >
-                {renderAcademicList(list, stateList, addFav)}
+                {renderAcademicList(list, stateList, addFav, postOpen)}
             </Grid>
 
-        </div>
+        </Fragment>
 
     );
 
 };
 
-const renderAcademicList = (list, stateList, addFav) => {
+const renderAcademicList = (list, stateList, addFav, postOpen) => {
 
     var renderList;
     switch (stateList) {
@@ -108,6 +108,7 @@ const renderAcademicList = (list, stateList, addFav) => {
                                     cardFavs={item.favsCount}
                                     onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
                                     cardShares={item.sharesCount}
+                                    onClickCard={() => postOpen(item.uid)}
                                 />
                             </Grid>
 

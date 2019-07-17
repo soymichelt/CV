@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import blueGrey from '@material-ui/core/colors/blueGrey'
+import TouchRipple from '@material-ui/core/ButtonBase'
 
 const styles = theme => ({
     card: {
@@ -25,6 +26,7 @@ const styles = theme => ({
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
+        textAlign: 'left',
     },
     media: {
         height: 0,
@@ -73,86 +75,106 @@ const styles = theme => ({
     },
 });
 
-const MyMediaCard = ({classes, key, avatar, photoURL, photoDescription, cardTitle, cardSubtitle, cardFavSelected, cardFavs, onClickFav, cardShares, onClickShare}) => (
+const MyMediaCard = ({
+    classes,
+    key,
+    avatar,
+    photoURL,
+    photoDescription,
+    cardTitle,
+    cardSubtitle,
+    cardFavSelected,
+    cardFavs,
+    onClickFav,
+    cardShares,
+    onClickShare,
+    onClickCard,
+}) => (
 
-    <Card
-        className={classes.card}
-        elevation={1}
+    <TouchRipple
     >
-        <CardHeader
-            avatar={avatar}
-            title={
-                <span
-                    className={classes.header}
-                >
-                    {cardTitle}
-                </span>
-            }
-            subheader={
-                <span
-                    className={classes.header}
-                >
-                    {cardSubtitle}
-                </span>
-            }
-        />
-        <CardMedia
-            className={classes.media}
-            image={photoURL}
-            title={photoDescription}
-        />
-        <CardContent
-            className={classes.cardContent}
+
+        <Card
+            className={classes.card}
+            elevation={1}
+            onClick={onClickCard}
         >
-            <section
-                className={classes.socialSection}
+            <CardHeader
+                avatar={avatar}
+                title={
+                    <span
+                        className={classes.header}
+                    >
+                        {cardTitle}
+                    </span>
+                }
+                subheader={
+                    <span
+                        className={classes.header}
+                    >
+                        {cardSubtitle}
+                    </span>
+                }
+            />
+            <CardMedia
+                className={classes.media}
+                image={photoURL}
+                title={photoDescription}
+            />
+            <CardContent
+                className={classes.cardContent}
             >
-                <div
-                    className={classes.favSection}
+                <section
+                    className={classes.socialSection}
                 >
-                    <p
-                        className={classes.value}
+                    <div
+                        className={classes.favSection}
                     >
-                        {cardFavs}
-                    </p>
-                    <p className={classes.label}>
-                        Likes
-                    </p>
-                </div>
-                <div
-                    className={classes.verticalDivider}
-                />
-                <div className={classes.shareSection}>
-                    <p
-                        className={classes.value}
+                        <p
+                            className={classes.value}
+                        >
+                            {cardFavs}
+                        </p>
+                        <p className={classes.label}>
+                            Likes
+                        </p>
+                    </div>
+                    <div
+                        className={classes.verticalDivider}
+                    />
+                    <div className={classes.shareSection}>
+                        <p
+                            className={classes.value}
+                        >
+                            {cardShares}
+                        </p>
+                        <p
+                            className={classes.label}
+                        >
+                            Shares
+                        </p>
+                    </div>
+                </section>
+                <section className={classes.socialSection}>
+                    <IconButton
+                        className={classes.iconButton}
+                        aria-label="Me gusta"
+                        onClick={onClickFav}
                     >
-                        {cardShares}
-                    </p>
-                    <p
-                        className={classes.label}
+                        <FavoriteIcon />
+                    </IconButton>
+                    <IconButton
+                        className={classes.iconButton}
+                        aria-label="Compartir"
+                        onClick={onClickShare}
                     >
-                        Shares
-                    </p>
-                </div>
-            </section>
-            <section className={classes.socialSection}>
-                <IconButton
-                    className={classes.iconButton}
-                    aria-label="Me gusta"
-                    onClick={onClickFav}
-                >
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton
-                    className={classes.iconButton}
-                    aria-label="Compartir"
-                    onClick={onClickShare}
-                >
-                    <ShareIcon />
-                </IconButton>
-            </section>
-        </CardContent>
-    </Card>
+                        <ShareIcon />
+                    </IconButton>
+                </section>
+            </CardContent>
+        </Card>
+
+    </TouchRipple>
 
 );
 

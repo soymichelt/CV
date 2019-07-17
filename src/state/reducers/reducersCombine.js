@@ -11,6 +11,7 @@ import { signInReducer } from './signInReducer'
 import { forgivePasswordReducer } from './forgivePasswordReducer'
 import { suscribeReducer } from './suscribeReducer'
 import { timelineListReducer } from './timelineListReducer'
+import { postReducer } from './post-reducer'
 
 const rootReducer = combineReducers({
     academicList:       academicListReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
     forgivePassword:    forgivePasswordReducer,
     suscribe:           suscribeReducer,
     timelineList:       timelineListReducer,
+    post:               postReducer,
 });
 
 export default rootReducer;
