@@ -3,10 +3,12 @@ import classnames from 'classnames'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { withStyles } from '@material-ui/core/styles'
+import Avatar from '@material-ui/core/Avatar'
 
 import FullScreenDialog from './../theme/full-screen-dialog'
 import ContentLoading from './../content/ContentLoading'
 import NotFound from './../theme/NotFound'
+import PostCard from './../theme/post-card'
 
 const styles = theme => ({
     container: {
@@ -60,11 +62,18 @@ const PostStudy = ({
                             )
                         : state === 1 ?
                             (
-                                <Paper
-                                    className={classnames(classes.container)}
-                                >
-                                    <h1>Datos</h1>
-                                </Paper>
+                                <section className={classes.container}>
+                                    <PostCard
+                                        avatar={
+                                            <Avatar
+                                                src={data.avatarURL}
+                                            />
+                                        }
+                                        title={data.title}
+                                        subtitle={data.data.school}
+                                        image={data.photoURL}
+                                    />
+                                </section>
                             )
                         :
                             (
