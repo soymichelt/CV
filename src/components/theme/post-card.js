@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
-import red from '@material-ui/core/colors/red';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
@@ -35,8 +35,12 @@ const styles = theme => ({
     expandOpen: {
         transform: 'rotate(180deg)',
     },
-    avatar: {
-        backgroundColor: red[500],
+    mediaPending: {
+        backgroundColor: blueGrey[100],
+    },
+    avatarPending: {
+        borderRadius: '50%',
+        backgroundColor: blueGrey[100],
     },
 });
 
@@ -58,12 +62,18 @@ const PostCard = ({
         <Card className={classes.card}>
             <CardHeader
                 avatar={avatar}
+                classes={{
+                    avatar: classes.avatarPending,
+                }}
                 action={actionHeader}
                 title={title}
                 subheader={subtitle}
             />
             <CardMedia
                 className={classes.media}
+                classes={{
+                    media: classes.mediaPending,
+                }}
                 image={image}
                 title={title}
             />
