@@ -12,11 +12,15 @@ const styles = theme => ({
     title: {
         marginLeft: theme.spacing.unit * 3,
         flex: 1,
+        color: '#fff',
     },
     toolbar: {
         display: 'flex',
         ...theme.mixins.toolbar,
         minHeight: '66px!important',
+    },
+    paperFullScreen: {
+        backgroundColor: 'rgba(0,0,0,0.3)!important',
     },
 });
 
@@ -34,13 +38,20 @@ const FullScreenDialog = ({
 }) => {
 
     return (
-        <Dialog fullScreen open={open} onClose={onClose} TransitionComponent={Transition}>
+        <Dialog
+            fullScreen open={open}
+            onClose={onClose}
+            TransitionComponent={Transition}
+            classes={{
+                paperFullScreen: classes.paperFullScreen,
+            }}
+        >
             <AppBar position={'fixed'}>
                 <Toolbar>
                     <IconButton edge="start" color="inherit" onClick={onClose} aria-label="Close">
                         <CloseIcon />
                     </IconButton>
-                    <Typography variant="h1" className={classes.title}>
+                    <Typography variant="title" className={classes.title}>
                         {title}
                     </Typography>
                     <div>

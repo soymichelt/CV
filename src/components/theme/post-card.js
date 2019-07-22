@@ -43,7 +43,7 @@ const styles = theme => ({
 const PostCard = ({
     classes,
     avatar,
-    action,
+    actionHeader,
     title,
     subtitle,
     image,
@@ -58,7 +58,7 @@ const PostCard = ({
         <Card className={classes.card}>
             <CardHeader
                 avatar={avatar}
-                action={action}
+                action={actionHeader}
                 title={title}
                 subheader={subtitle}
             />

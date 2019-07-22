@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { withStyles } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Clear'
 
 import FullScreenDialog from './../theme/full-screen-dialog'
 import ContentLoading from './../content/ContentLoading'
@@ -68,6 +70,13 @@ const PostStudy = ({
                                             <Avatar
                                                 src={data.avatarURL}
                                             />
+                                        }
+                                        actionHeader={
+                                            <IconButton
+                                                onClick={onClose}
+                                            >
+                                                <CloseIcon />
+                                            </IconButton>
                                         }
                                         title={data.title}
                                         subtitle={data.data.school}
