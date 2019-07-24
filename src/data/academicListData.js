@@ -6,5 +6,5 @@ export const getStudiesQuery = () => {
 }
 
 export const getFavsForStudiesQuery = (studyId) => {
-    return this.getStudiesQuery().doc(studyId).collection('favs')
+    return getStudiesQuery().doc(studyId).collection('favs')
 }
