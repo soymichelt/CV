@@ -11,6 +11,7 @@ import ContentCategoryFilter from './ContentCategoryFilter'
 import SimpleDialog from './../theme/SimpleDialog'
 import ContentLoading from './ContentLoading'
 import NotFound from './../theme/NotFound'
+import Pagination from './../theme/pagination'
 
 import Avatar from '@material-ui/core/Avatar'
 
@@ -87,34 +88,64 @@ const renderAcademicList = (list, stateList, addFav, postOpen) => {
         case 1:
             renderList = (
                 list && list.length > 0 ?
-                    list.map((item) => {
+                    <Fragment>
+                        {
+                            list.map((item) => {
 
-                        return (
-                            <Grid
-                                key={item.uid}
-                                item
-                            >
-                                <MyCardMedia
-                                    key={item.uid}
-                                    avatar={
-                                        <Avatar
-                                            src={item.avatarURL}
+                                return (
+                                    <Grid
+                                        key={item.uid}
+                                        item
+                                    >
+                                        <MyCardMedia
+                                            key={item.uid}
+                                            avatar={
+                                                <Avatar
+                                                    src={item.avatarURL}
+                                                />
+                                            }
+                                            photoURL={item.photoURL}
+                                            photoDescription={item.photoURL}
+                                            cardTitle={item.title}
+                                            cardSubtitle={item.data.school}
+                                            cardFavs={item.favsCount}
+                                            onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
+                                            cardShares={item.sharesCount}
+                                            onClickCard={() => postOpen(item.uid)}
                                         />
-                                    }
-                                    photoURL={item.photoURL}
-                                    photoDescription={item.photoURL}
-                                    cardTitle={item.title}
-                                    cardSubtitle={item.data.school}
-                                    cardFavs={item.favsCount}
-                                    onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
-                                    cardShares={item.sharesCount}
-                                    onClickCard={() => postOpen(item.uid)}
-                                />
-                            </Grid>
+                                    </Grid>
 
-                        )
+                                )
 
-                    })
+                            })
+                        }
+                        {
+                            list && list.length > 0 ? (
+                                <Grid
+                                    key={'content-academic-list-pagination'}
+                                    item
+                                    xs={12}
+                                >
+                                    <Grid
+                                        container
+                                        justify={'center'}
+                                    >
+                                        <Grid
+                                            item
+                                        >
+                                            <Pagination
+                                                totalRecords={list.length}
+                                                pageLimit={12}
+                                                pageNeighbours={1}
+                                                onPageChanged={(data) => { }}
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            )
+                            : {}
+                        }
+                    </Fragment>
                 :
                     <NotFound
                         title={'Por ahora no hay datos :('}
