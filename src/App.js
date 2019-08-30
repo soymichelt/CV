@@ -27,10 +27,10 @@ class App extends Component {
                         <Route exact path='/Home/Index' component={Home} />
                         <Route exact path='/Account/Signin' component={Signin} />
                         <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
-                        <Route exact path='/Timeline' component={Timeline} />
+                        {/*<Route exact path='/Timeline' component={Timeline} />
                         <Route exact path='/Timeline/Article' component={Article} />
                         <Route exact path='/EditorTest' component={EditorTest} />
-                        <Route exact path='/Timeline/Post' component={TimelinePost} />
+                        <Route exact path='/Timeline/Post' component={TimelinePost} />*/}
                     </div>
                 </BrowserRouter>
             </Provider>

@@ -13,7 +13,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import StoreIcon from '@material-ui/icons/Store'
-import InboxIcon from '@material-ui/icons/Timeline';
+//import InboxIcon from '@material-ui/icons/Timeline';
 import SendIcon from '@material-ui/icons/AccountCircle';
 import StarIcon from '@material-ui/icons/School';
 import { Link } from 'react-router-dom'
@@ -30,7 +30,7 @@ export const mailFolderListItems = (
       </ListItemIcon>
       <ListItemText primary="Inicio" />
     </ListItem>
-    <ListItem
+    {/*<ListItem
       button
       component={Link}
       to={'/Timeline'}
@@ -39,7 +39,7 @@ export const mailFolderListItems = (
         <InboxIcon />
       </ListItemIcon>
       <ListItemText primary="Timeline" />
-    </ListItem>
+    </ListItem>*/}
     <ListItem
       button
       component={'a'}

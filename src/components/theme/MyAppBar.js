@@ -163,13 +163,13 @@ export const MyAppBar = ({ classes, open, onDrawerOpen, background, elevation })
                 <Hidden
                     only={['xs', 'sm']}
                 >
-                    <Button
+                    {/*<Button
                         className={classes.appBarButton}
                         component={ Link }
                         to={'/Timeline'}
                     >
                         Timeline
-                    </Button>
+                    </Button>*/}
                     <Button
                         className={classes.appBarButton}
                         component={'a'}
