@@ -45,7 +45,9 @@ const styles = {
     portroitTitle: {
         marginTop: 0,
         marginBottom: '8px',
-        fontSize: '24px',
+        fontSize: '32px',
+        letterSpacing: '3px',
+        fontWeight: 400,
     },
     portroitCaption: {
         margin: 0,
