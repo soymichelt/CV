@@ -26,13 +26,21 @@ const styles = {
         height: '256px',
         width: '748px',
     },
+    backgroundHeroFront: {
+        objectFit: 'cover',
+        zIndex: 1,
+        top: '-44px',
+        right: '-80px',
+        bottom: 0,
+        height: '360px',
+    },
     portroitInfo:{
         maxWidth: '620px',
         marginLeft: '12px',
         zIndex: 901,
     },
     portroitText: {
-        color: 'rgba(255, 255, 255, .8)',
+        color: 'rgba(255, 255, 255)',
     },
     portroitTitle: {
         marginTop: 0,
@@ -45,6 +53,9 @@ const styles = {
     },
     social: {
         marginTop: 10,
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '106px',
     },
     appBar: {
         position: 'relative',
@@ -77,7 +88,7 @@ const TimelinePortroit = ({ classes }) => {
                 <img
                     className={
                         classnames(
-                            classes.background,
+                            classes.backgroundHeroFront,
                             classes.hero
                         )
                     }
