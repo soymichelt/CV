@@ -20,7 +20,7 @@ const styles = {
     background: {
         objectFit: 'cover',
         zIndex: 1,
-        top: '62px',
+        top: '60px',
         right: 0,
         bottom: 0,
         height: '256px',
@@ -29,6 +29,7 @@ const styles = {
     portroitInfo:{
         maxWidth: '620px',
         marginLeft: '12px',
+        zIndex: 901,
     },
     portroitText: {
         color: 'rgba(255, 255, 255, .8)',
@@ -60,7 +61,7 @@ const TimelinePortroit = ({ classes }) => {
             <section
                 className={classes.portroit}
             >
-                <img
+                {<img
                     className={
                         classnames(
                             classes.background,
@@ -71,6 +72,22 @@ const TimelinePortroit = ({ classes }) => {
                         process.env.PUBLIC_URL + '/res/hero-timeline.png'
                     }
                     alt={'Hero'}
+                />}
+
+                <img
+                    className={
+                        classnames(
+                            classes.background,
+                            classes.hero
+                        )
+                    }
+                    src={
+                        process.env.PUBLIC_URL + '/res/timeline.png'
+                    }
+                    srcSet={
+                        `${process.env.PUBLIC_URL}/res/timeline@2x.png 2x`
+                    }
+                    alt='Hero'
                 />
                 <section
                     className={classes.portroitInfo}
