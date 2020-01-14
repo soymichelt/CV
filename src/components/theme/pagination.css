@@ -3,12 +3,14 @@ ul.pagination {
     margin-bottom: 0;
     display: flex;
     list-style: none;
+    padding-inline-start: 0px;
 }
 ul.pagination li.page-item.active a.page-link {
     color: #fff !important;
     background-color: #fa5c7c !important;
 }
 ul.pagination a.page-link {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

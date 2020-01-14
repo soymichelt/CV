@@ -6,5 +6,6 @@ export const getStudiesQuery = () => {
 }
 
 export const getFavsForStudiesQuery = (studyId) => {
-    return getStudiesQuery().doc(studyId).collection('favs')
+    const db = getDb()
+    return db.collection('posts').doc(studyId).collection('favs')
 }

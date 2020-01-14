@@ -9,9 +9,7 @@ import Home from './pages/home/Home'
 import Signin from './pages/account/Signin'
 import ForgivePassword from './pages/account/ForgivePassword'
 import Timeline from './pages/timeline/Timeline'
-/*import Article from './pages/timeline/Article'
-import EditorTest from './pages/editor/Test'
-import TimelinePost from './pages/timeline/Post'*/
+import Blog from './timeline/containers/timeline-container'
 
 class App extends Component {
 
@@ -28,9 +26,7 @@ class App extends Component {
                         <Route exact path='/Account/Signin' component={Signin} />
                         <Route exact path='/Account/ForgivePassword' component={ForgivePassword} />
                         <Route exact path='/Timeline' component={Timeline} />
-                        {/*<Route exact path='/Timeline/Article' component={Article} />
-                        <Route exact path='/EditorTest' component={EditorTest} />
-                        <Route exact path='/Timeline/Post' component={TimelinePost} />*/}
+                        <Route exact path='/blog' component={Blog} />
                     </div>
                 </BrowserRouter>
             </Provider>

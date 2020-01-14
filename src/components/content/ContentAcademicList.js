@@ -109,7 +109,12 @@ const renderAcademicList = (list, stateList, addFav, postOpen) => {
                                             cardTitle={item.title}
                                             cardSubtitle={item.data.school}
                                             cardFavs={item.favsCount}
-                                            onClickFav={() => addFav(item.uid, true, '10.1.184.47')}
+                                            onClickFav={
+                                                (e) => {
+                                                    e.stopPropagation()
+                                                    addFav(item.uid, true, '10.1.184.47')
+                                                }
+                                            }
                                             cardShares={item.sharesCount}
                                             onClickCard={() => postOpen(item.uid)}
                                         />
