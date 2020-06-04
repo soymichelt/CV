@@ -1,0 +1,201 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.43.0",
+  "hash": "83cbade02a89384fc8cc",
+  "publicPath": "/",
+  "outputPath": "/",
+  "assetsByChunkName": {
+    "main": [
+      "assets/app.js",
+      "assets/app.js.map"
+    ],
+    "vendors": [
+      "assets/vendor.js",
+      "assets/vendor.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "assets/app.js",
+      "size": 43700,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "assets/app.js.map",
+      "size": 41222,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "development": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "assets/vendor.js",
+      "size": 1109793,
+      "chunks": [
+        "vendors"
+      ],
+      "chunkNames": [
+        "vendors"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "assets/vendor.js.map",
+      "size": 1275988,
+      "chunks": [
+        "vendors"
+      ],
+      "chunkNames": [
+        "vendors"
+      ],
+      "info": {
+        "development": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_128x128.b58a4a1a1469c2837bfbcc032019291c.png",
+      "size": 24867,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_192x192.0c17063a69b351211c25d6f84d41fe66.png",
+      "size": 52563,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_256x256.09fac38ec950f77f0ed0ea9c6277c919.png",
+      "size": 90235,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_384x384.54c1f6cec309e13e3e054001a03d5885.png",
+      "size": 190460,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_512x512.c64f59d9f881d4f3749de499d4724d02.png",
+      "size": 313635,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "icons/icon_96x96.14a2c079b65eba0829d5ceb1af915038.png",
+      "size": 14989,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "manifest.json",
+      "size": 1227,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "sw.js",
+      "size": 4664,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "sw.js.map",
+      "size": 4908,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "workbox-0cf2e321.js",
+      "size": 108131,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "workbox-0cf2e321.js.map",
+      "size": 178515,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "vendors",
+        "main"
+      ],
+      "assets": [
+        "assets/vendor.js",
+        "assets/vendor.js.map",
+        "assets/app.js",
+        "assets/app.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "vendors",
+        "main"
+      ],
+      "assets": [
+        "assets/vendor.js",
+        "assets/vendor.js.map",
+        "assets/app.js",
+        "assets/app.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}
