@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_512x512.c64f59d9f881d4f3749de499d4724d02.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_384x384.54c1f6cec309e13e3e054001a03d5885.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_256x256.09fac38ec950f77f0ed0ea9c6277c919.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_192x192.0c17063a69b351211c25d6f84d41fe66.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_128x128.b58a4a1a1469c2837bfbcc032019291c.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/C:/Users/soymichel/Documents/GitHub/CV/src/server/public/icons/icon_96x96.14a2c079b65eba0829d5ceb1af915038.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Soymichel.com - Michel Roberto Traña Tablada (+505 8367 - 1719)",
+  "short_name": "Soymichel.com",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "El Sitio Web personal de Michel Roberto Traña Tablada. Encuentra publicaciones y vídeos sobre desarrollo de software",
+  "background_color": "#ffffff",
+  "theme_color": "#6d1b7b"
+}

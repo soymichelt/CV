@@ -16,7 +16,7 @@ const render = (html, css) => {
                 <link rel="manifest" href="manifest.json" />
                 <link rel="shortcut icon" href="/fav.ico">
             </head>
-            <body>
+            <body style="margin: 0;padding: 0; font-family: 'Roboto', sans-serif;max-width: 100vw;">
                 <div id="root">${html}</div>
                 <script src="/assets/app.js" type="text/javascript"></script>
                 <script src="/assets/vendor.js" type="text/javascript"></script>

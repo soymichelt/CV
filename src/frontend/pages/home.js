@@ -1,11 +1,17 @@
 import React from 'react';
-import { Layout } from './../components/theme/layout';
+import { Layout } from './../theme/containers/layout';
+import { Profile } from './../portroit/components/profile';
+import { Content } from './../portroit/components/content';
+import { PortfolioTabs } from './../portfolio/components/portfolio-tabs';
 
 export default () => {
 
     return (
         <Layout title='Inicio'>
-            <h1>Esta s la HOME</h1>
+            <Profile>
+                <Content />
+            </Profile>
+            <PortfolioTabs />
         </Layout>
     );
 

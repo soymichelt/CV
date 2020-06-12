@@ -76,20 +76,25 @@ module.exports = {
                 use: [
                     {
                         'loader': 'file-loader',
-                        options: {
-                            name: 'assets/res/[name].[ext]',
-                        },
+                        options: { name: 'assets/res/[name].[ext]' },
                     },
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: { name: 'assets/res/[name].svg' },
+                    }
+                ],
             },
             {
                 test: /\.ico$/,
                 use: [
                     {
                         'loader': 'file-loader',
-                        options: {
-                            name: '/[name].[ext]',
-                        },
+                        options: { name: '/[name].[ext]' },
                     },
                 ],
             }
@@ -140,6 +145,7 @@ module.exports = {
                     : 'sw.js',
             clientsClaim: true,
             skipWaiting: true,
+            maximumFileSizeToCacheInBytes: 100 * 1024 * 1024,
             mode: process.env.NODE_ENV,
             runtimeCaching: [
                 {
@@ -164,12 +170,6 @@ module.exports = {
             navigateFallbackAllowlist: [
                 new RegExp('/'),
             ],
-        }),
-        new LoadableWebpackPlugin({
-            filename: isProduction
-                        ? path.join(process.cwd(), './src/server/public/loadable-stats.json')
-                        : path.join(process.cwd(), 'loadable-stats.json'),
-            outputAsset: true,
         }),
     ],
 };

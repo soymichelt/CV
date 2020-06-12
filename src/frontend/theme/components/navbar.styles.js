@@ -2,6 +2,9 @@ import { makeStyles, fade, } from '@material-ui/core/styles';
 
 export const navBarStyles = makeStyles(theme => ({
 
+    navbarSpace: {
+        minHeight: 60,
+    },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
         minHeight: 60,
