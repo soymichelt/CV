@@ -6,7 +6,6 @@ const terserPlugin = require('terser-webpack-plugin');
 const compressionPlugin = require('compression-webpack-plugin');
 const WebpackPwaManifestPlugin = require('webpack-pwa-manifest');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const LoadableWebpackPlugin = require('@loadable/webpack-plugin');
 
 dotenv.config();
 

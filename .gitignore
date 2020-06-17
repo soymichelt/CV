@@ -24,6 +24,9 @@ yarn-error.log*
 /.firebase
 
 # firebase credentials
-/src/firebaseCredentials.js
+/src/lib/data/config/firebase.dev-credentials.js
 
 .env
+
+#development files and directories
+/src/server/public

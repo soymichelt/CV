@@ -8,7 +8,19 @@ export const StudiesContainer = () => {
         { id: '2', name: 'Certificación', },
         { id: '3', name: 'Cursos', },
     ];
+    const sortData = [
+        { id: '0', label: 'Sin ordenar', },
+        { id: '1', label: 'Nombre de Estudio', },
+        { id: '2', label: 'Favoritos', },
+    ];
+    const studiesData=[];
     return (
-        <Studies categoriesData={categoriesData} />
+        <Studies
+            categoriesData={categoriesData}
+            sortData={sortData}
+            studiesDataState={2}
+            studiesData={studiesData}
+            isOpenSort={false}
+        />
     );
 };
