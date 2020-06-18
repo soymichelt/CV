@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import { dialogListStyles } from './dialog-list.styles';
 
-export const DialogList = ({title, list, open, onClose, onItemClick}) => {
+export const DialogList = ({title, list, open, onClose, onItemClick,}) => {
     const classes = dialogListStyles();
     return (
         <Dialog onClose={onClose} open={open}>
@@ -17,25 +17,24 @@ export const DialogList = ({title, list, open, onClose, onItemClick}) => {
             </DialogTitle>
             <div>
                 <List>
-                    {list.map(item => (
-                    <ListItem
-                        button
-                        key={item.id}
-                        onClick={() => {
-                            onListItemClick(item.id);
-                            onClose();
-                        }}
-                    >
-                        {item.icon &&
-                            <ListItemAvatar>
-                                <Avatar className={classes.avatar}>
-                                    {item.icon}
-                                </Avatar>
-                            </ListItemAvatar>
-                        }
-                        <ListItemText primary={item.label} />
-                    </ListItem>
-                    ))}
+                    {list.map(item => <ListItem
+                            button
+                            key={item.id}
+                            onClick={() => {
+                                onItemClick(item.id);
+                                onClose();
+                            }}
+                        >
+                            {item.icon &&
+                                <ListItemAvatar>
+                                    <Avatar className={classes.avatar}>
+                                        {item.icon}
+                                    </Avatar>
+                                </ListItemAvatar>
+                            }
+                            <ListItemText primary={item.label} />
+                        </ListItem>
+                    )}
                 </List>
             </div>
         </Dialog>

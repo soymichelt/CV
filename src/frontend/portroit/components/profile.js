@@ -4,7 +4,7 @@ import { profileStyles } from './profile.styles';
 import PrimaryImageDefault from './../../../assets/res/app_back2@2x.png';
 import SecondaryImageDefault from './../../../assets/res/app_mid@2x.png';
 
-export const Profile = ({ background, primaryImage, secondaryImage, children }) => {
+const ProfileComponent = ({ background, primaryImage, secondaryImage, children }) => {
 
     const classes = profileStyles();
 
@@ -42,3 +42,5 @@ export const Profile = ({ background, primaryImage, secondaryImage, children }) 
     );
 
 };
+
+export const Profile = React.memo(ProfileComponent);

@@ -4,7 +4,7 @@ import { Sort as SortIcon } from '@material-ui/icons';
 import classNames from 'classnames';
 import { categoriesStyles } from './categories.styles';
 
-export const Categories = ({categories, onCategoryClick, onSortClick, activeCategoryId = '0', }) => {
+export const Categories = ({categories, onCategoryClick, activeCategoryId = '0', onSortClick,}) => {
 
     const classes = categoriesStyles();
 

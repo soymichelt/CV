@@ -8,7 +8,7 @@ import Gb from './../../../assets/res/gb.png';
 import Gb2x from './../../../assets/res/gb-64x64.png';
 import { Grid, Paper, Button } from '@material-ui/core';
 
-export const SocialsNetworks = () => {
+const SocialsNetworksComponent = () => {
 
     const classes = socialsNetworksStyles();
 
@@ -52,3 +52,5 @@ export const SocialsNetworks = () => {
         </section>
     );
 };
+
+export const SocialsNetworks = React.memo(SocialsNetworksComponent);

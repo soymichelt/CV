@@ -1,26 +1,60 @@
-import React from 'react';
-import { Studies } from './../components/studies';
+import React, { useState, useEffect, } from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import { CardList } from './../../theme/components/card-list';
+import { Card } from './../../theme/components/card';
+import { getCategoriesData, getStudiesDataAsync, getSortData, } from './../../../lib/data/studies.data';
 
 export const StudiesContainer = () => {
-    const categoriesData = [
-        { id: '0', name: 'Todos', },
-        { id: '1', name: 'Grado', },
-        { id: '2', name: 'Certificación', },
-        { id: '3', name: 'Cursos', },
-    ];
-    const sortData = [
-        { id: '0', label: 'Sin ordenar', },
-        { id: '1', label: 'Nombre de Estudio', },
-        { id: '2', label: 'Favoritos', },
-    ];
-    const studiesData=[];
+    const categoriesData = getCategoriesData();
+    const [category, setCategory] = useState(categoriesData[0].id);
+
+    const sortData = getSortData();
+    const [isOpenSort, setIsOpenSort] = useState(false);
+    const handleSortClick = () => setIsOpenSort(true);
+    const handleDialogSortClose = () => setIsOpenSort(false);
+    const [sort, setSort] = useState(sortData[0].id);
+
+    const [studiesData, setStudiesData] = useState([]);
+    const [stateData, setStateData] = useState(0);
+
+    useEffect(() => {
+        const fetchingData = async () => {
+            setStateData(0);
+            try {
+                const data = await getStudiesDataAsync(category, sort);
+                setStudiesData(data);
+                setStateData(1);
+            }
+            catch(e) {
+                setStateData(2);
+            }
+        };
+        fetchingData();
+        return () => {};
+    }, [category, sort]);
     return (
-        <Studies
+        <CardList
             categoriesData={categoriesData}
+            categoryActive={category}
+            onCategoryClick={setCategory}
             sortData={sortData}
-            studiesDataState={2}
-            studiesData={studiesData}
-            isOpenSort={false}
+            dataState={stateData}
+            data={studiesData}
+            isOpenSort={isOpenSort}
+            onSortClick={handleSortClick}
+            onSortItemClick={setSort}
+            onDialogSortClose={handleDialogSortClose}
+            renderCard={(item) => <Card
+                avatar={<Avatar src={item.avatar} />}
+                photo={item.photo}
+                title={item.title}
+                subtitle={item.data.school}
+                favs={item.favs}
+                onClickFav={() => {}}
+                shares={item.shares}
+                onClickShares={() => {}}
+                onClickCard={() => {}}
+            />}
         />
     );
 };

@@ -22,7 +22,7 @@ export const Card = ({
 }) => {
     const classes = cardStyles();
     return (
-        <TouchRipple>
+        <TouchRipple component='a'>
             <CardMaterial className={classes.card} elevation={3} onClick={onClickCard}>
                 <CardHeader
                     avatar={avatar}

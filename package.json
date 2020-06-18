@@ -13,6 +13,7 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "firebase": "^7.15.1",
     "helmet": "^3.22.0",
     "history": "^4.10.1",
     "ignore-styles": "^5.0.1",
@@ -27,7 +28,7 @@
   "scripts": {
     "dev": "nodemon src/server/index.js --exact babel-node",
     "start": "npm run build && node src/server/index.js",
-    "build": "webpack-cli --config webpack.config.js --colors",
+    "build": "npx webpack-cli --config webpack.config.js --colors",
     "test": "jest",
     "test:watch": "jest --watch"
   },

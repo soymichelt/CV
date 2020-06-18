@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { footerStyles } from './footer.styles';
 import Profile from './../../../assets/res/profile-64x64.png';
 
-export const Footer = () => {
+const FooterComponent = () => {
 
     const classes = footerStyles();
 
@@ -37,3 +37,5 @@ export const Footer = () => {
         </footer>
     );
 };
+
+export const Footer = React.memo(FooterComponent);
