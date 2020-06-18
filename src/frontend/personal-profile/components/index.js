@@ -8,7 +8,7 @@ import { Biography } from './biography';
 import { GeneralInfo } from './general-info';
 import { Jobs } from './jobs';
 
-export const PersonalProfile = ({ }) => {
+const PersonalProfileComponent = () => {
 
     const classes = personalProfileStyles();
 
@@ -39,3 +39,5 @@ export const PersonalProfile = ({ }) => {
         </div>
     );
 };
+
+export const PersonalProfile = React.memo(PersonalProfileComponent);

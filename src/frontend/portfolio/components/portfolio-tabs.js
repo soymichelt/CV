@@ -5,8 +5,9 @@ import StudiesIcon from '@material-ui/icons/School';
 
 import { Tabs } from './../../theme/containers/tabs';
 import { portfolioTabsStyles } from './portfolio-tabs.styles';
-import { PersonalProfile } from './../../personal-profile/components';
 import { StudiesContainer } from './../../studies-list/containers/studies-container';
+import { PersonalProfile } from './../../personal-profile/components';
+import { ProjectsContainer } from './../../projects-list/containers/projects-container';
 
 export const PortfolioTabs = ({ }) => {
 
@@ -29,7 +30,7 @@ export const PortfolioTabs = ({ }) => {
 
     const tabsContent = [
         <StudiesContainer />,
-        <h1>Proyectos</h1>,
+        <ProjectsContainer />,
         <PersonalProfile />,
     ];
 
