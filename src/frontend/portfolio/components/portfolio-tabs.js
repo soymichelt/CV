@@ -1,4 +1,5 @@
 import React from 'react';
+import NoSSR from '@material-ui/core/NoSsr';
 import InfoIcon from '@material-ui/icons/Public';
 import ProjectIcon from '@material-ui/icons/ImportantDevices';
 import StudiesIcon from '@material-ui/icons/School';
@@ -28,10 +29,12 @@ export const PortfolioTabs = ({ }) => {
         },
     ];
 
+    const fallback = (<span>Estamos cargando</span>);
+
     const tabsContent = [
-        <StudiesContainer />,
-        <ProjectsContainer />,
-        <PersonalProfile />,
+        <NoSSR fallback={fallback}><StudiesContainer /></NoSSR>,
+        <NoSSR fallback={fallback}><ProjectsContainer /></NoSSR>,
+        <NoSSR fallback={fallback}><PersonalProfile /></NoSSR>,
     ];
 
     return (

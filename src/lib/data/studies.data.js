@@ -63,7 +63,7 @@ export const getStudiesDataAsync = async (category = '', sort = '') => {
 };
 
 export const selectStudyDataAsync = async (studyId) => {
-    const snapshot = await getStudiesQuery().doc(studyId).get();
+    const snapshot = await getPublicationsQuery().doc(studyId).get();
     if(snapshot.exists) {
         return {
             ...snapshot.data()
