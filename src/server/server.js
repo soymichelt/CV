@@ -10,7 +10,7 @@ const ENV = process.env.NODE_ENV;
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
+export const app = express();
 app.use(express.static(`${__dirname}/public`));
 
 if(ENV === 'development') {
@@ -39,8 +39,3 @@ else {
 }
 
 app.get('*', mainRoutes);
-
-app.listen(PORT, error => {
-    if(error) console.log(error);
-    console.log(`Server Running on ${PORT}`);
-});

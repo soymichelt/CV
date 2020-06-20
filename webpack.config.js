@@ -115,9 +115,6 @@ module.exports = {
             })
             : () => {},
         new WebpackPwaManifestPlugin({
-            filename: isProduction
-                        ? path.join(process.cwd(), './src/server/public/manifest.json')
-                        : 'manifest.json',
             filename: 'manifest.json',
             name: 'Soymichel.com - Michel Roberto Traña Tablada (+505 8367 - 1719)',
             short_name: 'Soymichel.com',
@@ -132,9 +129,7 @@ module.exports = {
                     src: path.resolve('src/assets/res/fav.png'),
                     sizes: [96, 128, 192, 256, 384, 512, ],
                     ios: true,
-                    destination: isProduction 
-                                    ? path.join(process.cwd(), 'src/server/public/icons')
-                                    : path.join('icons'),
+                    destination: path.join('assets/icons'),
                 },
             ],
         }),

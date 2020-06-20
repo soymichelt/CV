@@ -1,17 +1,8 @@
-require('ignore-styles');
+require('./server.config');
 
-require('@babel/register')({
-    ignore: [/(node_modules)/],
-    presets: ['@babel/preset-env', '@babel/preset-react'],
+const {app} = require('./server');
+
+app.listen(PORT, error => {
+    if(error) console.log(error);
+    console.log(`Server Running on ${PORT}`);
 });
-
-require('asset-require-hook')({
-    extensions: [
-        'jpg',
-        'png',
-        'gif',
-    ],
-    name: '/assets/res/[name].[ext]',
-});
-
-require('./server.js');

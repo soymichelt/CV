@@ -128,10 +128,16 @@ workflows:
 
   -deploy:
     jobs:
-      - init-job
+      - init-job:
+        filters:
+          branches:
+            only: master
       - testing-job:
           requires:
             - init-job
+          filters:
+            branches:
+              only: master
       - build-job:
           requires:
             - init-job
