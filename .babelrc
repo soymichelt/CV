@@ -16,25 +16,9 @@
         "@babel/plugin-transform-runtime",
         "@babel/plugin-proposal-class-properties",
         "@loadable/babel-plugin"
-    ]/*,
+    ],
     "ignore": [
-        "public",
-        "node_modules", 
-        ".circleci",
-        "src/lib/functions/build/node_modules",
-        "src/__mocks__",
-        "__test__",
-        ".firebaserc",
-        "Dockerfile",
-        ".dockerignore",
-        ".gitattributes",
-        ".gitignore",
-        "/.git",
-        "firebase.json",
-        "LICENSE",
-        "loadable-stats.json",
-        "package.json",
-        "package-lock.json",
-        "README.md"
-    ]*/
+        "./src/lib/functions/*.*",
+        "./src/server/*.*"
+    ]
 }

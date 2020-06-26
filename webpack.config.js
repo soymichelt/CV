@@ -1,5 +1,6 @@
 const path = require('path');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const terserPlugin = require('terser-webpack-plugin');
@@ -164,6 +165,10 @@ module.exports = {
             navigateFallbackAllowlist: [
                 new RegExp('/'),
             ],
+        }),
+        new HtmlWebpackPlugin({
+            filename: './index.html',
+            template: './public/index.html',
         }),
     ],
 };

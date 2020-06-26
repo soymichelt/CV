@@ -34,7 +34,7 @@ const render = (html, css) => {
                         s.parentNode.insertBefore(wf, s);
                     })();
 
-                    <!-- Service Workbox -->
+                    //Service Workbox
                     if(navigator) {
                         if('serviceWorker' in navigator) {
                             window.addEventListener('load', () => {

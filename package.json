@@ -31,10 +31,13 @@
     "build": "webpack-cli --config webpack.config.js --colors",
     "test": "jest",
     "test:watch": "jest --watch",
-    "functions:build": "babel ./ -d src/lib/functions/build && babel src/lib/functions/index.js -d src/lib/functions/build"
+    "app:babel": "babel src --out-dir src/lib/functions/build/ --copy-files --no-copy-ignored",
+    "functions:babel": "babel src/lib/functions/index.js -d src/lib/functions/build",
+    "deploy": "npm run build && firebase deploy --only hosting,functions"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
@@ -52,7 +55,9 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "file-loader": "^6.0.0",
+    "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.7.0",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^26.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "nodemon": "^2.0.4",
@@ -69,10 +74,10 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "<rootDir>/src/__test__/setup-files.js"
+      "<rootDir>/src/frontend/__test__/setup-files.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|ico|jpeg|png|gif|svg)$": "<rootDir>/src/__mocks__/image-mock.js"
+      "\\.(jpg|ico|jpeg|png|gif|svg)$": "<rootDir>/src/frontend/__mocks__/image-mock.js"
     }
   }
 }
